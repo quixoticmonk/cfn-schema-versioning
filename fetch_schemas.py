@@ -17,7 +17,18 @@ def main():
     else:
         versions = {}
     
+    # Load existing removed schemas
+    removed_file = Path('removed_schemas.json')
+    if removed_file.exists():
+        with open(removed_file) as f:
+            removed_schemas = json.load(f)
+    else:
+        removed_schemas = {}
+    
     current_time = datetime.now().isoformat()
+    
+    # Track current AWS resource types to detect removals
+    current_types = set()
     
     # Get all AWS resource types
     paginator = cfn.get_paginator('list_types')
@@ -30,6 +41,8 @@ def main():
             # Only process AWS resource types
             if not type_name.startswith('AWS::'):
                 continue
+            
+            current_types.add(type_name)
                 
             filename = type_name.replace('::', '--') + '.json'
             
@@ -39,10 +52,8 @@ def main():
                 
                 # Extract additional metadata if available
                 type_metadata = {
-                    'last_updated_aws': response.get('LastUpdated'),
                     'time_created': response.get('TimeCreated'),
-                    'deprecation_status': response.get('DeprecatedStatus'),
-                    'default_version_id': response.get('DefaultVersionId')
+                    'deprecation_status': response.get('DeprecatedStatus')
                 }
                 
                 # Check if schema changed
@@ -82,9 +93,22 @@ def main():
                 print(f"Error with {type_name}: {e}")
                 continue
     
-    # Save version metadata
+    # Check for removed schemas
+    for type_name in list(versions.keys()):
+        if type_name not in current_types:
+            removed_schemas[type_name] = {
+                **versions[type_name],
+                'removed_date': current_time
+            }
+            del versions[type_name]
+            print(f"Schema removed: {type_name}")
+    
+    # Save version metadata and removed schemas
     with open(version_file, 'w') as f:
         json.dump(versions, f, indent=2, sort_keys=True)
+    
+    with open(removed_file, 'w') as f:
+        json.dump(removed_schemas, f, indent=2, sort_keys=True)
 
 if __name__ == "__main__":
     main()
