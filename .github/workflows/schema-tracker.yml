@@ -48,38 +48,37 @@ jobs:
     - name: Update version metadata
       if: steps.changes.outputs.changed == 'true'
       run: |
-        # Update last_updated timestamp for changed schemas
-        python3 -c "
-import json
-import subprocess
-from datetime import datetime
-from pathlib import Path
-
-# Get list of changed files
-result = subprocess.run(['git', 'diff', '--cached', '--name-only', 'schemas/'], 
-                       capture_output=True, text=True)
-changed_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
-
-# Load version metadata
-version_file = Path('version_metadata.json')
-if version_file.exists():
-    with open(version_file) as f:
-        versions = json.load(f)
-else:
-    versions = {}
-
-# Update timestamps for changed schemas
-current_time = datetime.now().isoformat()
-for file_path in changed_files:
-    if file_path.startswith('schemas/') and file_path.endswith('.json'):
-        type_name = Path(file_path).stem.replace('--', '::')
-        if type_name in versions:
-            versions[type_name]['last_updated'] = current_time
-
-# Save updated metadata
-with open(version_file, 'w') as f:
-    json.dump(versions, f, indent=2, sort_keys=True)
-"
+        python3 << 'EOF'
+        import json
+        import subprocess
+        from datetime import datetime
+        from pathlib import Path
+        
+        # Get list of changed files
+        result = subprocess.run(['git', 'diff', '--cached', '--name-only', 'schemas/'], 
+                               capture_output=True, text=True)
+        changed_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+        
+        # Load version metadata
+        version_file = Path('version_metadata.json')
+        if version_file.exists():
+            with open(version_file) as f:
+                versions = json.load(f)
+        else:
+            versions = {}
+        
+        # Update timestamps for changed schemas
+        current_time = datetime.now().isoformat()
+        for file_path in changed_files:
+            if file_path.startswith('schemas/') and file_path.endswith('.json'):
+                type_name = Path(file_path).stem.replace('--', '::')
+                if type_name in versions:
+                    versions[type_name]['last_updated'] = current_time
+        
+        # Save updated metadata
+        with open(version_file, 'w') as f:
+            json.dump(versions, f, indent=2, sort_keys=True)
+        EOF
     
     - name: Commit changes
       if: steps.changes.outputs.changed == 'true'
