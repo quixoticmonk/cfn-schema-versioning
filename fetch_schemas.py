@@ -32,16 +32,41 @@ def main():
                 response = cfn.describe_type(Type='RESOURCE', TypeName=type_name)
                 schema = json.loads(response['Schema'])
                 
+                # Extract additional metadata if available
+                type_metadata = {
+                    'last_updated_aws': response.get('LastUpdated'),
+                    'time_created': response.get('TimeCreated'),
+                    'deprecation_status': response.get('DeprecatedStatus'),
+                    'default_version_id': response.get('DefaultVersionId')
+                }
+                
+                # Check if schema changed
+                schema_file = schemas_dir / filename
+                schema_changed = True
+                
+                if schema_file.exists():
+                    with open(schema_file) as f:
+                        existing_schema = json.load(f)
+                    schema_changed = existing_schema != schema
+                
                 # Save schema file
-                with open(schemas_dir / filename, 'w') as f:
+                with open(schema_file, 'w') as f:
                     json.dump(schema, f, indent=2, sort_keys=True)
                 
-                # Initialize version metadata if not exists
+                # Update version metadata
                 if type_name not in versions:
                     versions[type_name] = {
                         'first_seen': current_time,
-                        'last_updated': current_time
+                        'last_updated': current_time,
+                        **{k: v.isoformat() if hasattr(v, 'isoformat') else v 
+                           for k, v in type_metadata.items() if v is not None}
                     }
+                elif schema_changed:
+                    versions[type_name]['last_updated'] = current_time
+                    # Update AWS metadata if it changed
+                    for k, v in type_metadata.items():
+                        if v is not None:
+                            versions[type_name][k] = v.isoformat() if hasattr(v, 'isoformat') else v
                 
                 processed_count += 1
                 if processed_count % 100 == 0:

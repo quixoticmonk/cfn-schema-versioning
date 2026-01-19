@@ -38,8 +38,7 @@ jobs:
     - name: Check for changes
       id: changes
       run: |
-        git add schemas/
-        if git diff --cached --quiet; then
+        if git diff --quiet schemas/ && git diff --quiet version_metadata.json; then
           echo "changed=false" >> $GITHUB_OUTPUT
         else
           echo "changed=true" >> $GITHUB_OUTPUT
@@ -85,6 +84,6 @@ jobs:
       run: |
         git config user.name "Schema Tracker Bot"
         git config user.email "schema-tracker@github.com"
-        git add .
+        git add schemas/ version_metadata.json
         git commit -m "Schema update: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
         git push
