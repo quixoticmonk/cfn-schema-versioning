@@ -26,6 +26,11 @@ def main():
     for page in paginator.paginate(Visibility='PUBLIC', Type='RESOURCE'):
         for type_info in page['TypeSummaries']:
             type_name = type_info['TypeName']
+            
+            # Only process AWS resource types
+            if not type_name.startswith('AWS::'):
+                continue
+                
             filename = type_name.replace('::', '--') + '.json'
             
             try:
@@ -63,10 +68,11 @@ def main():
                     }
                 elif schema_changed:
                     versions[type_name]['last_updated'] = current_time
-                    # Update AWS metadata if it changed
-                    for k, v in type_metadata.items():
-                        if v is not None:
-                            versions[type_name][k] = v.isoformat() if hasattr(v, 'isoformat') else v
+                
+                # Always update AWS metadata if it exists (it might change independently of schema)
+                for k, v in type_metadata.items():
+                    if v is not None:
+                        versions[type_name][k] = v.isoformat() if hasattr(v, 'isoformat') else v
                 
                 processed_count += 1
                 if processed_count % 100 == 0:
