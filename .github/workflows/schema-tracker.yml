@@ -1,0 +1,91 @@
+name: AWS Schema Version Tracker
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:
+
+jobs:
+  track-schemas:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install uv
+      uses: astral-sh/setup-uv@v4
+    
+    - name: Install dependencies
+      run: uv pip install --system -r requirements.txt
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+        aws-region: us-east-1
+    
+    - name: Fetch and check schemas
+      run: python fetch_schemas.py
+    
+    - name: Check for changes
+      id: changes
+      run: |
+        git add schemas/
+        if git diff --cached --quiet; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Update version metadata
+      if: steps.changes.outputs.changed == 'true'
+      run: |
+        # Update last_updated timestamp for changed schemas
+        python3 -c "
+import json
+import subprocess
+from datetime import datetime
+from pathlib import Path
+
+# Get list of changed files
+result = subprocess.run(['git', 'diff', '--cached', '--name-only', 'schemas/'], 
+                       capture_output=True, text=True)
+changed_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+
+# Load version metadata
+version_file = Path('version_metadata.json')
+if version_file.exists():
+    with open(version_file) as f:
+        versions = json.load(f)
+else:
+    versions = {}
+
+# Update timestamps for changed schemas
+current_time = datetime.now().isoformat()
+for file_path in changed_files:
+    if file_path.startswith('schemas/') and file_path.endswith('.json'):
+        type_name = Path(file_path).stem.replace('--', '::')
+        if type_name in versions:
+            versions[type_name]['last_updated'] = current_time
+
+# Save updated metadata
+with open(version_file, 'w') as f:
+    json.dump(versions, f, indent=2, sort_keys=True)
+"
+    
+    - name: Commit changes
+      if: steps.changes.outputs.changed == 'true'
+      run: |
+        git config user.name "Schema Tracker Bot"
+        git config user.email "schema-tracker@github.com"
+        git add .
+        git commit -m "Schema update: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+        git push
