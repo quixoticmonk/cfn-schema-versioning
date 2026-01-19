@@ -1,6 +1,12 @@
 # AWS CloudFormation Schema Version Tracker
 
-This repository tracks AWS CloudFormation resource type schema changes using git diffs to determine actual update dates.
+This repository tracks AWS CloudFormation resource type schema changes using git diffs to determine actual update dates. This is an approximation of when schemas would have changed.
+
+## What this provides
+
+1. **Schema versioning**: Preserves every version of each CloudFormation schema in git history
+2. **Change traceability**: Git diffs show exactly what changed between schema versions
+3. **Timeline tracking**: Metadata tracks when changes were detected (approximation of AWS release dates)
 
 ## How it works
 
@@ -24,4 +30,4 @@ The workflow automatically:
 - Only commits and updates timestamps when actual changes are found
 - Preserves full history of schema evolution
 
-This gives you accurate schema version dates based on actual content changes, not arbitrary API timestamps.
+This tracks when schema changes are **detected** through daily monitoring, providing a timeline of schema evolution relative to your monitoring schedule.
