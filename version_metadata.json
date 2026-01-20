@@ -3126,8 +3126,10 @@
     "time_created": "2021-09-02T18:26:24.382000+00:00"
   },
   "AWS::EC2::VPC": {
+    "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687"
+    "last_updated": "2026-01-19T02:16:06.407687",
+    "time_created": "2021-08-20T20:27:36.240000+00:00"
   },
   "AWS::EC2::VPCBlockPublicAccessExclusion": {
     "deprecation_status": "LIVE",
@@ -9056,13 +9058,5 @@
     "first_seen": "2026-01-19T02:02:20.407855",
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2025-02-25T21:43:51.097000+00:00"
-  },
-  "Alexa::ASK::Skill": {
-    "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687"
-  },
-  "GitHub::Repositories::Repository": {
-    "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687"
   }
 }
