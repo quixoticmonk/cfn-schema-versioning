@@ -1184,7 +1184,7 @@
   "AWS::Chatbot::MicrosoftTeamsChannelConfiguration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-21T06:25:15.978664",
     "time_created": "2022-10-27T16:21:20.436000+00:00"
   },
   "AWS::Chatbot::SlackChannelConfiguration": {
@@ -3776,7 +3776,7 @@
   "AWS::FMS::NotificationChannel": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-21T06:25:15.978664",
     "time_created": "2020-02-06T18:50:47.558000+00:00"
   },
   "AWS::FMS::Policy": {
@@ -4700,7 +4700,7 @@
   "AWS::IoT::Logging": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-21T06:25:15.978664",
     "time_created": "2021-09-22T22:18:33.005000+00:00"
   },
   "AWS::IoT::MitigationAction": {
@@ -5632,6 +5632,12 @@
     "first_seen": "2026-01-19T02:02:20.407855",
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2020-11-24T04:38:41.769000+00:00"
+  },
+  "AWS::MWAAServerless::Workflow": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-01-21T06:25:15.978664",
+    "last_updated": "2026-01-21T06:25:15.978664",
+    "time_created": "2025-11-28T20:55:03.046000+00:00"
   },
   "AWS::Macie::AllowList": {
     "deprecation_status": "LIVE",

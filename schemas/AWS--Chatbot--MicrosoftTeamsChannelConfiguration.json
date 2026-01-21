@@ -56,7 +56,8 @@
     "read": {
       "permissions": [
         "chatbot:GetMicrosoftTeamsChannelConfiguration",
-        "chatbot:ListAssociations"
+        "chatbot:ListAssociations",
+        "chatbot:ListTagsForResource"
       ]
     },
     "update": {
