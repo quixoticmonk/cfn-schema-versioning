@@ -3,6 +3,7 @@
   "createOnlyProperties": [
     "/properties/DashboardName"
   ],
+  "definitions": {},
   "description": "Resource Type definition for AWS::CloudWatch::Dashboard",
   "handlers": {
     "create": {

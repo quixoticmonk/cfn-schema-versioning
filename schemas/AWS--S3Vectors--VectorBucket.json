@@ -64,20 +64,17 @@
     "delete": {
       "permissions": [
         "s3vectors:GetVectorBucket",
-        "s3vectors:DeleteVectorBucket",
-        "kms:GenerateDataKey"
+        "s3vectors:DeleteVectorBucket"
       ]
     },
     "list": {
       "permissions": [
-        "s3vectors:ListVectorBuckets",
-        "kms:GenerateDataKey"
+        "s3vectors:ListVectorBuckets"
       ]
     },
     "read": {
       "permissions": [
-        "s3vectors:GetVectorBucket",
-        "kms:GenerateDataKey"
+        "s3vectors:GetVectorBucket"
       ]
     }
   },

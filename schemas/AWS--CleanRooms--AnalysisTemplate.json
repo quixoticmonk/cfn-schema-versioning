@@ -15,7 +15,7 @@
       "additionalProperties": false,
       "properties": {
         "DefaultValue": {
-          "maxLength": 250,
+          "maxLength": 1000,
           "minLength": 0,
           "type": "string"
         },
@@ -408,7 +408,7 @@
       "items": {
         "$ref": "#/definitions/AnalysisParameter"
       },
-      "maxItems": 10,
+      "maxItems": 50,
       "minItems": 0,
       "type": "array"
     },

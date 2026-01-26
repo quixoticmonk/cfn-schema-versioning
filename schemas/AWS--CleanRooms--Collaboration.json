@@ -30,7 +30,9 @@
     },
     "AutoApprovedChangeType": {
       "enum": [
-        "ADD_MEMBER"
+        "ADD_MEMBER",
+        "GRANT_RECEIVE_RESULTS_ABILITY",
+        "REVOKE_RECEIVE_RESULTS_ABILITY"
       ],
       "type": "string"
     },

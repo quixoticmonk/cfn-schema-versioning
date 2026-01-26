@@ -34,7 +34,7 @@
       "type": "string"
     }
   },
-  "description": "Resource schema for AWS::Config::OrganizationConformancePack.",
+  "description": "Resource Type definition for AWS::Config::OrganizationConformancePack.",
   "documentationUrl": "https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html",
   "handlers": {
     "create": {

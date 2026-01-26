@@ -242,7 +242,7 @@
     "/properties/BaseUrl",
     "/properties/CurrentVersionEolDate"
   ],
-  "replacementStrategy": "delete_then_create",
+  "replacementStrategy": "create_then_delete",
   "required": [
     "Name",
     "Type",

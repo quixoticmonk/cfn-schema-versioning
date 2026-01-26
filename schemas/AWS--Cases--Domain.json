@@ -123,6 +123,7 @@
   "tagging": {
     "cloudFormationSystemTags": true,
     "permissions": [
+      "cases:GetDomain",
       "cases:TagResource",
       "cases:UntagResource"
     ],
