@@ -1034,13 +1034,13 @@
   "AWS::BedrockAgentCore::Memory": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2025-10-09T02:38:16.137000+00:00"
   },
   "AWS::BedrockAgentCore::Runtime": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2025-09-20T20:10:03.316000+00:00"
   },
   "AWS::BedrockAgentCore::RuntimeEndpoint": {
@@ -2204,7 +2204,7 @@
   "AWS::DSQL::Cluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2025-04-04T19:59:41.136000+00:00"
   },
   "AWS::DataBrew::Dataset": {
@@ -2672,7 +2672,7 @@
   "AWS::EC2::EC2Fleet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2021-03-23T23:49:54.406000+00:00"
   },
   "AWS::EC2::EIP": {
@@ -2834,7 +2834,7 @@
   "AWS::EC2::NatGateway": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2022-03-29T22:25:01.902000+00:00"
   },
   "AWS::EC2::NetworkAcl": {
@@ -2984,7 +2984,7 @@
   "AWS::EC2::SpotFleet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2021-03-23T23:54:41.074000+00:00"
   },
   "AWS::EC2::Subnet": {
@@ -3170,7 +3170,7 @@
   "AWS::EC2::VPCEndpoint": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2021-06-14T17:35:42.870000+00:00"
   },
   "AWS::EC2::VPCEndpointConnectionNotification": {
@@ -3920,7 +3920,7 @@
   "AWS::GameLift::ContainerFleet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2024-11-11T00:35:07.162000+00:00"
   },
   "AWS::GameLift::ContainerGroupDefinition": {
@@ -3932,7 +3932,7 @@
   "AWS::GameLift::Fleet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2020-07-16T21:52:59.995000+00:00"
   },
   "AWS::GameLift::GameServerGroup": {
@@ -4676,7 +4676,7 @@
   "AWS::IoT::Command": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2024-08-22T19:20:11.121000+00:00"
   },
   "AWS::IoT::CustomMetric": {
@@ -5380,6 +5380,12 @@
     "first_seen": "2026-01-19T02:02:20.407855",
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2021-10-12T20:33:48.529000+00:00"
+  },
+  "AWS::Lightsail::DatabaseSnapshot": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-01-28T06:25:38.739040",
+    "last_updated": "2026-01-28T06:25:38.739040",
+    "time_created": "2026-01-16T23:27:36.760000+00:00"
   },
   "AWS::Lightsail::Disk": {
     "deprecation_status": "LIVE",
@@ -7610,7 +7616,7 @@
   "AWS::SES::ConfigurationSet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-01-28T06:25:38.739040",
     "time_created": "2019-11-13T00:57:39.750000+00:00"
   },
   "AWS::SES::ConfigurationSetEventDestination": {

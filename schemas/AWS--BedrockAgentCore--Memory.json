@@ -908,7 +908,7 @@
     "EventExpiryDuration": {
       "description": "Duration in days until memory events expire",
       "maximum": 365,
-      "minimum": 7,
+      "minimum": 3,
       "type": "integer"
     },
     "FailureReason": {
