@@ -1886,13 +1886,13 @@
   "AWS::Connect::DataTable": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2025-12-01T22:30:49.812000+00:00"
   },
   "AWS::Connect::DataTableAttribute": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2025-12-01T22:20:44.133000+00:00"
   },
   "AWS::Connect::DataTableRecord": {
@@ -2792,7 +2792,7 @@
   "AWS::EC2::LaunchTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2023-04-04T23:35:46.908000+00:00"
   },
   "AWS::EC2::LocalGatewayRoute": {
@@ -3212,7 +3212,7 @@
   "AWS::EC2::VPNConnection": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2022-07-28T09:37:10.503000+00:00"
   },
   "AWS::EC2::VPNConnectionRoute": {
@@ -3266,7 +3266,7 @@
   "AWS::EC2::VolumeAttachment": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2023-05-18T17:07:04.925000+00:00"
   },
   "AWS::ECR::PublicRepository": {
@@ -6860,7 +6860,7 @@
   "AWS::QuickSight::DataSet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2021-03-19T22:43:29.046000+00:00"
   },
   "AWS::QuickSight::DataSource": {
@@ -7256,7 +7256,7 @@
   "AWS::RolesAnywhere::CRL": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2022-06-20T05:44:56.015000+00:00"
   },
   "AWS::RolesAnywhere::Profile": {
@@ -8606,7 +8606,7 @@
   "AWS::Transfer::Connector": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2022-09-19T20:26:30.148000+00:00"
   },
   "AWS::Transfer::Profile": {
@@ -8630,7 +8630,7 @@
   "AWS::Transfer::WebApp": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2025-02-06T16:30:47.026000+00:00"
   },
   "AWS::Transfer::Workflow": {
@@ -8882,13 +8882,13 @@
   "AWS::WAFv2::RuleGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2021-06-02T23:02:23.329000+00:00"
   },
   "AWS::WAFv2::WebACL": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-02T06:53:56.338912",
     "time_created": "2021-06-02T23:01:56.066000+00:00"
   },
   "AWS::WAFv2::WebACLAssociation": {

@@ -88,6 +88,9 @@
       "type": "string"
     }
   },
+  "propertyTransform": {
+    "/properties/CrlData": "$replace(CrlData, /\\s+$/, '')"
+  },
   "readOnlyProperties": [
     "/properties/CrlId"
   ],

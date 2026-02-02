@@ -634,6 +634,9 @@
         "Cookies": {
           "$ref": "#/definitions/Cookies"
         },
+        "HeaderOrder": {
+          "$ref": "#/definitions/HeaderOrder"
+        },
         "Headers": {
           "$ref": "#/definitions/Headers"
         },
@@ -792,6 +795,19 @@
           "type": "array"
         }
       },
+      "type": "object"
+    },
+    "HeaderOrder": {
+      "additionalProperties": false,
+      "description": "The string containing the list of a web request's header names, ordered as they appear in the web request, separated by colons.",
+      "properties": {
+        "OversizeHandling": {
+          "$ref": "#/definitions/OversizeHandling"
+        }
+      },
+      "required": [
+        "OversizeHandling"
+      ],
       "type": "object"
     },
     "Headers": {

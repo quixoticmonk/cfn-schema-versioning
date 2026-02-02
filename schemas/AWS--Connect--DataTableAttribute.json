@@ -45,7 +45,8 @@
   "handlers": {
     "create": {
       "permissions": [
-        "connect:CreateDataTableAttribute"
+        "connect:CreateDataTableAttribute",
+        "connect:ListDataTableAttributes"
       ]
     },
     "delete": {

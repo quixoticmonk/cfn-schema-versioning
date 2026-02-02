@@ -3,12 +3,17 @@
   "createOnlyProperties": [
     "/properties/Device",
     "/properties/InstanceId",
-    "/properties/VolumeId"
+    "/properties/VolumeId",
+    "/properties/EbsCardIndex"
   ],
   "definitions": {
     "Device": {
       "description": "The device name",
       "type": "string"
+    },
+    "EbsCardIndex": {
+      "description": "The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.",
+      "type": "integer"
     },
     "Id": {
       "description": "",
@@ -56,6 +61,10 @@
     "Device": {
       "$ref": "#/definitions/Device",
       "description": "The device name (for example, ``/dev/sdh`` or ``xvdh``)."
+    },
+    "EbsCardIndex": {
+      "$ref": "#/definitions/EbsCardIndex",
+      "description": ""
     },
     "InstanceId": {
       "$ref": "#/definitions/InstanceId",
