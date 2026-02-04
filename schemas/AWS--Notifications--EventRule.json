@@ -65,7 +65,7 @@
       "handlerSchema": {
         "properties": {
           "NotificationConfigurationArn": {
-            "pattern": "^arn:aws:notifications::[0-9]{12}:configuration\\/[a-z0-9]{27}$",
+            "pattern": "^arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}$",
             "type": "string"
           }
         },
@@ -95,7 +95,7 @@
   ],
   "properties": {
     "Arn": {
-      "pattern": "^arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}$",
+      "pattern": "^arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}$",
       "type": "string"
     },
     "CreationTime": {
@@ -115,20 +115,19 @@
     },
     "ManagedRules": {
       "items": {
-        "pattern": "^arn:aws:events:[a-z-\\d]{2,25}:\\d{12}:rule\\/[a-zA-Z-\\d]{1,1024}$",
+        "pattern": "^arn:[a-z-]{3,10}:events:[a-z-\\d]{2,25}:\\d{12}:rule\\/[a-zA-Z-\\d]{1,1024}$",
         "type": "string"
       },
       "type": "array"
     },
     "NotificationConfigurationArn": {
-      "pattern": "^arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}$",
+      "pattern": "^arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}$",
       "type": "string"
     },
     "Regions": {
       "items": {
         "maxLength": 25,
         "minLength": 2,
-        "pattern": "^([a-z]{1,2})-([a-z]{1,15}-)+([0-9])$",
         "type": "string"
       },
       "minItems": 1,

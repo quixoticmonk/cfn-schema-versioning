@@ -1724,7 +1724,7 @@
   "AWS::Cognito::UserPool": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2023-07-31T16:50:55.555000+00:00"
   },
   "AWS::Cognito::UserPoolClient": {
@@ -1922,7 +1922,7 @@
   "AWS::Connect::Instance": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2022-03-28T18:13:49.992000+00:00"
   },
   "AWS::Connect::InstanceStorageConfig": {
@@ -1934,7 +1934,7 @@
   "AWS::Connect::IntegrationAssociation": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2023-01-14T19:51:57.021000+00:00"
   },
   "AWS::Connect::PhoneNumber": {
@@ -2600,7 +2600,7 @@
   "AWS::DynamoDB::GlobalTable": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2021-05-04T15:48:35.280000+00:00"
   },
   "AWS::DynamoDB::Table": {
@@ -2834,7 +2834,7 @@
   "AWS::EC2::NatGateway": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-28T06:25:38.739040",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2022-03-29T22:25:01.902000+00:00"
   },
   "AWS::EC2::NetworkAcl": {
@@ -5258,7 +5258,7 @@
   "AWS::Lambda::CodeSigningConfig": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2020-07-29T19:25:43.317000+00:00"
   },
   "AWS::Lambda::EventInvokeConfig": {
@@ -5318,7 +5318,7 @@
   "AWS::Lex::Bot": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2021-11-16T19:57:12.777000+00:00"
   },
   "AWS::Lex::BotAlias": {
@@ -5342,13 +5342,13 @@
   "AWS::LicenseManager::Grant": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2020-11-19T20:26:15.806000+00:00"
   },
   "AWS::LicenseManager::License": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2020-11-19T20:26:16.139000+00:00"
   },
   "AWS::Lightsail::Alarm": {
@@ -6200,43 +6200,43 @@
   "AWS::Notifications::ChannelAssociation": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2025-01-07T01:02:30.033000+00:00"
   },
   "AWS::Notifications::EventRule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2025-01-07T01:02:50.932000+00:00"
   },
   "AWS::Notifications::ManagedNotificationAccountContactAssociation": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2025-01-16T23:00:39.882000+00:00"
   },
   "AWS::Notifications::ManagedNotificationAdditionalChannelAssociation": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2025-01-16T23:00:46.680000+00:00"
   },
   "AWS::Notifications::NotificationConfiguration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2025-01-07T00:45:44.614000+00:00"
   },
   "AWS::Notifications::NotificationHub": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2025-01-07T00:29:07.005000+00:00"
   },
   "AWS::Notifications::OrganizationalUnitAssociation": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2025-09-02T15:11:06.793000+00:00"
   },
   "AWS::NotificationsContacts::EmailContact": {
@@ -6422,7 +6422,7 @@
   "AWS::OpenSearchService::Domain": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2021-07-21T12:42:15.326000+00:00"
   },
   "AWS::OpsWorks::App": {
@@ -6542,7 +6542,7 @@
   "AWS::PCS::Cluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2024-12-11T07:53:26.327000+00:00"
   },
   "AWS::PCS::ComputeNodeGroup": {
@@ -7718,7 +7718,7 @@
   "AWS::SES::Template": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-04T06:40:01.769376",
     "time_created": "2021-09-23T12:25:51.252000+00:00"
   },
   "AWS::SES::Tenant": {

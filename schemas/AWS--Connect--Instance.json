@@ -33,6 +33,9 @@
         "InboundCalls": {
           "$ref": "#/definitions/InboundCalls"
         },
+        "MessageStreaming": {
+          "$ref": "#/definitions/MessageStreaming"
+        },
         "MultiPartyChatConference": {
           "$ref": "#/definitions/MultiPartyChatConference"
         },
@@ -82,6 +85,10 @@
     },
     "InboundCalls": {
       "description": "Mandatory element which enables inbound calls on new instance.",
+      "type": "boolean"
+    },
+    "MessageStreaming": {
+      "description": "Boolean flag which enables MESSAGE_STREAMING on an instance.",
       "type": "boolean"
     },
     "MultiPartyChatConference": {

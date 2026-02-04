@@ -94,6 +94,18 @@
       },
       "type": "object"
     },
+    "InboundFederation": {
+      "additionalProperties": false,
+      "properties": {
+        "LambdaArn": {
+          "type": "string"
+        },
+        "LambdaVersion": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "InviteMessageTemplate": {
       "additionalProperties": false,
       "properties": {
@@ -126,6 +138,9 @@
         },
         "DefineAuthChallenge": {
           "type": "string"
+        },
+        "InboundFederation": {
+          "$ref": "#/definitions/InboundFederation"
         },
         "KMSKeyID": {
           "type": "string"

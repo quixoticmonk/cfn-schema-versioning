@@ -218,14 +218,14 @@
         "pcs:ListTagsForResource",
         "pcs:TagResource"
       ],
-      "timeoutInMinutes": 60
+      "timeoutInMinutes": 130
     },
     "delete": {
       "permissions": [
         "pcs:DeleteCluster",
         "pcs:GetCluster"
       ],
-      "timeoutInMinutes": 60
+      "timeoutInMinutes": 130
     },
     "list": {
       "permissions": [
@@ -246,7 +246,7 @@
         "pcs:TagResource",
         "pcs:UntagResource"
       ],
-      "timeoutInMinutes": 60
+      "timeoutInMinutes": 130
     }
   },
   "primaryIdentifier": [

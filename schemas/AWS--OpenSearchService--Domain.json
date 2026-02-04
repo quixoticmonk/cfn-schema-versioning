@@ -13,6 +13,9 @@
       "properties": {
         "S3VectorsEngine": {
           "$ref": "#/definitions/S3VectorsEngine"
+        },
+        "ServerlessVectorAcceleration": {
+          "$ref": "#/definitions/ServerlessVectorAcceleration"
         }
       },
       "type": "object"
@@ -389,6 +392,16 @@
         },
         "SubjectKey": {
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ServerlessVectorAcceleration": {
+      "additionalProperties": false,
+      "properties": {
+        "Enabled": {
+          "description": "Whether to enable serverless vector acceleration.",
+          "type": "boolean"
         }
       },
       "type": "object"

@@ -110,6 +110,25 @@
       ],
       "type": "object"
     },
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag.",
+          "type": "string"
+        },
+        "Value": {
+          "description": "The value for the tag.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
+    },
     "ValidityDateFormat": {
       "additionalProperties": false,
       "properties": {
@@ -135,12 +154,18 @@
   "handlers": {
     "create": {
       "permissions": [
-        "license-manager:CreateLicense"
+        "license-manager:CreateLicense",
+        "license-manager:GetLicense",
+        "license-manager:TagResource",
+        "license-manager:ListTagsForResource",
+        "kms:CreateGrant"
       ]
     },
     "delete": {
       "permissions": [
-        "license-manager:DeleteLicense"
+        "license-manager:DeleteLicense",
+        "license-manager:GetLicense",
+        "license-manager:ListTagsForResource"
       ]
     },
     "list": {
@@ -150,12 +175,17 @@
     },
     "read": {
       "permissions": [
-        "license-manager:GetLicense"
+        "license-manager:GetLicense",
+        "license-manager:ListTagsForResource"
       ]
     },
     "update": {
       "permissions": [
-        "license-manager:CreateLicenseVersion"
+        "license-manager:CreateLicenseVersion",
+        "license-manager:GetLicense",
+        "license-manager:TagResource",
+        "license-manager:UntagResource",
+        "license-manager:ListTagsForResource"
       ]
     }
   },
@@ -212,6 +242,15 @@
     "Status": {
       "$ref": "#/definitions/LicenseStatus"
     },
+    "Tags": {
+      "description": "A list of tags to attach.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array",
+      "uniqueItems": false
+    },
     "Validity": {
       "$ref": "#/definitions/ValidityDateFormat"
     },
@@ -231,11 +270,22 @@
     "HomeRegion",
     "Validity",
     "ConsumptionConfiguration",
-    "Entitlements"
+    "Entitlements",
+    "Beneficiary",
+    "ProductSKU"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-licensemanager.git",
-  "typeName": "AWS::LicenseManager::License",
-  "writeOnlyProperties": [
-    "/properties/Status"
-  ]
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "license-manager:TagResource",
+      "license-manager:UntagResource",
+      "license-manager:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
+  "typeName": "AWS::LicenseManager::License"
 }
