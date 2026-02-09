@@ -516,6 +516,9 @@
         },
         "TimecodeBurninSettings": {
           "$ref": "#/definitions/TimecodeBurninSettings"
+        },
+        "TimecodeInsertion": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -940,6 +943,15 @@
     },
     "ColorSpacePassthroughSettings": {
       "additionalProperties": false,
+      "type": "object"
+    },
+    "DisabledLockingSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "CustomEpoch": {
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "DolbyVision81Settings": {
@@ -2526,6 +2538,15 @@
       },
       "type": "object"
     },
+    "MediaPackageAdditionalDestinations": {
+      "additionalProperties": false,
+      "properties": {
+        "Destination": {
+          "$ref": "#/definitions/OutputLocationRef"
+        }
+      },
+      "type": "object"
+    },
     "MediaPackageGroupSettings": {
       "additionalProperties": false,
       "properties": {
@@ -2541,6 +2562,9 @@
     "MediaPackageOutputDestinationSettings": {
       "additionalProperties": false,
       "properties": {
+        "ChannelEndpointId": {
+          "type": "string"
+        },
         "ChannelGroup": {
           "type": "string"
         },
@@ -2548,6 +2572,9 @@
           "type": "string"
         },
         "ChannelName": {
+          "type": "string"
+        },
+        "MediaPackageRegionName": {
           "type": "string"
         }
       },
@@ -2583,6 +2610,13 @@
     "MediaPackageV2GroupSettings": {
       "additionalProperties": false,
       "properties": {
+        "AdditionalDestinations": {
+          "items": {
+            "$ref": "#/definitions/MediaPackageAdditionalDestinations"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
         "CaptionLanguageMappings": {
           "items": {
             "$ref": "#/definitions/CaptionLanguageMapping"
@@ -3117,6 +3151,9 @@
     "OutputLockingSettings": {
       "additionalProperties": false,
       "properties": {
+        "DisabledLockingSettings": {
+          "$ref": "#/definitions/DisabledLockingSettings"
+        },
         "EpochLockingSettings": {
           "$ref": "#/definitions/EpochLockingSettings"
         },
@@ -3169,6 +3206,9 @@
     "PipelineLockingSettings": {
       "additionalProperties": false,
       "properties": {
+        "CustomEpoch": {
+          "type": "string"
+        },
         "PipelineLockingMethod": {
           "type": "string"
         }

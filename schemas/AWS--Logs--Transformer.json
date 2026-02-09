@@ -594,13 +594,13 @@
       "additionalProperties": false,
       "properties": {
         "From": {
-          "$ref": "#/definitions/NonEmptyAndMaxLengthString"
+          "$ref": "#/definitions/MaxLengthString"
         },
         "Source": {
           "$ref": "#/definitions/NonEmptyString"
         },
         "To": {
-          "$ref": "#/definitions/NonEmptyAndMaxLengthString"
+          "$ref": "#/definitions/MaxLengthString"
         }
       },
       "required": [

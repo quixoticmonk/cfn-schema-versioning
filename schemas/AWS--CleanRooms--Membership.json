@@ -345,6 +345,9 @@
     "DefaultResultConfiguration": {
       "$ref": "#/definitions/MembershipProtectedQueryResultConfiguration"
     },
+    "IsMetricsEnabled": {
+      "type": "boolean"
+    },
     "JobLogStatus": {
       "$ref": "#/definitions/MembershipJobLogStatus"
     },

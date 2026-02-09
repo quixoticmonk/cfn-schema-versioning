@@ -465,7 +465,7 @@
       "items": {
         "$ref": "#/definitions/ResourceTag"
       },
-      "maxItems": 8,
+      "maxItems": 50,
       "type": "array"
     },
     "ResourceType": {

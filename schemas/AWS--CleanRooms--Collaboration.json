@@ -411,6 +411,9 @@
       "pattern": "^(?!\\s*$)[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDBFF-\\uDC00\\uDFFF\\t\\r\\n]*$",
       "type": "string"
     },
+    "IsMetricsEnabled": {
+      "type": "boolean"
+    },
     "JobLogStatus": {
       "$ref": "#/definitions/CollaborationJobLogStatus"
     },
