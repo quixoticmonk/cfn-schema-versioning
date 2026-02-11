@@ -125,7 +125,6 @@
       "type": "object"
     },
     "DataStore": {
-      "additionalProperties": false,
       "description": "Configuration and status of the data store for the domain.",
       "properties": {
         "Enabled": {
@@ -260,7 +259,6 @@
       "type": "array"
     },
     "Readiness": {
-      "additionalProperties": false,
       "description": "Progress information for data store setup.",
       "properties": {
         "Message": {
@@ -399,7 +397,12 @@
     },
     "list": {
       "permissions": [
-        "profile:ListDomains"
+        "profile:ListDomains",
+        "kms:CreateGrant",
+        "kms:DescribeKey",
+        "kms:GetKeyPolicy",
+        "kms:PutKeyPolicy",
+        "kms:ListGrants"
       ]
     },
     "read": {

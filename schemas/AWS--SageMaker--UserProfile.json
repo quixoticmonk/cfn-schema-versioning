@@ -3,10 +3,11 @@
   "createOnlyProperties": [
     "/properties/DomainId",
     "/properties/UserProfileName",
-    "/properties/UserSettings/RStudioServerProAppSettings/AccessStatus",
     "/properties/SingleSignOnUserIdentifier",
     "/properties/SingleSignOnUserValue",
-    "/properties/UserSettings/RStudioServerProAppSettings/UserGroup"
+    "/properties/UserSettings/RStudioServerProAppSettings/AccessStatus",
+    "/properties/UserSettings/RStudioServerProAppSettings/UserGroup",
+    "/properties/Tags"
   ],
   "definitions": {
     "AppInstanceType": {
@@ -627,7 +628,7 @@
         "SageMakerImageVersionArn": {
           "description": "The ARN of the image version created on the instance.",
           "maxLength": 256,
-          "pattern": "^(arn:aws(-[\\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+|None)",
+          "pattern": "^arn:aws(-[\\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+$",
           "type": "string"
         }
       },
@@ -776,7 +777,7 @@
           "items": {
             "$ref": "#/definitions/CustomFileSystemConfig"
           },
-          "maxItems": 10,
+          "maxItems": 2,
           "minItems": 0,
           "type": "array",
           "uniqueItems": true
@@ -852,31 +853,23 @@
         "sagemaker:DescribeUserProfile",
         "sagemaker:DescribeImage",
         "sagemaker:DescribeImageVersion",
-        "sagemaker:AddTags",
-        "sagemaker:ListTags",
         "iam:PassRole"
-      ],
-      "timeoutInMinutes": 30
+      ]
     },
     "delete": {
       "permissions": [
         "sagemaker:DeleteUserProfile",
-        "sagemaker:DescribeUserProfile",
-        "sagemaker:AddTags",
-        "sagemaker:ListTags",
-        "sagemaker:DeleteTags"
+        "sagemaker:DescribeUserProfile"
       ]
     },
     "list": {
       "permissions": [
-        "sagemaker:ListUserProfiles",
-        "sagemaker:ListTags"
+        "sagemaker:ListUserProfiles"
       ]
     },
     "read": {
       "permissions": [
-        "sagemaker:DescribeUserProfile",
-        "sagemaker:ListTags"
+        "sagemaker:DescribeUserProfile"
       ]
     },
     "update": {
@@ -885,9 +878,6 @@
         "sagemaker:DescribeUserProfile",
         "sagemaker:DescribeImage",
         "sagemaker:DescribeImageVersion",
-        "sagemaker:AddTags",
-        "sagemaker:DeleteTags",
-        "sagemaker:ListTags",
         "iam:PassRole"
       ]
     }
@@ -951,17 +941,8 @@
     "DomainId",
     "UserProfileName"
   ],
-  "tagging": {
-    "cloudFormationSystemTags": false,
-    "permissions": [
-      "sagemaker:AddTags",
-      "sagemaker:ListTags",
-      "sagemaker:DeleteTags"
-    ],
-    "tagOnCreate": true,
-    "tagProperty": "/properties/Tags",
-    "tagUpdatable": true,
-    "taggable": true
-  },
-  "typeName": "AWS::SageMaker::UserProfile"
+  "typeName": "AWS::SageMaker::UserProfile",
+  "writeOnlyProperties": [
+    "/properties/Tags"
+  ]
 }

@@ -66,7 +66,8 @@
     },
     "delete": {
       "permissions": [
-        "notifications:DeleteNotificationConfiguration"
+        "notifications:DeleteNotificationConfiguration",
+        "notifications:GetNotificationConfiguration"
       ]
     },
     "list": {
