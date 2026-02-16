@@ -5,6 +5,7 @@
     "/properties/PeerOwnerId",
     "/properties/PeerVpcId",
     "/properties/PeerRoleArn",
+    "/properties/AssumeRoleRegion",
     "/properties/VpcId"
   ],
   "definitions": {
@@ -67,6 +68,10 @@
     "/properties/Id"
   ],
   "properties": {
+    "AssumeRoleRegion": {
+      "description": "The Region code to use when calling Security Token Service (STS) to assume the PeerRoleArn, if provided.",
+      "type": "string"
+    },
     "Id": {
       "type": "string"
     },
@@ -120,6 +125,7 @@
   },
   "typeName": "AWS::EC2::VPCPeeringConnection",
   "writeOnlyProperties": [
-    "/properties/PeerRoleArn"
+    "/properties/PeerRoleArn",
+    "/properties/AssumeRoleRegion"
   ]
 }

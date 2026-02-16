@@ -41,6 +41,10 @@
       "additionalProperties": false,
       "description": "Details about auto scaling of a connector.",
       "properties": {
+        "MaxAutoscalingTaskCount": {
+          "description": "The maximum number of tasks allocated to the connector during autoscaling operations.",
+          "type": "integer"
+        },
         "MaxWorkerCount": {
           "description": "The maximum number of workers for a connector.",
           "type": "integer"

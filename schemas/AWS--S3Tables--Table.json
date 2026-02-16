@@ -32,12 +32,75 @@
       "additionalProperties": false,
       "description": "Contains details about the metadata for an Iceberg table.",
       "properties": {
+        "IcebergPartitionSpec": {
+          "$ref": "#/definitions/IcebergPartitionSpec"
+        },
         "IcebergSchema": {
           "$ref": "#/definitions/IcebergSchema"
+        },
+        "IcebergSortOrder": {
+          "$ref": "#/definitions/IcebergSortOrder"
+        },
+        "TableProperties": {
+          "$ref": "#/definitions/TableProperties"
         }
       },
       "required": [
         "IcebergSchema"
+      ],
+      "type": "object"
+    },
+    "IcebergPartitionField": {
+      "additionalProperties": false,
+      "description": "A partition field specification for an Iceberg table",
+      "properties": {
+        "FieldId": {
+          "description": "The partition field ID (auto-assigned starting from 1000 if not specified)",
+          "type": "integer"
+        },
+        "Name": {
+          "description": "The name of the partition field",
+          "type": "string"
+        },
+        "SourceId": {
+          "description": "The source column ID to partition on",
+          "type": "integer"
+        },
+        "Transform": {
+          "description": "The partition transform function (identity, bucket[N], truncate[N], year, month, day, hour)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SourceId",
+        "Transform",
+        "Name"
+      ],
+      "type": "object"
+    },
+    "IcebergPartitionFieldList": {
+      "description": "List of partition fields for an Iceberg table",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/IcebergPartitionField"
+      },
+      "type": "array"
+    },
+    "IcebergPartitionSpec": {
+      "additionalProperties": false,
+      "description": "Partition specification for an Iceberg table",
+      "properties": {
+        "Fields": {
+          "$ref": "#/definitions/IcebergPartitionFieldList",
+          "description": "List of partition fields"
+        },
+        "SpecId": {
+          "description": "The partition spec ID (defaults to 0 if not specified)",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Fields"
       ],
       "type": "object"
     },
@@ -51,6 +114,69 @@
       },
       "required": [
         "SchemaFieldList"
+      ],
+      "type": "object"
+    },
+    "IcebergSortField": {
+      "additionalProperties": false,
+      "description": "A sort field specification for an Iceberg table",
+      "properties": {
+        "Direction": {
+          "description": "Sort direction (asc or desc)",
+          "enum": [
+            "asc",
+            "desc"
+          ],
+          "type": "string"
+        },
+        "NullOrder": {
+          "description": "Null value ordering (nulls-first or nulls-last)",
+          "enum": [
+            "nulls-first",
+            "nulls-last"
+          ],
+          "type": "string"
+        },
+        "SourceId": {
+          "description": "The source column ID to sort on",
+          "type": "integer"
+        },
+        "Transform": {
+          "description": "The sort transform function",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SourceId",
+        "Transform",
+        "Direction",
+        "NullOrder"
+      ],
+      "type": "object"
+    },
+    "IcebergSortFieldList": {
+      "description": "List of sort fields for an Iceberg table",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/IcebergSortField"
+      },
+      "type": "array"
+    },
+    "IcebergSortOrder": {
+      "additionalProperties": false,
+      "description": "Sort order specification for an Iceberg table",
+      "properties": {
+        "Fields": {
+          "$ref": "#/definitions/IcebergSortFieldList",
+          "description": "List of sort fields"
+        },
+        "OrderId": {
+          "description": "The sort order ID (defaults to 1 if not specified, 0 is reserved for unsorted)",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Fields"
       ],
       "type": "object"
     },
@@ -69,6 +195,10 @@
       "additionalProperties": false,
       "description": "Contains details about the schema for an Iceberg table",
       "properties": {
+        "Id": {
+          "description": "The unique identifier for the field",
+          "type": "integer"
+        },
         "Name": {
           "description": "The name of the field",
           "type": "string"
@@ -153,6 +283,16 @@
     "TableName": {
       "description": "The name for the table.",
       "type": "string"
+    },
+    "TableProperties": {
+      "additionalProperties": false,
+      "description": "Iceberg table properties (e.g., format-version, write.parquet.compression-codec)",
+      "patternProperties": {
+        "^.+$": {
+          "type": "string"
+        }
+      },
+      "type": "object"
     },
     "Tag": {
       "additionalProperties": false,

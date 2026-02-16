@@ -110,6 +110,11 @@
       "description": "The Kubernetes namespace that the pod identity association is created for.",
       "type": "string"
     },
+    "Policy": {
+      "description": "The policy of the pod identity association.",
+      "minLength": 1,
+      "type": "string"
+    },
     "RoleArn": {
       "description": "The IAM role ARN that the pod identity association is created for.",
       "type": "string"

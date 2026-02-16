@@ -1239,6 +1239,7 @@
   "readOnlyProperties": [
     "/properties/ModelPackageArn",
     "/properties/CreationTime",
+    "/properties/LastModifiedTime",
     "/properties/ModelPackageStatus"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-sagemaker",

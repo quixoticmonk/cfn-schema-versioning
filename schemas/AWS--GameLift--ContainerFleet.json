@@ -216,7 +216,7 @@
     },
     "ManagedCapacityConfiguration": {
       "additionalProperties": false,
-      "description": "Configuration options for GameLift-managed capacity behavior.",
+      "description": "Configuration options for Amazon GameLift Servers managed capacity behavior.",
       "properties": {
         "ScaleInAfterInactivityMinutes": {
           "description": "Length of time, in minutes, that Amazon GameLift Servers will wait before scaling in your MinSize and DesiredInstances to 0 after a period with no game session activity.",

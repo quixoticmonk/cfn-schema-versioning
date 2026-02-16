@@ -193,7 +193,7 @@
       "ec2:DeleteTags"
     ],
     "tagOnCreate": true,
-    "tagProperty": "/properties/TagSpecifications",
+    "tagProperty": "/properties/TagSpecifications/*/Tags",
     "tagUpdatable": true,
     "taggable": true
   },
