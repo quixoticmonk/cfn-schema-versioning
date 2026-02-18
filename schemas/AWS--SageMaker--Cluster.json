@@ -8,7 +8,7 @@
   "createOnlyProperties": [
     "/properties/ClusterName",
     "/properties/VpcConfig",
-    "/properties/Orchestrator",
+    "/properties/Orchestrator/Eks",
     "/properties/InstanceGroups/*/OverrideVpcConfig",
     "/properties/InstanceGroups/*/ExecutionRole",
     "/properties/InstanceGroups/*/InstanceGroupName",
@@ -128,6 +128,62 @@
       },
       "type": "object"
     },
+    "ClusterFsxLustreConfig": {
+      "additionalProperties": false,
+      "description": "Configuration for mounting an Amazon FSx Lustre file system to the instances in the SageMaker HyperPod cluster instance group.",
+      "properties": {
+        "DnsName": {
+          "description": "The DNS name of the FSx for Lustre file system.",
+          "maxLength": 275,
+          "minLength": 16,
+          "pattern": "^((fs|fc)i?-[0-9a-f]{8,}\\..{4,253})$",
+          "type": "string"
+        },
+        "MountName": {
+          "description": "The mount name of the FSx for Lustre file system.",
+          "maxLength": 8,
+          "minLength": 1,
+          "pattern": "^([A-Za-z0-9_-]{1,8})$",
+          "type": "string"
+        },
+        "MountPath": {
+          "description": "The mount path for the FSx for Lustre file system.",
+          "maxLength": 1024,
+          "minLength": 1,
+          "pattern": "^/(?!/)(?!.*/$)[a-zA-Z0-9._-]+(/[a-zA-Z0-9._-]+)*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "DnsName",
+        "MountName"
+      ],
+      "type": "object"
+    },
+    "ClusterFsxOpenZfsConfig": {
+      "additionalProperties": false,
+      "description": "Configuration for mounting an Amazon FSx OpenZFS file system to the instances in the SageMaker HyperPod cluster instance group.",
+      "properties": {
+        "DnsName": {
+          "description": "The DNS name of the FSx for OpenZFS file system.",
+          "maxLength": 275,
+          "minLength": 16,
+          "pattern": "^((fs|fc)i?-[0-9a-f]{8,}\\..{4,253})$",
+          "type": "string"
+        },
+        "MountPath": {
+          "description": "The mount path for the FSx for OpenZFS file system.",
+          "maxLength": 1024,
+          "minLength": 1,
+          "pattern": "^/(?!/)(?!.*/$)[a-zA-Z0-9._-]+(/[a-zA-Z0-9._-]+)*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "DnsName"
+      ],
+      "type": "object"
+    },
     "ClusterInstanceGroup": {
       "additionalProperties": false,
       "description": "Details of an instance group in a SageMaker HyperPod cluster.",
@@ -180,6 +236,9 @@
         "ScheduledUpdateConfig": {
           "$ref": "#/definitions/ScheduledUpdateConfig"
         },
+        "SlurmConfig": {
+          "$ref": "#/definitions/ClusterSlurmConfig"
+        },
         "ThreadsPerCore": {
           "description": "The number you specified to TreadsPerCore in CreateCluster for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading.",
           "maximum": 2,
@@ -223,6 +282,24 @@
             }
           },
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "FsxLustreConfig": {
+              "$ref": "#/definitions/ClusterFsxLustreConfig"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "FsxOpenZfsConfig": {
+              "$ref": "#/definitions/ClusterFsxOpenZfsConfig"
+            }
+          },
+          "type": "object"
         }
       ],
       "type": "object"
@@ -233,7 +310,7 @@
       "items": {
         "$ref": "#/definitions/ClusterInstanceStorageConfig"
       },
-      "maxItems": 1,
+      "maxItems": 4,
       "type": "array"
     },
     "ClusterKubernetesConfig": {
@@ -339,6 +416,22 @@
       ],
       "type": "object"
     },
+    "ClusterOrchestratorSlurmConfig": {
+      "additionalProperties": false,
+      "description": "Specifies parameter(s) related to Slurm as orchestrator.",
+      "properties": {
+        "SlurmConfigStrategy": {
+          "description": "The strategy for managing Slurm configuration on the cluster.",
+          "enum": [
+            "Overwrite",
+            "Managed",
+            "Merge"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "ClusterRestrictedInstanceGroup": {
       "additionalProperties": false,
       "description": "Details of a restricted instance group in a SageMaker HyperPod cluster.",
@@ -405,6 +498,39 @@
       },
       "minItems": 1,
       "type": "array"
+    },
+    "ClusterSlurmConfig": {
+      "additionalProperties": false,
+      "description": "Slurm configuration for the instance group.",
+      "properties": {
+        "NodeType": {
+          "description": "The type of Slurm node for this instance group.",
+          "enum": [
+            "Controller",
+            "Login",
+            "Compute"
+          ],
+          "type": "string"
+        },
+        "PartitionNames": {
+          "description": "The Slurm partitions that this instance group belongs to. Maximum of 1 partition.",
+          "insertionOrder": false,
+          "items": {
+            "description": "The name of a Slurm partition.",
+            "maxLength": 1024,
+            "minLength": 0,
+            "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9])*$",
+            "type": "string"
+          },
+          "maxItems": 1,
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "required": [
+        "NodeType"
+      ],
+      "type": "object"
     },
     "ClusterSpotOptions": {
       "additionalProperties": false,
@@ -505,15 +631,26 @@
       "type": "array"
     },
     "Orchestrator": {
-      "additionalProperties": false,
-      "description": "Specifies parameter(s) specific to the orchestrator, e.g. specify the EKS cluster.",
-      "properties": {
-        "Eks": {
-          "$ref": "#/definitions/ClusterOrchestratorEksConfig"
+      "description": "Specifies parameter(s) specific to the orchestrator, e.g. specify the EKS cluster or Slurm configuration.",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Eks": {
+              "$ref": "#/definitions/ClusterOrchestratorEksConfig"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Slurm": {
+              "$ref": "#/definitions/ClusterOrchestratorSlurmConfig"
+            }
+          },
+          "type": "object"
         }
-      },
-      "required": [
-        "Eks"
       ],
       "type": "object"
     },
