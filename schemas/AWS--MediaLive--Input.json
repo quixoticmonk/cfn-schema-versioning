@@ -237,6 +237,33 @@
       },
       "type": "object"
     },
+    "SrtListenerDecryptionRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "Algorithm": {
+          "type": "string"
+        },
+        "PassphraseSecretArn": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SrtListenerSettingsRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "Decryption": {
+          "$ref": "#/definitions/SrtListenerDecryptionRequest"
+        },
+        "MinimumLatency": {
+          "type": "integer"
+        },
+        "StreamId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "SrtSettingsRequest": {
       "additionalProperties": false,
       "properties": {
@@ -246,6 +273,9 @@
           },
           "type": "array",
           "uniqueItems": false
+        },
+        "SrtListenerSettings": {
+          "$ref": "#/definitions/SrtListenerSettingsRequest"
         }
       },
       "type": "object"

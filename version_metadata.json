@@ -2072,7 +2072,7 @@
   "AWS::ControlTower::EnabledControl": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-23T06:54:54.616276",
     "time_created": "2022-06-13T16:36:12.203000+00:00"
   },
   "AWS::ControlTower::LandingZone": {
@@ -2732,7 +2732,7 @@
   "AWS::EC2::Host": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-23T06:54:54.616276",
     "time_created": "2021-11-01T15:58:30.347000+00:00"
   },
   "AWS::EC2::IPAM": {
@@ -3560,8 +3560,8 @@
   "AWS::ElastiCache::ReplicationGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
-    "time_created": "2019-11-15T17:24:19.918000+00:00"
+    "last_updated": "2026-02-23T06:54:54.616276",
+    "time_created": "2025-09-29T21:37:13.624000+00:00"
   },
   "AWS::ElastiCache::SecurityGroup": {
     "deprecation_status": "LIVE",
@@ -4340,7 +4340,7 @@
   "AWS::GuardDuty::PublishingDestination": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-23T06:54:54.616276",
     "time_created": "2024-12-16T19:45:45.382000+00:00"
   },
   "AWS::GuardDuty::ThreatEntitySet": {
@@ -4352,7 +4352,7 @@
   "AWS::GuardDuty::ThreatIntelSet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-23T06:54:54.616276",
     "time_created": "2023-10-09T11:58:50.921000+00:00"
   },
   "AWS::GuardDuty::TrustedEntitySet": {
@@ -5300,7 +5300,7 @@
   "AWS::Lambda::Function": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-23T06:54:54.616276",
     "time_created": "2020-07-30T16:26:35.719000+00:00"
   },
   "AWS::Lambda::LayerVersion": {
@@ -5834,7 +5834,7 @@
   "AWS::MediaLive::Channel": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-09T06:55:57.770231",
+    "last_updated": "2026-02-23T06:54:54.616276",
     "time_created": "2019-11-15T17:23:54.429000+00:00"
   },
   "AWS::MediaLive::ChannelPlacementGroup": {
@@ -5876,7 +5876,7 @@
   "AWS::MediaLive::Input": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-23T06:54:54.616276",
     "time_created": "2019-11-15T17:25:32.133000+00:00"
   },
   "AWS::MediaLive::InputSecurityGroup": {
@@ -6962,7 +6962,7 @@
   "AWS::RDS::DBCluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-23T06:54:54.616276",
     "time_created": "2022-01-25T16:46:41.418000+00:00"
   },
   "AWS::RDS::DBClusterParameterGroup": {

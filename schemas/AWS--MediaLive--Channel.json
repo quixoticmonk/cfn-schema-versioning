@@ -454,6 +454,9 @@
         "AfdSignaling": {
           "type": "string"
         },
+        "BitDepth": {
+          "type": "string"
+        },
         "Bitrate": {
           "type": "integer"
         },
@@ -3389,8 +3392,14 @@
     "SrtOutputDestinationSettings": {
       "additionalProperties": false,
       "properties": {
+        "ConnectionMode": {
+          "type": "string"
+        },
         "EncryptionPassphraseSecretArn": {
           "type": "string"
+        },
+        "ListenerPort": {
+          "type": "integer"
         },
         "StreamId": {
           "type": "string"
@@ -3749,6 +3758,13 @@
     },
     "ChannelEngineVersion": {
       "$ref": "#/definitions/ChannelEngineVersionRequest"
+    },
+    "ChannelSecurityGroups": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": false
     },
     "Destinations": {
       "items": {
