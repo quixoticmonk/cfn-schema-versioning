@@ -38,7 +38,10 @@
         "amplify:GetWebACLForResource",
         "elasticloadbalancing:CreateWebACLAssociation",
         "elasticloadbalancing:DeleteWebACLAssociation",
-        "elasticloadbalancing:GetLoadBalancerWebACL"
+        "elasticloadbalancing:GetLoadBalancerWebACL",
+        "appsync:AssociateWebACL",
+        "appsync:DisassociateWebACL",
+        "appsync:GetWebACLForResource"
       ]
     },
     "delete": {
@@ -65,7 +68,10 @@
         "amplify:GetWebACLForResource",
         "elasticloadbalancing:CreateWebACLAssociation",
         "elasticloadbalancing:DeleteWebACLAssociation",
-        "elasticloadbalancing:GetLoadBalancerWebACL"
+        "elasticloadbalancing:GetLoadBalancerWebACL",
+        "appsync:AssociateWebACL",
+        "appsync:DisassociateWebACL",
+        "appsync:GetWebACLForResource"
       ]
     },
     "read": {
@@ -90,7 +96,10 @@
         "amplify:GetWebACLForResource",
         "elasticloadbalancing:CreateWebACLAssociation",
         "elasticloadbalancing:DeleteWebACLAssociation",
-        "elasticloadbalancing:GetLoadBalancerWebACL"
+        "elasticloadbalancing:GetLoadBalancerWebACL",
+        "appsync:AssociateWebACL",
+        "appsync:DisassociateWebACL",
+        "appsync:GetWebACLForResource"
       ]
     },
     "update": {
@@ -114,7 +123,10 @@
         "ec2:GetVerifiedAccessInstanceWebAcl",
         "elasticloadbalancing:CreateWebACLAssociation",
         "elasticloadbalancing:DeleteWebACLAssociation",
-        "elasticloadbalancing:GetLoadBalancerWebACL"
+        "elasticloadbalancing:GetLoadBalancerWebACL",
+        "appsync:AssociateWebACL",
+        "appsync:DisassociateWebACL",
+        "appsync:GetWebACLForResource"
       ]
     }
   },

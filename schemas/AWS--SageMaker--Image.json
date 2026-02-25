@@ -142,7 +142,7 @@
     "ImageRoleArn"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "sagemaker:AddTags",
       "sagemaker:ListTags",

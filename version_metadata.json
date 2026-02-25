@@ -740,7 +740,7 @@
   "AWS::AutoScaling::AutoScalingGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-09T06:55:57.770231",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2023-03-03T21:43:24.578000+00:00"
   },
   "AWS::AutoScaling::LaunchConfiguration": {
@@ -1136,7 +1136,7 @@
   "AWS::Cases::Field": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-26T06:26:20.589672",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2025-12-09T22:36:58.881000+00:00"
   },
   "AWS::Cases::Layout": {
@@ -1799,6 +1799,12 @@
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2023-02-10T21:42:16.081000+00:00"
   },
+  "AWS::ComputeOptimizer::AutomationRule": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-02-25T06:53:23.840116",
+    "last_updated": "2026-02-25T06:53:23.840116",
+    "time_created": "2026-02-11T22:38:17.175000+00:00"
+  },
   "AWS::Config::AggregationAuthorization": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
@@ -2108,13 +2114,13 @@
   "AWS::CustomerProfiles::Integration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2021-02-25T21:38:32.009000+00:00"
   },
   "AWS::CustomerProfiles::ObjectType": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-18T06:52:25.449227",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2021-02-25T21:38:36.149000+00:00"
   },
   "AWS::CustomerProfiles::SegmentDefinition": {
@@ -3236,7 +3242,7 @@
   "AWS::EC2::VPNConnection": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-02T06:53:56.338912",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2022-07-28T09:37:10.503000+00:00"
   },
   "AWS::EC2::VPNConnectionRoute": {
@@ -3284,7 +3290,7 @@
   "AWS::EC2::Volume": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2021-07-27T16:21:42.974000+00:00"
   },
   "AWS::EC2::VolumeAttachment": {
@@ -3560,8 +3566,8 @@
   "AWS::ElastiCache::ReplicationGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-23T06:54:54.616276",
-    "time_created": "2025-09-29T21:37:13.624000+00:00"
+    "last_updated": "2026-02-25T06:53:23.840116",
+    "time_created": "2019-11-15T17:24:19.918000+00:00"
   },
   "AWS::ElastiCache::SecurityGroup": {
     "deprecation_status": "LIVE",
@@ -6572,7 +6578,7 @@
   "AWS::PCAConnectorSCEP::Connector": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2024-08-01T15:16:44.534000+00:00"
   },
   "AWS::PCS::Cluster": {
@@ -8072,7 +8078,7 @@
   "AWS::SageMaker::Image": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2021-02-10T16:35:01.734000+00:00"
   },
   "AWS::SageMaker::ImageVersion": {
@@ -8090,7 +8096,7 @@
   "AWS::SageMaker::InferenceExperiment": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2023-03-09T04:14:12.206000+00:00"
   },
   "AWS::SageMaker::MlflowTrackingServer": {
@@ -8384,8 +8390,8 @@
   "AWS::ServiceCatalog::LaunchRoleConstraint": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
-    "time_created": "2019-11-15T17:24:56.424000+00:00"
+    "last_updated": "2026-02-25T06:53:23.840116",
+    "time_created": "2025-03-02T07:48:18.131000+00:00"
   },
   "AWS::ServiceCatalog::LaunchTemplateConstraint": {
     "deprecation_status": "LIVE",
@@ -8942,7 +8948,7 @@
   "AWS::WAFv2::WebACLAssociation": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-26T06:26:20.589672",
+    "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2021-06-02T23:01:48.937000+00:00"
   },
   "AWS::Wisdom::AIAgent": {

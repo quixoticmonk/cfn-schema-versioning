@@ -431,10 +431,20 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "sagemaker:AddTags",
+      "sagemaker:DeleteTags",
+      "sagemaker:ListTags"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::SageMaker::InferenceExperiment"
+  "typeName": "AWS::SageMaker::InferenceExperiment",
+  "writeOnlyProperties": [
+    "/properties/StatusReason",
+    "/properties/DesiredState",
+    "/properties/Schedule"
+  ]
 }
