@@ -158,7 +158,7 @@
     "GlobalClusterIdentifier"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "rds:AddTagsToResource",
       "rds:ListTagsForResource",

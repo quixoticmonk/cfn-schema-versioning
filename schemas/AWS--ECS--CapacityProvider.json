@@ -75,15 +75,36 @@
       },
       "type": "object"
     },
+    "CapacityReservationRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "ReservationGroupArn": {
+          "type": "string"
+        },
+        "ReservationPreference": {
+          "enum": [
+            "RESERVATIONS_ONLY",
+            "RESERVATIONS_FIRST",
+            "RESERVATIONS_EXCLUDED"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "InstanceLaunchTemplate": {
       "additionalProperties": false,
       "properties": {
         "CapacityOptionType": {
           "enum": [
             "ON_DEMAND",
-            "SPOT"
+            "SPOT",
+            "RESERVED"
           ],
           "type": "string"
+        },
+        "CapacityReservations": {
+          "$ref": "#/definitions/CapacityReservationRequest"
         },
         "Ec2InstanceProfileArn": {
           "type": "string"
