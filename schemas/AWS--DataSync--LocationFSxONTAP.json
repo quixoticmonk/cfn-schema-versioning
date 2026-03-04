@@ -5,6 +5,64 @@
     "/properties/SecurityGroupArns"
   ],
   "definitions": {
+    "CmkSecretConfig": {
+      "additionalProperties": false,
+      "description": "Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed AWS KMS key.",
+      "properties": {
+        "KmsKeyArn": {
+          "description": "Specifies the ARN for the customer-managed AWS KMS key used to encrypt the secret specified for SecretArn. DataSync provides this key to AWS Secrets Manager.",
+          "maxLength": 2048,
+          "pattern": "^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):kms:[a-z-0-9]+:[0-9]{12}:key/.*|)$",
+          "type": "string"
+        },
+        "SecretArn": {
+          "description": "Specifies the ARN for an AWS Secrets Manager secret, managed by DataSync.",
+          "maxLength": 2048,
+          "pattern": "^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):secretsmanager:[a-z-0-9]+:[0-9]{12}:secret:.*|)$",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "CustomSecretConfig": {
+      "additionalProperties": false,
+      "description": "Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and an IAM role that DataSync can assume and access the customer-managed secret.",
+      "properties": {
+        "SecretAccessRoleArn": {
+          "description": "Specifies the ARN for the AWS Identity and Access Management role that DataSync uses to access the secret specified for SecretArn.",
+          "maxLength": 2048,
+          "pattern": "^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*|)$",
+          "type": "string"
+        },
+        "SecretArn": {
+          "description": "Specifies the ARN for a customer created AWS Secrets Manager secret.",
+          "maxLength": 2048,
+          "pattern": "^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):secretsmanager:[a-z-0-9]+:[0-9]{12}:secret:.*|)$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SecretArn",
+        "SecretAccessRoleArn"
+      ],
+      "type": "object"
+    },
+    "ManagedSecretConfig": {
+      "additionalProperties": false,
+      "description": "Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location. DataSync uses the default AWS-managed KMS key to encrypt this secret in AWS Secrets Manager.",
+      "properties": {
+        "SecretArn": {
+          "description": "Specifies the ARN for an AWS Secrets Manager secret.",
+          "maxLength": 2048,
+          "pattern": "^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):secretsmanager:[a-z-0-9]+:[0-9]{12}:secret:.*|)$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SecretArn"
+      ],
+      "type": "object"
+    },
     "NFS": {
       "additionalProperties": false,
       "description": "NFS protocol configuration for FSx ONTAP file system.",
@@ -52,11 +110,20 @@
       "additionalProperties": false,
       "description": "SMB protocol configuration for FSx ONTAP file system.",
       "properties": {
+        "CmkSecretConfig": {
+          "$ref": "#/definitions/CmkSecretConfig"
+        },
+        "CustomSecretConfig": {
+          "$ref": "#/definitions/CustomSecretConfig"
+        },
         "Domain": {
           "description": "The name of the Windows domain that the SMB server belongs to.",
           "maxLength": 253,
           "pattern": "^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$",
           "type": "string"
+        },
+        "ManagedSecretConfig": {
+          "$ref": "#/definitions/ManagedSecretConfig"
         },
         "MountOptions": {
           "$ref": "#/definitions/SmbMountOptions"
@@ -76,7 +143,6 @@
       },
       "required": [
         "User",
-        "Password",
         "MountOptions"
       ],
       "type": "object"
@@ -123,7 +189,7 @@
       "type": "object"
     }
   },
-  "description": "Resource schema for AWS::DataSync::LocationFSxONTAP.",
+  "description": "Resource Type definition for AWS::DataSync::LocationFSxONTAP.",
   "handlers": {
     "create": {
       "permissions": [
@@ -135,12 +201,21 @@
         "fsx:DescribeFileSystems",
         "ec2:DescribeNetworkInterfaces",
         "ec2:DescribeSubnets",
-        "ec2:DescribeSecurityGroups"
+        "ec2:DescribeSecurityGroups",
+        "secretsmanager:CreateSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:DeleteSecret",
+        "iam:CreateServiceLinkedRole",
+        "iam:PassRole",
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
       ]
     },
     "delete": {
       "permissions": [
-        "datasync:DeleteLocation"
+        "datasync:DeleteLocation",
+        "secretsmanager:DeleteSecret"
       ]
     },
     "list": {
@@ -163,7 +238,16 @@
         "datasync:UntagResource",
         "fsx:DescribeFileSystems",
         "fsx:DescribeStorageVirtualMachines",
-        "ec2:DescribeNetworkInterfaces"
+        "ec2:DescribeNetworkInterfaces",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:CreateSecret",
+        "iam:CreateServiceLinkedRole",
+        "iam:PassRole",
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
       ]
     }
   },
@@ -231,7 +315,9 @@
   "readOnlyProperties": [
     "/properties/LocationArn",
     "/properties/LocationUri",
-    "/properties/FsxFilesystemArn"
+    "/properties/FsxFilesystemArn",
+    "/properties/Protocol/SMB/ManagedSecretConfig",
+    "/properties/Protocol/SMB/CmkSecretConfig/SecretArn"
   ],
   "required": [
     "SecurityGroupArns",
@@ -239,7 +325,7 @@
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-datasync.git",
   "tagging": {
-    "cloudFormationSystemTags": true,
+    "cloudFormationSystemTags": false,
     "permissions": [
       "datasync:TagResource",
       "datasync:UntagResource",

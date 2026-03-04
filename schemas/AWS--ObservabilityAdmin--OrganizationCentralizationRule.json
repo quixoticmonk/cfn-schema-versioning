@@ -75,10 +75,28 @@
         "BackupConfiguration": {
           "$ref": "#/definitions/LogsBackupConfiguration"
         },
+        "LogGroupNameConfiguration": {
+          "$ref": "#/definitions/LogGroupNameConfiguration"
+        },
         "LogsEncryptionConfiguration": {
           "$ref": "#/definitions/LogsEncryptionConfiguration"
         }
       },
+      "type": "object"
+    },
+    "LogGroupNameConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "LogGroupNamePattern": {
+          "maxLength": 512,
+          "minLength": 1,
+          "pattern": "^(?:[\\._\\-/#A-Za-z0-9]+|\\$\\{[A-Za-z]+(?:\\.[A-Za-z]+){1,2}\\})+$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "LogGroupNamePattern"
+      ],
       "type": "object"
     },
     "LogsBackupConfiguration": {

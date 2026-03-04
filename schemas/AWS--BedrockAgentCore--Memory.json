@@ -866,7 +866,10 @@
     "delete": {
       "permissions": [
         "bedrock-agentcore:DeleteMemory",
-        "bedrock-agentcore:GetMemory"
+        "bedrock-agentcore:GetMemory",
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:GenerateDataKey"
       ]
     },
     "list": {
@@ -877,7 +880,10 @@
     "read": {
       "permissions": [
         "bedrock-agentcore:GetMemory",
-        "bedrock-agentcore:ListTagsForResource"
+        "bedrock-agentcore:ListTagsForResource",
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:GenerateDataKey"
       ]
     },
     "update": {
@@ -887,7 +893,13 @@
         "iam:PassRole",
         "bedrock-agentcore:TagResource",
         "bedrock-agentcore:UntagResource",
-        "bedrock-agentcore:ListTagsForResource"
+        "bedrock-agentcore:ListTagsForResource",
+        "kms:DescribeKey",
+        "kms:Decrypt",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:ReEncryptTo",
+        "kms:ReEncryptFrom",
+        "kms:GenerateDataKey"
       ]
     }
   },

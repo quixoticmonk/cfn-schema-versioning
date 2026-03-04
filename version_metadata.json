@@ -362,13 +362,13 @@
   "AWS::AppConfig::ConfigurationProfile": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2024-01-17T15:41:18.113000+00:00"
   },
   "AWS::AppConfig::Deployment": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2024-09-11T16:21:08.995000+00:00"
   },
   "AWS::AppConfig::DeploymentStrategy": {
@@ -1046,7 +1046,7 @@
   "AWS::BedrockAgentCore::Memory": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-28T06:25:38.739040",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2025-10-09T02:38:16.137000+00:00"
   },
   "AWS::BedrockAgentCore::OnlineEvaluationConfig": {
@@ -1054,6 +1054,18 @@
     "first_seen": "2026-03-02T06:45:49.915953",
     "last_updated": "2026-03-02T06:45:49.915953",
     "time_created": "2026-02-26T17:44:25.025000+00:00"
+  },
+  "AWS::BedrockAgentCore::Policy": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-03-04T06:36:37.856012",
+    "last_updated": "2026-03-04T06:36:37.856012",
+    "time_created": "2026-03-03T19:39:29.382000+00:00"
+  },
+  "AWS::BedrockAgentCore::PolicyEngine": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-03-04T06:36:37.856012",
+    "last_updated": "2026-03-04T06:36:37.856012",
+    "time_created": "2026-02-26T21:03:09.712000+00:00"
   },
   "AWS::BedrockAgentCore::Runtime": {
     "deprecation_status": "LIVE",
@@ -1544,7 +1556,7 @@
   "AWS::CloudWatch::Alarm": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2020-05-19T13:53:32.548000+00:00"
   },
   "AWS::CloudWatch::AlarmMuteRule": {
@@ -1912,6 +1924,18 @@
     "first_seen": "2026-01-19T02:02:20.407855",
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2021-11-07T07:17:04.972000+00:00"
+  },
+  "AWS::Connect::ContactFlowModuleAlias": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-03-04T06:36:37.856012",
+    "last_updated": "2026-03-04T06:36:37.856012",
+    "time_created": "2025-12-17T23:34:52.497000+00:00"
+  },
+  "AWS::Connect::ContactFlowModuleVersion": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-03-04T06:36:37.856012",
+    "last_updated": "2026-03-04T06:36:37.856012",
+    "time_created": "2025-12-17T23:36:52.376000+00:00"
   },
   "AWS::Connect::ContactFlowVersion": {
     "deprecation_status": "LIVE",
@@ -2294,79 +2318,79 @@
   "AWS::DataSync::Agent": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2020-12-18T22:13:09.665000+00:00"
   },
   "AWS::DataSync::LocationAzureBlob": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2023-03-30T13:32:17.768000+00:00"
   },
   "AWS::DataSync::LocationEFS": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2020-12-18T22:13:13.773000+00:00"
   },
   "AWS::DataSync::LocationFSxLustre": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2022-01-27T14:20:21.828000+00:00"
   },
   "AWS::DataSync::LocationFSxONTAP": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2022-06-06T13:17:44.592000+00:00"
   },
   "AWS::DataSync::LocationFSxOpenZFS": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2022-03-10T14:17:23.897000+00:00"
   },
   "AWS::DataSync::LocationFSxWindows": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2020-12-18T22:13:04.308000+00:00"
   },
   "AWS::DataSync::LocationHDFS": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2021-10-18T13:17:56.562000+00:00"
   },
   "AWS::DataSync::LocationNFS": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2020-12-18T22:13:00.039000+00:00"
   },
   "AWS::DataSync::LocationObjectStorage": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2020-12-18T22:13:14.371000+00:00"
   },
   "AWS::DataSync::LocationS3": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2020-12-18T22:13:03.829000+00:00"
   },
   "AWS::DataSync::LocationSMB": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2020-12-18T22:17:59.997000+00:00"
   },
   "AWS::DataSync::Task": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2020-12-18T22:18:06.243000+00:00"
   },
   "AWS::DataZone::Connection": {
@@ -3410,7 +3434,7 @@
   "AWS::ECR::RepositoryCreationTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2024-04-05T20:13:12.589000+00:00"
   },
   "AWS::ECR::SigningConfiguration": {
@@ -6404,7 +6428,7 @@
   "AWS::ObservabilityAdmin::OrganizationCentralizationRule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-04T06:36:37.856012",
     "time_created": "2025-09-29T22:10:18.828000+00:00"
   },
   "AWS::ObservabilityAdmin::OrganizationTelemetryRule": {
