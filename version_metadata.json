@@ -1046,7 +1046,7 @@
   "AWS::BedrockAgentCore::Memory": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-04T06:36:37.856012",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2025-10-09T02:38:16.137000+00:00"
   },
   "AWS::BedrockAgentCore::OnlineEvaluationConfig": {
@@ -1970,7 +1970,7 @@
   "AWS::Connect::EvaluationForm": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2023-04-12T22:46:52.756000+00:00"
   },
   "AWS::Connect::HoursOfOperation": {
@@ -2018,13 +2018,13 @@
   "AWS::Connect::Prompt": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2023-05-03T05:58:48.879000+00:00"
   },
   "AWS::Connect::Queue": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2023-06-28T15:53:06.421000+00:00"
   },
   "AWS::Connect::QuickConnect": {
@@ -2054,7 +2054,7 @@
   "AWS::Connect::SecurityProfile": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2023-09-01T22:59:08.177000+00:00"
   },
   "AWS::Connect::TaskTemplate": {
@@ -3530,7 +3530,7 @@
   "AWS::EKS::Cluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2021-08-24T22:07:26.705000+00:00"
   },
   "AWS::EKS::FargateProfile": {
@@ -4040,7 +4040,7 @@
   "AWS::GameLift::ContainerFleet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-16T06:54:09.694919",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2024-11-11T00:35:07.162000+00:00"
   },
   "AWS::GameLift::ContainerGroupDefinition": {
@@ -4052,7 +4052,7 @@
   "AWS::GameLift::Fleet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-28T06:25:38.739040",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2020-07-16T21:52:59.995000+00:00"
   },
   "AWS::GameLift::GameServerGroup": {
@@ -6020,13 +6020,13 @@
   "AWS::MediaPackage::Channel": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2020-09-22T22:54:20.294000+00:00"
   },
   "AWS::MediaPackage::OriginEndpoint": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2020-09-22T22:54:06.622000+00:00"
   },
   "AWS::MediaPackage::PackagingConfiguration": {
@@ -9230,7 +9230,7 @@
   "AWS::XRay::SamplingRule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-09T06:51:44.416053",
     "time_created": "2021-04-07T14:09:33.387000+00:00"
   },
   "AWS::XRay::TransactionSearchConfig": {

@@ -40,12 +40,6 @@
           "type": "string"
         }
       },
-      "required": [
-        "Id",
-        "Username",
-        "Password",
-        "Url"
-      ],
       "type": "object"
     },
     "LogConfiguration": {

@@ -3,7 +3,8 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/InstanceType",
-    "/properties/BillingType"
+    "/properties/BillingType",
+    "/properties/PlayerGatewayMode"
   ],
   "definitions": {
     "ConnectionPortRange": {
@@ -172,6 +173,14 @@
         },
         "LocationCapacity": {
           "$ref": "#/definitions/LocationCapacity"
+        },
+        "PlayerGatewayStatus": {
+          "description": "The player gateway status for the location.",
+          "enum": [
+            "DISABLED",
+            "ENABLED"
+          ],
+          "type": "string"
         },
         "StoppedActions": {
           "$ref": "#/definitions/StoppedActions"
@@ -564,6 +573,15 @@
       "pattern": "^[a-zA-Z0-9\\-]+$|^arn:.*:containergroupdefinition\\/[a-zA-Z0-9\\-]+(:[0-9]+)?$",
       "type": "string"
     },
+    "PlayerGatewayMode": {
+      "description": "The player gateway mode for the container fleet.",
+      "enum": [
+        "DISABLED",
+        "ENABLED",
+        "REQUIRED"
+      ],
+      "type": "string"
+    },
     "ScalingPolicies": {
       "description": "A list of rules that control how a fleet is scaled.",
       "insertionOrder": false,
@@ -605,7 +623,8 @@
     "/properties/DeploymentDetails",
     "/properties/GameServerContainerGroupDefinitionArn",
     "/properties/PerInstanceContainerGroupDefinitionArn",
-    "/properties/MaximumGameServerContainerGroupsPerInstance"
+    "/properties/MaximumGameServerContainerGroupsPerInstance",
+    "/properties/Locations/*/PlayerGatewayStatus"
   ],
   "required": [
     "FleetRoleArn"

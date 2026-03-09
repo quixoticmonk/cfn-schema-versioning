@@ -96,7 +96,9 @@
             "standard",
             "tier-xl",
             "tier-2xl",
-            "tier-4xl"
+            "tier-4xl",
+            "tier-8xl",
+            "ultra"
           ],
           "type": "string"
         }
