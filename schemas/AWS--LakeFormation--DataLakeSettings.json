@@ -1,24 +1,36 @@
 {
   "additionalProperties": false,
   "definitions": {
-    "Admins": {
+    "DataLakePrincipal": {
       "additionalProperties": false,
+      "properties": {
+        "DataLakePrincipalIdentifier": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "DataLakePrincipalIdentifier"
+      ],
       "type": "object"
     },
-    "CreateDatabaseDefaultPermissions": {
+    "PrincipalPermissions": {
       "additionalProperties": false,
-      "type": "object"
-    },
-    "CreateTableDefaultPermissions": {
-      "additionalProperties": false,
-      "type": "object"
-    },
-    "ExternalDataFilteringAllowList": {
-      "additionalProperties": false,
-      "type": "object"
-    },
-    "ReadOnlyAdmins": {
-      "additionalProperties": false,
+      "properties": {
+        "Permissions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
+        "Principal": {
+          "$ref": "#/definitions/DataLakePrincipal"
+        }
+      },
+      "required": [
+        "Permissions",
+        "Principal"
+      ],
       "type": "object"
     }
   },
@@ -28,7 +40,11 @@
   ],
   "properties": {
     "Admins": {
-      "$ref": "#/definitions/Admins"
+      "items": {
+        "$ref": "#/definitions/DataLakePrincipal"
+      },
+      "type": "array",
+      "uniqueItems": false
     },
     "AllowExternalDataFiltering": {
       "type": "boolean"
@@ -44,13 +60,25 @@
       "uniqueItems": false
     },
     "CreateDatabaseDefaultPermissions": {
-      "$ref": "#/definitions/CreateDatabaseDefaultPermissions"
+      "items": {
+        "$ref": "#/definitions/PrincipalPermissions"
+      },
+      "type": "array",
+      "uniqueItems": false
     },
     "CreateTableDefaultPermissions": {
-      "$ref": "#/definitions/CreateTableDefaultPermissions"
+      "items": {
+        "$ref": "#/definitions/PrincipalPermissions"
+      },
+      "type": "array",
+      "uniqueItems": false
     },
     "ExternalDataFilteringAllowList": {
-      "$ref": "#/definitions/ExternalDataFilteringAllowList"
+      "items": {
+        "$ref": "#/definitions/DataLakePrincipal"
+      },
+      "type": "array",
+      "uniqueItems": false
     },
     "Id": {
       "type": "string"
@@ -62,7 +90,11 @@
       "type": "object"
     },
     "ReadOnlyAdmins": {
-      "$ref": "#/definitions/ReadOnlyAdmins"
+      "items": {
+        "$ref": "#/definitions/DataLakePrincipal"
+      },
+      "type": "array",
+      "uniqueItems": false
     },
     "TrustedResourceOwners": {
       "items": {

@@ -125,6 +125,19 @@
       },
       "type": "object"
     },
+    "DeploymentStrategyOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "DeploymentStrategy": {
+          "enum": [
+            "Default",
+            "CapacityOptimized"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "DomainEndpointOptions": {
       "additionalProperties": false,
       "properties": {
@@ -601,6 +614,9 @@
     },
     "CognitoOptions": {
       "$ref": "#/definitions/CognitoOptions"
+    },
+    "DeploymentStrategyOptions": {
+      "$ref": "#/definitions/DeploymentStrategyOptions"
     },
     "DomainArn": {
       "type": "string"

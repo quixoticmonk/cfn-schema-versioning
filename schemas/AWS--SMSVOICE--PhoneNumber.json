@@ -35,7 +35,7 @@
         },
         "Keyword": {
           "maxLength": 30,
-          "pattern": "^(?!.*(?i)(stop|help))[ \\S]+",
+          "pattern": "^(?!(?i)(stop|help)$)[ \\S]+",
           "type": "string"
         },
         "Message": {

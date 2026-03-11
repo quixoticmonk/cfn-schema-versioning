@@ -4,8 +4,20 @@
     "/properties/RuleName"
   ],
   "definitions": {
-    "Tags": {
+    "Tag": {
       "additionalProperties": false,
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Value",
+        "Key"
+      ],
       "type": "object"
     }
   },
@@ -33,7 +45,11 @@
       "type": "string"
     },
     "Tags": {
-      "$ref": "#/definitions/Tags"
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array",
+      "uniqueItems": false
     }
   },
   "readOnlyProperties": [

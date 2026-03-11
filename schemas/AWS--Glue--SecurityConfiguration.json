@@ -26,7 +26,11 @@
           "$ref": "#/definitions/JobBookmarksEncryption"
         },
         "S3Encryptions": {
-          "$ref": "#/definitions/S3Encryptions"
+          "items": {
+            "$ref": "#/definitions/S3Encryption"
+          },
+          "type": "array",
+          "uniqueItems": false
         }
       },
       "type": "object"
@@ -43,8 +47,16 @@
       },
       "type": "object"
     },
-    "S3Encryptions": {
+    "S3Encryption": {
       "additionalProperties": false,
+      "properties": {
+        "KmsKeyArn": {
+          "type": "string"
+        },
+        "S3EncryptionMode": {
+          "type": "string"
+        }
+      },
       "type": "object"
     }
   },

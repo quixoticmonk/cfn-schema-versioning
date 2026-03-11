@@ -253,6 +253,12 @@
     "AthenaTableReference": {
       "additionalProperties": false,
       "properties": {
+        "CatalogName": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "type": "string"
+        },
         "DatabaseName": {
           "maxLength": 128,
           "type": "string"

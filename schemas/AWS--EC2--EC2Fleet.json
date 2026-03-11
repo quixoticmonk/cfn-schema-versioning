@@ -536,6 +536,22 @@
       },
       "type": "object"
     },
+    "ReservedCapacityOptionsRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "ReservationTypes": {
+          "items": {
+            "enum": [
+              "interruptible-capacity-reservation"
+            ],
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        }
+      },
+      "type": "object"
+    },
     "SpotOptionsRequest": {
       "additionalProperties": false,
       "properties": {
@@ -669,7 +685,8 @@
         "DefaultTargetCapacityType": {
           "enum": [
             "on-demand",
-            "spot"
+            "spot",
+            "reserved-capacity"
           ],
           "type": "string"
         },

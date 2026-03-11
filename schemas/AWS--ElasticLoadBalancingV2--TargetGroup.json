@@ -255,13 +255,13 @@
     "/properties/TargetGroupFullName"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "elasticloadbalancing:AddTags",
       "elasticloadbalancing:DescribeTags",
       "elasticloadbalancing:RemoveTags"
     ],
-    "tagOnCreate": false,
+    "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
