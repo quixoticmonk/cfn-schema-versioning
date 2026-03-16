@@ -99,38 +99,14 @@
       "pattern": "^[a-zA-Z0-9:/_-]+$",
       "type": "string"
     },
-    "SchemaCedarFormat": {
-      "type": "string"
-    },
     "SchemaDefinition": {
-      "oneOf": [
-        {
-          "additionalProperties": false,
-          "properties": {
-            "CedarJson": {
-              "$ref": "#/definitions/SchemaJson"
-            }
-          },
-          "required": [
-            "CedarJson"
-          ],
-          "title": "CedarJson",
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "CedarFormat": {
-              "$ref": "#/definitions/SchemaCedarFormat"
-            }
-          },
-          "required": [
-            "CedarFormat"
-          ],
-          "title": "CedarFormat",
-          "type": "object"
+      "additionalProperties": false,
+      "properties": {
+        "CedarJson": {
+          "$ref": "#/definitions/SchemaJson"
         }
-      ]
+      },
+      "type": "object"
     },
     "SchemaJson": {
       "type": "string"

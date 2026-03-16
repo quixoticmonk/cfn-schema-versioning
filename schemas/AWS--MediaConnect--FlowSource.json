@@ -1,7 +1,9 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
-    "/properties/Name"
+    "/properties/FlowArn",
+    "/properties/Name",
+    "/properties/Protocol"
   ],
   "definitions": {
     "Encryption": {
@@ -45,10 +47,12 @@
         },
         "RoleArn": {
           "description": "The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).",
+          "pattern": "^arn:(aws[a-zA-Z-]*):iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]+$",
           "type": "string"
         },
         "SecretArn": {
           "description": " The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.",
+          "pattern": "^arn:(aws[a-zA-Z-]*):secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+$",
           "type": "string"
         },
         "Url": {
@@ -67,6 +71,7 @@
       "properties": {
         "BridgeArn": {
           "description": "The ARN of the bridge feeding this flow.",
+          "pattern": "^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:bridge:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$",
           "type": "string"
         },
         "VpcInterfaceAttachment": {
@@ -76,6 +81,22 @@
       },
       "required": [
         "BridgeArn"
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "additionalProperties": false,
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
       ],
       "type": "object"
     },
@@ -91,13 +112,25 @@
       "type": "object"
     }
   },
-  "description": "Resource schema for AWS::MediaConnect::FlowSource",
+  "deprecatedProperties": [
+    "/properties/EntitlementArn",
+    "/properties/SenderIpAddress",
+    "/properties/SenderControlPort",
+    "/properties/Decryption/ResourceId",
+    "/properties/Decryption/ConstantInitializationVector",
+    "/properties/Decryption/DeviceId",
+    "/properties/Decryption/Region",
+    "/properties/Decryption/Url"
+  ],
+  "description": "Resource Type definition for AWS::MediaConnect::FlowSource",
   "handlers": {
     "create": {
       "permissions": [
         "mediaconnect:CreateFlow",
         "mediaconnect:DescribeFlow",
         "mediaconnect:AddFlowSources",
+        "mediaconnect:TagResource",
+        "mediaconnect:ListTagsForResource",
         "iam:PassRole"
       ]
     },
@@ -109,6 +142,16 @@
       ]
     },
     "list": {
+      "handlerSchema": {
+        "properties": {
+          "FlowArn": {
+            "$ref": "resource-schema.json#/properties/FlowArn"
+          }
+        },
+        "required": [
+          "FlowArn"
+        ]
+      },
       "permissions": [
         "mediaconnect:DescribeFlow",
         "mediaconnect:ListFlows"
@@ -117,13 +160,18 @@
     "read": {
       "permissions": [
         "mediaconnect:DescribeFlow",
-        "mediaconnect:ListFlows"
+        "mediaconnect:ListFlows",
+        "mediaconnect:ListTagsForResource"
       ]
     },
     "update": {
       "permissions": [
         "mediaconnect:DescribeFlow",
-        "mediaconnect:UpdateFlowSource"
+        "mediaconnect:UpdateFlowSource",
+        "mediaconnect:TagResource",
+        "mediaconnect:UntagResource",
+        "mediaconnect:ListTagsForResource",
+        "iam:PassRole"
       ]
     }
   },
@@ -141,10 +189,12 @@
     },
     "EntitlementArn": {
       "description": "The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.",
+      "pattern": "^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:entitlement:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$",
       "type": "string"
     },
     "FlowArn": {
       "description": "The ARN of the flow.",
+      "pattern": "^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:flow:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$",
       "type": "string"
     },
     "GatewayBridgeSource": {
@@ -197,6 +247,7 @@
     },
     "SourceArn": {
       "description": "The ARN of the source.",
+      "pattern": "^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:source:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$",
       "type": "string"
     },
     "SourceIngestPort": {
@@ -215,6 +266,14 @@
       "description": "The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.",
       "type": "string"
     },
+    "Tags": {
+      "description": "Key-value pairs that can be used to tag and organize this flow source.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array"
+    },
     "VpcInterfaceName": {
       "description": "The name of the VPC Interface this Source is configured with.",
       "type": "string"
@@ -230,9 +289,22 @@
     "/properties/SourceIngestPort"
   ],
   "required": [
+    "FlowArn",
     "Name",
     "Description"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-mediaconnect.git",
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "mediaconnect:TagResource",
+      "mediaconnect:UntagResource",
+      "mediaconnect:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::MediaConnect::FlowSource"
 }
