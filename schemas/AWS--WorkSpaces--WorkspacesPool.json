@@ -198,7 +198,7 @@
     "Capacity"
   ],
   "tagging": {
-    "cloudFormationSystemTags": true,
+    "cloudFormationSystemTags": false,
     "permissions": [
       "workspaces:CreateTags",
       "workspaces:DescribeTags",
@@ -206,7 +206,7 @@
     ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
-    "tagUpdatable": false,
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::WorkSpaces::WorkspacesPool"

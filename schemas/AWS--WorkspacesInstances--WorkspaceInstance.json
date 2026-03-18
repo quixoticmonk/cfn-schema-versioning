@@ -227,22 +227,6 @@
       },
       "type": "object"
     },
-    "InstanceMarketOptionsRequest": {
-      "additionalProperties": false,
-      "properties": {
-        "MarketType": {
-          "enum": [
-            "spot",
-            "capacity-block"
-          ],
-          "type": "string"
-        },
-        "SpotOptions": {
-          "$ref": "#/definitions/SpotMarketOptions"
-        }
-      },
-      "type": "object"
-    },
     "InstanceMetadataOptionsRequest": {
       "additionalProperties": false,
       "properties": {
@@ -422,34 +406,6 @@
       },
       "type": "object"
     },
-    "SpotMarketOptions": {
-      "additionalProperties": false,
-      "properties": {
-        "InstanceInterruptionBehavior": {
-          "enum": [
-            "hibernate",
-            "stop"
-          ],
-          "type": "string"
-        },
-        "MaxPrice": {
-          "maxLength": 64,
-          "type": "string"
-        },
-        "SpotInstanceType": {
-          "enum": [
-            "one-time",
-            "persistent"
-          ],
-          "type": "string"
-        },
-        "ValidUntilUtc": {
-          "maxLength": 64,
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "Tag": {
       "additionalProperties": false,
       "properties": {
@@ -501,6 +457,7 @@
         "ec2:RunInstances",
         "ec2:DescribeInstances",
         "ec2:DescribeInstanceStatus",
+        "ec2:DescribeImages",
         "ec2:CreateTags",
         "iam:PassRole"
       ]
@@ -580,9 +537,6 @@
         "ImageId": {
           "pattern": "^ami-[0-9a-zA-Z]{1,63}$",
           "type": "string"
-        },
-        "InstanceMarketOptions": {
-          "$ref": "#/definitions/InstanceMarketOptionsRequest"
         },
         "InstanceType": {
           "pattern": "^([a-z0-9-]+)\\.([a-z0-9]+)$",

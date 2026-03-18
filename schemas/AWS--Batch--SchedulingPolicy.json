@@ -31,6 +31,19 @@
       "required": [],
       "type": "object"
     },
+    "QuotaSharePolicy": {
+      "additionalProperties": false,
+      "description": "Quota Share Policy for the Job Queue.",
+      "properties": {
+        "IdleResourceAssignmentStrategy": {
+          "enum": [
+            "FIFO"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "ResourceArn": {
       "description": "ARN of the Scheduling Policy.",
       "type": "string"
@@ -84,6 +97,18 @@
       ]
     }
   },
+  "oneOf": [
+    {
+      "required": [
+        "FairsharePolicy"
+      ]
+    },
+    {
+      "required": [
+        "QuotaSharePolicy"
+      ]
+    }
+  ],
   "primaryIdentifier": [
     "/properties/Arn"
   ],
@@ -98,6 +123,9 @@
       "description": "Name of Scheduling Policy.",
       "pattern": "",
       "type": "string"
+    },
+    "QuotaSharePolicy": {
+      "$ref": "#/definitions/QuotaSharePolicy"
     },
     "Tags": {
       "additionalProperties": false,
