@@ -109,6 +109,9 @@
       "type": "string"
     }
   },
+  "propertyTransform": {
+    "/properties/Statement": "$merge([{\"Sid\": StatementId}, Statement])"
+  },
   "required": [
     "StatementId"
   ],
