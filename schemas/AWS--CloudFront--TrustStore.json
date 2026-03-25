@@ -11,21 +11,22 @@
   "definitions": {
     "CaCertificatesBundleS3Location": {
       "additionalProperties": false,
+      "description": "The CA certificates bundle location in Amazon S3.",
       "properties": {
         "Bucket": {
-          "description": "The S3 bucket containing the CA certificates bundle PEM file",
+          "description": "The S3 bucket.",
           "type": "string"
         },
         "Key": {
-          "description": "The S3 object key of the CA certificates bundle PEM file",
+          "description": "The location's key.",
           "type": "string"
         },
         "Region": {
-          "description": "The S3 bucket region",
+          "description": "The location's Region.",
           "type": "string"
         },
         "Version": {
-          "description": "The S3 object version of the CA certificates bundle PEM file",
+          "description": "The location's version.",
           "type": "string"
         }
       },
@@ -38,9 +39,11 @@
     },
     "CaCertificatesBundleSource": {
       "additionalProperties": false,
+      "description": "A CA certificates bundle source.",
       "properties": {
         "CaCertificatesBundleS3Location": {
-          "$ref": "#/definitions/CaCertificatesBundleS3Location"
+          "$ref": "#/definitions/CaCertificatesBundleS3Location",
+          "description": "The CA certificates bundle location in Amazon S3."
         }
       },
       "required": [
@@ -50,17 +53,20 @@
     },
     "Tag": {
       "additionalProperties": false,
+      "description": "A complex type that contains ``Tag`` key and ``Tag`` value.",
       "properties": {
         "Key": {
+          "description": "A string that contains ``Tag`` key.\n The string length should be between 1 and 128 characters. Valid characters include ``a-z``, ``A-Z``, ``0-9``, space, and the special characters ``_ - . : / = + @``.",
           "maxLength": 128,
           "minLength": 1,
-          "pattern": "^[a-zA-Z0-9 _.:/=+\\-@]{1,128}\\Z",
+          "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
           "type": "string"
         },
         "Value": {
+          "description": "A string that contains an optional ``Tag`` value.\n The string length should be between 0 and 256 characters. Valid characters include ``a-z``, ``A-Z``, ``0-9``, space, and the special characters ``_ - . : / = + @``.",
           "maxLength": 256,
           "minLength": 0,
-          "pattern": "^[a-zA-Z0-9 _.:/=+\\-@]{0,256}\\Z",
+          "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
           "type": "string"
         }
       },
@@ -71,7 +77,7 @@
       "type": "object"
     }
   },
-  "description": "Resource Type definition for AWS::CloudFront::TrustStore. TrustStores contain CA certificates for mTLS authentication and can be associated with CloudFront distributions.",
+  "description": "A trust store.",
   "handlers": {
     "create": {
       "permissions": [
@@ -120,34 +126,36 @@
   ],
   "properties": {
     "Arn": {
-      "description": "The Amazon Resource Name (ARN) of the trust store",
+      "description": "",
       "pattern": "^arn:aws:cloudfront::[0-9]{12}:trust-store/[A-Za-z0-9_]+$",
       "type": "string"
     },
     "CaCertificatesBundleSource": {
-      "$ref": "#/definitions/CaCertificatesBundleSource"
+      "$ref": "#/definitions/CaCertificatesBundleSource",
+      "description": "A CA certificates bundle source."
     },
     "ETag": {
+      "description": "",
       "type": "string"
     },
     "Id": {
-      "description": "The unique identifier for the trust store",
+      "description": "",
       "type": "string"
     },
     "LastModifiedTime": {
-      "description": "The last modification timestamp of the trust store PEM file",
+      "description": "",
       "type": "string"
     },
     "Name": {
-      "description": "A unique name to identify the trust store",
+      "description": "The trust store's name.",
       "type": "string"
     },
     "NumberOfCaCertificates": {
-      "description": "The number of CA certificates in the trust store PEM file",
+      "description": "",
       "type": "integer"
     },
     "Status": {
-      "description": "Current status of the trust store",
+      "description": "",
       "enum": [
         "PENDING",
         "ACTIVE",
@@ -156,7 +164,7 @@
       "type": "string"
     },
     "Tags": {
-      "description": "Key-value pairs for resource tagging",
+      "description": "A complex type that contains zero or more ``Tag`` elements.",
       "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/Tag"

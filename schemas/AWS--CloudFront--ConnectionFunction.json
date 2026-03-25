@@ -15,11 +15,14 @@
   "definitions": {
     "ConnectionFunctionConfig": {
       "additionalProperties": false,
+      "description": "Contains configuration information about a CloudFront function.",
       "properties": {
         "Comment": {
+          "description": "A comment to describe the function.",
           "type": "string"
         },
         "KeyValueStoreAssociations": {
+          "description": "The configuration for the key value store associations.",
           "items": {
             "$ref": "#/definitions/KeyValueStoreAssociation"
           },
@@ -27,6 +30,7 @@
           "uniqueItems": true
         },
         "Runtime": {
+          "description": "The function's runtime environment version.",
           "enum": [
             "cloudfront-js-2.0"
           ],
@@ -41,8 +45,10 @@
     },
     "KeyValueStoreAssociation": {
       "additionalProperties": false,
+      "description": "The key value store association.",
       "properties": {
         "KeyValueStoreARN": {
+          "description": "The Amazon Resource Name (ARN) of the key value store association.",
           "type": "string"
         }
       },
@@ -53,17 +59,20 @@
     },
     "Tag": {
       "additionalProperties": false,
+      "description": "A complex type that contains ``Tag`` key and ``Tag`` value.",
       "properties": {
         "Key": {
+          "description": "A string that contains ``Tag`` key.\n The string length should be between 1 and 128 characters. Valid characters include ``a-z``, ``A-Z``, ``0-9``, space, and the special characters ``_ - . : / = + @``.",
           "maxLength": 128,
           "minLength": 1,
-          "pattern": "^[a-zA-Z0-9 _.:/=+\\-@]{1,128}\\Z",
+          "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
           "type": "string"
         },
         "Value": {
+          "description": "A string that contains an optional ``Tag`` value.\n The string length should be between 0 and 256 characters. Valid characters include ``a-z``, ``A-Z``, ``0-9``, space, and the special characters ``_ - . : / = + @``.",
           "maxLength": 256,
           "minLength": 0,
-          "pattern": "^[a-zA-Z0-9 _.:/=+\\-@]{0,256}\\Z",
+          "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
           "type": "string"
         }
       },
@@ -74,7 +83,7 @@
       "type": "object"
     }
   },
-  "description": "Resource Type definition for AWS::CloudFront::ConnectionFunction",
+  "description": "A connection function.",
   "handlers": {
     "create": {
       "permissions": [
@@ -118,35 +127,45 @@
   "properties": {
     "AutoPublish": {
       "default": false,
+      "description": "A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it?s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``.",
       "type": "boolean"
     },
     "ConnectionFunctionArn": {
+      "description": "",
       "type": "string"
     },
     "ConnectionFunctionCode": {
+      "description": "The code for the connection function.",
       "type": "string"
     },
     "ConnectionFunctionConfig": {
-      "$ref": "#/definitions/ConnectionFunctionConfig"
+      "$ref": "#/definitions/ConnectionFunctionConfig",
+      "description": "Contains configuration information about a CloudFront function."
     },
     "CreatedTime": {
+      "description": "",
       "format": "date-time",
       "type": "string"
     },
     "ETag": {
+      "description": "",
       "type": "string"
     },
     "Id": {
+      "description": "",
       "type": "string"
     },
     "LastModifiedTime": {
+      "description": "",
       "format": "date-time",
       "type": "string"
     },
     "Name": {
+      "description": "The connection function name.",
       "type": "string"
     },
     "Stage": {
+      "description": "",
       "enum": [
         "DEVELOPMENT",
         "LIVE"
@@ -154,6 +173,7 @@
       "type": "string"
     },
     "Status": {
+      "description": "",
       "enum": [
         "UNPUBLISHED",
         "DEPLOYED",
@@ -164,6 +184,7 @@
       "type": "string"
     },
     "Tags": {
+      "description": "A complex type that contains zero or more ``Tag`` elements.",
       "items": {
         "$ref": "#/definitions/Tag"
       },

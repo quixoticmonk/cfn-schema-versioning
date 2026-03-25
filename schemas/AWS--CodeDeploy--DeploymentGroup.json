@@ -481,6 +481,7 @@
         "codedeploy:CreateDeployment",
         "codedeploy:GetDeployment",
         "codedeploy:GetDeploymentConfig",
+        "codedeploy:GetDeploymentGroup",
         "codedeploy:GetApplicationRevision",
         "codedeploy:ListDeployments",
         "codedeploy:RegisterApplicationRevision",

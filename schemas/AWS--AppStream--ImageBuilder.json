@@ -1,5 +1,8 @@
 {
   "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/Name"
+  ],
   "definitions": {
     "AccessEndpoint": {
       "additionalProperties": false,
@@ -45,6 +48,15 @@
       ],
       "type": "object"
     },
+    "VolumeConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "VolumeSizeInGb": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "VpcConfig": {
       "additionalProperties": false,
       "properties": {
@@ -77,18 +89,18 @@
         "appstream:DescribeImageBuilders",
         "appstream:StartImageBuilder",
         "appstream:StopImageBuilder",
+        "appstream:TagResource",
         "iam:CreateServiceLinkedRole",
         "iam:DeleteServiceLinkedRole",
-        "iam:GetServiceLinkedRoleDeletionStatus"
+        "iam:GetServiceLinkedRoleDeletionStatus",
+        "iam:PassRole"
       ]
     },
     "delete": {
       "permissions": [
-        "appstream:CreateImageBuilder",
-        "appstream:CreateImageBuilderStreamingURL",
-        "appstream:CreateStreamingURL",
         "appstream:DeleteImageBuilder",
         "appstream:DescribeImageBuilders",
+        "appstream:ListTagsForResource",
         "appstream:StartImageBuilder",
         "appstream:StopImageBuilder",
         "iam:CreateServiceLinkedRole",
@@ -98,13 +110,8 @@
     },
     "list": {
       "permissions": [
-        "appstream:CreateImageBuilder",
-        "appstream:CreateImageBuilderStreamingURL",
-        "appstream:CreateStreamingURL",
-        "appstream:DeleteImageBuilder",
         "appstream:DescribeImageBuilders",
-        "appstream:StartImageBuilder",
-        "appstream:StopImageBuilder",
+        "appstream:ListTagsForResource",
         "iam:CreateServiceLinkedRole",
         "iam:DeleteServiceLinkedRole",
         "iam:GetServiceLinkedRoleDeletionStatus"
@@ -112,19 +119,27 @@
     },
     "read": {
       "permissions": [
-        "appstream:CreateImageBuilder",
         "appstream:CreateImageBuilderStreamingURL",
-        "appstream:CreateStreamingURL",
-        "appstream:DeleteImageBuilder",
         "appstream:DescribeImageBuilders",
-        "appstream:StartImageBuilder",
-        "appstream:StopImageBuilder",
+        "appstream:ListTagsForResource",
         "iam:CreateServiceLinkedRole",
         "iam:DeleteServiceLinkedRole",
         "iam:GetServiceLinkedRoleDeletionStatus"
       ]
     }
   },
+  "oneOf": [
+    {
+      "required": [
+        "ImageName"
+      ]
+    },
+    {
+      "required": [
+        "ImageArn"
+      ]
+    }
+  ],
   "primaryIdentifier": [
     "/properties/Name"
   ],
@@ -166,6 +181,21 @@
     "Name": {
       "type": "string"
     },
+    "RootVolumeConfig": {
+      "$ref": "#/definitions/VolumeConfig"
+    },
+    "SoftwaresToInstall": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "SoftwaresToUninstall": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
     "StreamingUrl": {
       "type": "string"
     },
@@ -189,10 +219,20 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "appstream:ListTagsForResource",
+      "appstream:TagResource",
+      "appstream:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": false,
     "taggable": false
   },
-  "typeName": "AWS::AppStream::ImageBuilder"
+  "typeName": "AWS::AppStream::ImageBuilder",
+  "writeOnlyProperties": [
+    "/properties/SoftwaresToInstall",
+    "/properties/SoftwaresToUninstall",
+    "/properties/ImageName"
+  ]
 }

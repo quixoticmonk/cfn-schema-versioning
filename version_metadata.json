@@ -560,7 +560,7 @@
   "AWS::AppStream::ImageBuilder": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2022-06-19T16:19:12.645000+00:00"
   },
   "AWS::AppStream::Stack": {
@@ -1424,7 +1424,7 @@
   "AWS::CloudFront::AnycastIpList": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2024-12-23T16:42:59.026000+00:00"
   },
   "AWS::CloudFront::CachePolicy": {
@@ -1442,7 +1442,7 @@
   "AWS::CloudFront::ConnectionFunction": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2025-11-17T18:58:59.906000+00:00"
   },
   "AWS::CloudFront::ConnectionGroup": {
@@ -1460,7 +1460,7 @@
   "AWS::CloudFront::Distribution": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2021-01-06T00:39:59.935000+00:00"
   },
   "AWS::CloudFront::DistributionTenant": {
@@ -1532,7 +1532,7 @@
   "AWS::CloudFront::TrustStore": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2025-11-23T17:41:10.274000+00:00"
   },
   "AWS::CloudFront::VpcOrigin": {
@@ -1682,7 +1682,7 @@
   "AWS::CodeDeploy::DeploymentGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-23T06:59:41.718166",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2025-03-18T19:59:37.094000+00:00"
   },
   "AWS::CodeGuruProfiler::ProfilingGroup": {
@@ -3476,7 +3476,7 @@
   "AWS::ECS::CapacityProvider": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-02T06:45:49.915953",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2020-06-11T15:32:13.029000+00:00"
   },
   "AWS::ECS::Cluster": {
@@ -3590,8 +3590,8 @@
   "AWS::EMR::Cluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
-    "time_created": "2019-11-15T17:25:18.009000+00:00"
+    "last_updated": "2026-03-25T06:53:10.632848",
+    "time_created": "2024-10-15T18:31:14.919000+00:00"
   },
   "AWS::EMR::InstanceFleetConfig": {
     "deprecation_status": "LIVE",
@@ -4786,6 +4786,12 @@
     "first_seen": "2026-01-19T02:02:20.407855",
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2021-12-02T22:44:36.836000+00:00"
+  },
+  "AWS::Interconnect::Connection": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-03-25T06:53:10.632848",
+    "last_updated": "2026-03-25T06:53:10.632848",
+    "time_created": "2026-03-23T15:59:12.442000+00:00"
   },
   "AWS::InternetMonitor::Monitor": {
     "deprecation_status": "LIVE",
@@ -6470,7 +6476,7 @@
   "AWS::ObservabilityAdmin::OrganizationCentralizationRule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-04T06:36:37.856012",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2025-09-29T22:10:18.828000+00:00"
   },
   "AWS::ObservabilityAdmin::OrganizationTelemetryRule": {
@@ -7028,7 +7034,7 @@
   "AWS::QuickSight::CustomPermissions": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2024-12-11T16:58:51.696000+00:00"
   },
   "AWS::QuickSight::Dashboard": {
@@ -8696,13 +8702,13 @@
   "AWS::Shield::DRTAccess": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2023-05-11T11:33:02.010000+00:00"
   },
   "AWS::Shield::ProactiveEngagement": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-25T06:53:10.632848",
     "time_created": "2023-05-11T11:33:05.818000+00:00"
   },
   "AWS::Shield::Protection": {

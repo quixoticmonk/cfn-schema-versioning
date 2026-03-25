@@ -162,6 +162,11 @@
     "SourceLogsConfiguration": {
       "additionalProperties": false,
       "properties": {
+        "DataSourceSelectionCriteria": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "type": "string"
+        },
         "EncryptedLogGroupStrategy": {
           "enum": [
             "ALLOW",
@@ -176,7 +181,6 @@
         }
       },
       "required": [
-        "LogGroupSelectionCriteria",
         "EncryptedLogGroupStrategy"
       ],
       "type": "object"

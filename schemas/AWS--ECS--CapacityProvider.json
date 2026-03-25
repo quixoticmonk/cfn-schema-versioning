@@ -112,6 +112,9 @@
         "FipsEnabled": {
           "type": "boolean"
         },
+        "InstanceMetadataTagsPropagation": {
+          "type": "boolean"
+        },
         "InstanceRequirements": {
           "$ref": "#/definitions/InstanceRequirementsRequest"
         },
