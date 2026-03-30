@@ -1,4 +1,10 @@
 {
+  "additionalIdentifiers": [
+    [
+      "/properties/PolicyEngineId",
+      "/properties/PolicyId"
+    ]
+  ],
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/PolicyEngineId",

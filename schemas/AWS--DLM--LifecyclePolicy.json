@@ -261,6 +261,13 @@
     "FastRestoreRule": {
       "additionalProperties": false,
       "properties": {
+        "AvailabilityZoneIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
         "AvailabilityZones": {
           "items": {
             "type": "string"

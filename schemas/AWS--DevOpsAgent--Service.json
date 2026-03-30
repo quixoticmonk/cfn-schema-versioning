@@ -2,7 +2,8 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/ServiceType",
-    "/properties/ServiceDetails"
+    "/properties/ServiceDetails",
+    "/properties/KmsKeyArn"
   ],
   "definitions": {
     "AdditionalServiceDetails": {
@@ -680,6 +681,29 @@
         "servicenow"
       ],
       "type": "string"
+    },
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
+        "Value": {
+          "description": "The value for the tag.",
+          "maxLength": 256,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
     }
   },
   "description": "The AWS::DevOpsAgent::Service resource registers external services (like Dynatrace, MCP servers, GitLab) for integration with DevOpsAgent.",
@@ -687,7 +711,19 @@
     "create": {
       "permissions": [
         "aidevops:RegisterService",
-        "aidevops:GetService"
+        "aidevops:GetService",
+        "aidevops:TagResource",
+        "aidevops:ListTagsForResource",
+        "iam:CreateServiceLinkedRole",
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyPair",
+        "kms:GenerateDataKeyPairWithoutPlaintext",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo"
       ]
     },
     "delete": {
@@ -703,7 +739,16 @@
     },
     "read": {
       "permissions": [
-        "aidevops:GetService"
+        "aidevops:GetService",
+        "aidevops:ListTagsForResource"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "aidevops:GetService",
+        "aidevops:TagResource",
+        "aidevops:UntagResource",
+        "aidevops:ListTagsForResource"
       ]
     }
   },
@@ -722,6 +767,16 @@
       "$ref": "#/definitions/AdditionalServiceDetails",
       "description": "Additional details specific to the service type"
     },
+    "Arn": {
+      "description": "The Amazon Resource Name (ARN) of the Service.",
+      "type": "string"
+    },
+    "KmsKeyArn": {
+      "description": "The ARN of the KMS key to use for encryption.",
+      "maxLength": 2048,
+      "minLength": 1,
+      "type": "string"
+    },
     "ServiceDetails": {
       "$ref": "#/definitions/ServiceDetails",
       "description": "Service-specific configuration details for create operation"
@@ -733,19 +788,38 @@
     "ServiceType": {
       "$ref": "#/definitions/ServiceType",
       "description": "The type of service being registered"
+    },
+    "Tags": {
+      "description": "An array of key-value pairs to apply to this resource.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array",
+      "uniqueItems": true
     }
   },
   "readOnlyProperties": [
     "/properties/ServiceId",
     "/properties/AccessibleResources",
-    "/properties/AdditionalServiceDetails"
+    "/properties/AdditionalServiceDetails",
+    "/properties/Arn"
   ],
   "required": [
     "ServiceType"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
-    "taggable": false
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "aidevops:TagResource",
+      "aidevops:UntagResource",
+      "aidevops:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
   },
   "typeName": "AWS::DevOpsAgent::Service",
   "writeOnlyProperties": [

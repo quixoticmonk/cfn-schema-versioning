@@ -1,5 +1,8 @@
 {
   "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/KmsKeyArn"
+  ],
   "definitions": {
     "IamAuthConfiguration": {
       "additionalProperties": false,
@@ -59,6 +62,29 @@
         }
       },
       "type": "object"
+    },
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
+        "Value": {
+          "description": "The value for the tag.",
+          "maxLength": 256,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
     }
   },
   "description": "Resource Type definition for AWS::DevOpsAgent::AgentSpace",
@@ -69,7 +95,21 @@
         "aidevops:GetAgentSpace",
         "aidevops:EnableOperatorApp",
         "aidevops:GetOperatorAppTeams",
+        "aidevops:TagResource",
+        "aidevops:ListTagsForResource",
+        "iam:CreateServiceLinkedRole",
         "iam:PassRole",
+        "kms:CreateGrant",
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyPair",
+        "kms:GenerateDataKeyPairWithoutPlaintext",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo",
+        "kms:RetireGrant",
         "sso:CreateApplication",
         "sso:DeleteApplication",
         "sso:PutApplicationAccessScope",
@@ -94,13 +134,16 @@
     },
     "list": {
       "permissions": [
-        "aidevops:ListAgentSpaces"
+        "aidevops:ListAgentSpaces",
+        "kms:Decrypt"
       ]
     },
     "read": {
       "permissions": [
         "aidevops:GetAgentSpace",
-        "aidevops:GetOperatorAppTeams"
+        "aidevops:GetOperatorAppTeams",
+        "aidevops:ListTagsForResource",
+        "kms:Decrypt"
       ]
     },
     "update": {
@@ -110,7 +153,21 @@
         "aidevops:EnableOperatorApp",
         "aidevops:DisableOperatorApp",
         "aidevops:GetOperatorAppTeams",
+        "aidevops:TagResource",
+        "aidevops:UntagResource",
+        "aidevops:ListTagsForResource",
         "iam:PassRole",
+        "kms:CreateGrant",
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyPair",
+        "kms:GenerateDataKeyPairWithoutPlaintext",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo",
+        "kms:RetireGrant",
         "sso:CreateApplication",
         "sso:DeleteApplication",
         "sso:PutApplicationAccessScope",
@@ -148,6 +205,12 @@
       "minLength": 1,
       "type": "string"
     },
+    "KmsKeyArn": {
+      "description": "The ARN of the KMS key to use for encryption.",
+      "maxLength": 2048,
+      "minLength": 1,
+      "type": "string"
+    },
     "Name": {
       "description": "The name of the AgentSpace.",
       "maxLength": 255,
@@ -156,6 +219,15 @@
     },
     "OperatorApp": {
       "$ref": "#/definitions/OperatorApp"
+    },
+    "Tags": {
+      "description": "An array of key-value pairs to apply to this resource.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array",
+      "uniqueItems": true
     },
     "UpdatedAt": {
       "description": "The timestamp when the resource was last updated.",
@@ -179,7 +251,16 @@
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
-    "taggable": false
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "aidevops:TagResource",
+      "aidevops:UntagResource",
+      "aidevops:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
   },
   "typeName": "AWS::DevOpsAgent::AgentSpace"
 }

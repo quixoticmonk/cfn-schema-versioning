@@ -51,6 +51,25 @@
       ],
       "type": "object"
     },
+    "CgroupCustomSetting": {
+      "additionalProperties": false,
+      "description": "Additional cgroup configuration settings.",
+      "properties": {
+        "ParameterName": {
+          "description": "The cgroup.conf parameter name.",
+          "type": "string"
+        },
+        "ParameterValue": {
+          "description": "The value for the cgroup.conf parameter.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ParameterName",
+        "ParameterValue"
+      ],
+      "type": "object"
+    },
     "Endpoint": {
       "additionalProperties": false,
       "description": "An endpoint available for interaction with the scheduler.",
@@ -171,6 +190,25 @@
       },
       "required": [
         "Mode"
+      ],
+      "type": "object"
+    },
+    "SlurmdbdCustomSetting": {
+      "additionalProperties": false,
+      "description": "Additional slurmdbd configuration settings.",
+      "properties": {
+        "ParameterName": {
+          "description": "The slurmdbd.conf parameter name.",
+          "type": "string"
+        },
+        "ParameterValue": {
+          "description": "The value for the slurmdbd.conf parameter.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ParameterName",
+        "ParameterValue"
       ],
       "type": "object"
     },
@@ -355,6 +393,14 @@
         "AuthKey": {
           "$ref": "#/definitions/AuthKey"
         },
+        "CgroupCustomSettings": {
+          "description": "Additional cgroup-specific configuration that directly maps to cgroup.conf settings.",
+          "insertionOrder": false,
+          "items": {
+            "$ref": "#/definitions/CgroupCustomSetting"
+          },
+          "type": "array"
+        },
         "JwtAuth": {
           "$ref": "#/definitions/JwtAuth"
         },
@@ -373,6 +419,14 @@
         },
         "SlurmRest": {
           "$ref": "#/definitions/SlurmRest"
+        },
+        "SlurmdbdCustomSettings": {
+          "description": "Additional slurmdbd-specific configuration that directly maps to slurmdbd.conf settings.",
+          "insertionOrder": false,
+          "items": {
+            "$ref": "#/definitions/SlurmdbdCustomSetting"
+          },
+          "type": "array"
         }
       },
       "type": "object"

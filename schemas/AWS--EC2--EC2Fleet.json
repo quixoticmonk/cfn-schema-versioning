@@ -3,6 +3,7 @@
   "createOnlyProperties": [
     "/properties/LaunchTemplateConfigs",
     "/properties/OnDemandOptions",
+    "/properties/ReservedCapacityOptions",
     "/properties/ReplaceUnhealthyInstances",
     "/properties/SpotOptions",
     "/properties/TagSpecifications",
@@ -814,6 +815,9 @@
     },
     "ReplaceUnhealthyInstances": {
       "type": "boolean"
+    },
+    "ReservedCapacityOptions": {
+      "$ref": "#/definitions/ReservedCapacityOptionsRequest"
     },
     "SpotOptions": {
       "$ref": "#/definitions/SpotOptionsRequest"

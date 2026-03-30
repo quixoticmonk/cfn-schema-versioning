@@ -43,6 +43,18 @@
       },
       "type": "object"
     },
+    "FipsEndpoints": {
+      "additionalProperties": false,
+      "properties": {
+        "CollectionEndpoint": {
+          "type": "string"
+        },
+        "DashboardEndpoint": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "ServerlessVectorAcceleration": {
       "description": "Indicates whether GPU acceleration is enabled for vector indexing",
       "enum": [
@@ -157,6 +169,9 @@
     "EncryptionConfig": {
       "$ref": "#/definitions/EncryptionConfig"
     },
+    "FipsEndpoints": {
+      "$ref": "#/definitions/FipsEndpoints"
+    },
     "Id": {
       "description": "The identifier of the collection",
       "maxLength": 40,
@@ -199,6 +214,7 @@
     "/properties/Arn",
     "/properties/CollectionEndpoint",
     "/properties/DashboardEndpoint",
+    "/properties/FipsEndpoints",
     "/properties/KmsKeyArn"
   ],
   "required": [

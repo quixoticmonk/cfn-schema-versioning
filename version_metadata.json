@@ -740,7 +740,7 @@
   "AWS::AutoScaling::AutoScalingGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-02T06:45:49.915953",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2023-03-03T21:43:24.578000+00:00"
   },
   "AWS::AutoScaling::LaunchConfiguration": {
@@ -1058,13 +1058,13 @@
   "AWS::BedrockAgentCore::OnlineEvaluationConfig": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-03-02T06:45:49.915953",
-    "last_updated": "2026-03-02T06:45:49.915953",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2026-02-26T17:44:25.025000+00:00"
   },
   "AWS::BedrockAgentCore::Policy": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-03-04T06:36:37.856012",
-    "last_updated": "2026-03-04T06:36:37.856012",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2026-03-03T19:39:29.382000+00:00"
   },
   "AWS::BedrockAgentCore::PolicyEngine": {
@@ -2189,6 +2189,12 @@
     "last_updated": "2026-02-25T06:53:23.840116",
     "time_created": "2021-02-25T21:38:36.149000+00:00"
   },
+  "AWS::CustomerProfiles::Recommender": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-03-30T07:16:32.251528",
+    "last_updated": "2026-03-30T07:16:32.251528",
+    "time_created": "2025-12-09T04:28:46.947000+00:00"
+  },
   "AWS::CustomerProfiles::SegmentDefinition": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
@@ -2216,7 +2222,7 @@
   "AWS::DLM::LifecyclePolicy": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-11T06:40:39.514781",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2019-11-15T17:25:44.215000+00:00"
   },
   "AWS::DMS::Certificate": {
@@ -2600,7 +2606,7 @@
   "AWS::DevOpsAgent::AgentSpace": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-18T06:52:25.449227",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2025-11-20T15:42:12.397000+00:00"
   },
   "AWS::DevOpsAgent::Association": {
@@ -2612,7 +2618,7 @@
   "AWS::DevOpsAgent::Service": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-02-18T06:52:25.449227",
-    "last_updated": "2026-02-18T06:52:25.449227",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2025-12-10T20:10:37.270000+00:00"
   },
   "AWS::DevOpsGuru::LogAnomalyDetectionIntegration": {
@@ -2804,7 +2810,7 @@
   "AWS::EC2::EC2Fleet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-11T06:40:39.514781",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2021-03-23T23:49:54.406000+00:00"
   },
   "AWS::EC2::EIP": {
@@ -3590,8 +3596,8 @@
   "AWS::EMR::Cluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-25T06:53:10.632848",
-    "time_created": "2024-10-15T18:31:14.919000+00:00"
+    "last_updated": "2026-03-30T07:16:32.251528",
+    "time_created": "2019-11-15T17:25:18.009000+00:00"
   },
   "AWS::EMR::InstanceFleetConfig": {
     "deprecation_status": "LIVE",
@@ -3974,7 +3980,7 @@
   "AWS::FSx::FileSystem": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2019-11-15T17:25:42.681000+00:00"
   },
   "AWS::FSx::S3AccessPointAttachment": {
@@ -4814,7 +4820,7 @@
   "AWS::IoT::Authorizer": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2020-08-28T17:10:15.087000+00:00"
   },
   "AWS::IoT::BillingGroup": {
@@ -4826,7 +4832,7 @@
   "AWS::IoT::CACertificate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2021-11-23T20:41:27.220000+00:00"
   },
   "AWS::IoT::Certificate": {
@@ -4838,7 +4844,7 @@
   "AWS::IoT::CertificateProvider": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2023-10-26T15:31:35.105000+00:00"
   },
   "AWS::IoT::Command": {
@@ -4862,7 +4868,7 @@
   "AWS::IoT::DomainConfiguration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2020-10-20T15:10:08.014000+00:00"
   },
   "AWS::IoT::EncryptionConfiguration": {
@@ -4910,7 +4916,7 @@
   "AWS::IoT::ProvisioningTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2020-05-23T19:20:05.689000+00:00"
   },
   "AWS::IoT::ResourceSpecificLogging": {
@@ -4922,7 +4928,7 @@
   "AWS::IoT::RoleAlias": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2021-11-23T20:41:34.879000+00:00"
   },
   "AWS::IoT::ScheduledAudit": {
@@ -6515,6 +6521,12 @@
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2023-01-25T21:39:28.605000+00:00"
   },
+  "AWS::Omics::Configuration": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-03-30T07:16:32.251528",
+    "last_updated": "2026-03-30T07:16:32.251528",
+    "time_created": "2026-03-25T17:29:09.963000+00:00"
+  },
   "AWS::Omics::ReferenceStore": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
@@ -6560,7 +6572,7 @@
   "AWS::OpenSearchServerless::Collection": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-23T06:59:41.718166",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2022-11-26T01:01:57.125000+00:00"
   },
   "AWS::OpenSearchServerless::CollectionGroup": {
@@ -6680,7 +6692,7 @@
   "AWS::Organizations::ResourcePolicy": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2022-12-22T22:59:13.750000+00:00"
   },
   "AWS::PCAConnectorAD::Connector": {
@@ -6728,7 +6740,7 @@
   "AWS::PCS::Cluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-04T06:40:01.769376",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2024-12-11T07:53:26.327000+00:00"
   },
   "AWS::PCS::ComputeNodeGroup": {
@@ -8180,7 +8192,7 @@
   "AWS::SSO::Instance": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-03-30T07:16:32.251528",
     "time_created": "2024-05-03T09:17:31.920000+00:00"
   },
   "AWS::SSO::InstanceAccessControlAttributeConfiguration": {

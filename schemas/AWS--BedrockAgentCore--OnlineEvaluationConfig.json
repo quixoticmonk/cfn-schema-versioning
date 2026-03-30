@@ -1,4 +1,9 @@
 {
+  "additionalIdentifiers": [
+    [
+      "/properties/OnlineEvaluationConfigId"
+    ]
+  ],
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/OnlineEvaluationConfigName"
@@ -372,7 +377,6 @@
     "/properties/OnlineEvaluationConfigId",
     "/properties/OnlineEvaluationConfigArn",
     "/properties/Status",
-    "/properties/ExecutionStatus",
     "/properties/OutputConfig",
     "/properties/CreatedAt",
     "/properties/UpdatedAt"
