@@ -142,6 +142,28 @@
       ],
       "type": "string"
     },
+    "ResourceTag": {
+      "additionalProperties": false,
+      "properties": {
+        "Key": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[\\w \\.:/=+@-]+$",
+          "type": "string"
+        },
+        "Value": {
+          "maxLength": 256,
+          "minLength": 0,
+          "pattern": "^[\\w \\.:/=+@-]*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
+    },
     "Tags": {
       "additionalProperties": false,
       "patternProperties": {
@@ -154,7 +176,7 @@
       "type": "object"
     }
   },
-  "description": "Amazon DataZone projects are business use case?based groupings of people, assets (data), and tools used to simplify access to the AWS analytics.",
+  "description": "Amazon DataZone projects are business use case\u2013based groupings of people, assets (data), and tools used to simplify access to the AWS analytics.",
   "handlers": {
     "create": {
       "permissions": [
@@ -269,6 +291,13 @@
     "ProjectStatus": {
       "$ref": "#/definitions/ProjectStatus",
       "description": "The status of the project."
+    },
+    "ResourceTags": {
+      "description": "The resource tags of the project.",
+      "items": {
+        "$ref": "#/definitions/ResourceTag"
+      },
+      "type": "array"
     },
     "UserParameters": {
       "description": "The user parameters of the project.",

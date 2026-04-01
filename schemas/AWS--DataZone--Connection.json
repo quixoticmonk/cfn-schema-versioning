@@ -288,6 +288,32 @@
           ],
           "title": "MlflowProperties",
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "WorkflowsMwaaProperties": {
+              "$ref": "#/definitions/WorkflowsMwaaPropertiesInput"
+            }
+          },
+          "required": [
+            "WorkflowsMwaaProperties"
+          ],
+          "title": "WorkflowsMwaaProperties",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "WorkflowsServerlessProperties": {
+              "$ref": "#/definitions/WorkflowsServerlessPropertiesInput"
+            }
+          },
+          "required": [
+            "WorkflowsServerlessProperties"
+          ],
+          "title": "WorkflowsServerlessProperties",
+          "type": "object"
         }
       ]
     },
@@ -844,6 +870,22 @@
         "Password",
         "Username"
       ],
+      "type": "object"
+    },
+    "WorkflowsMwaaPropertiesInput": {
+      "additionalProperties": false,
+      "description": "Workflows MWAA Properties Input",
+      "properties": {
+        "MwaaEnvironmentName": {
+          "description": "The name of the MWAA environment.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "WorkflowsServerlessPropertiesInput": {
+      "additionalProperties": false,
+      "description": "Workflows Serverless Properties Input",
       "type": "object"
     }
   },

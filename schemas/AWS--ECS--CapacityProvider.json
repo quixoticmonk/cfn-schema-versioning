@@ -118,6 +118,9 @@
         "InstanceRequirements": {
           "$ref": "#/definitions/InstanceRequirementsRequest"
         },
+        "LocalStorageConfiguration": {
+          "$ref": "#/definitions/ManagedInstancesLocalStorageConfiguration"
+        },
         "Monitoring": {
           "$ref": "#/definitions/ManagedInstancesMonitoringOptions"
         },
@@ -307,6 +310,15 @@
         "VCpuCount",
         "MemoryMiB"
       ],
+      "type": "object"
+    },
+    "ManagedInstancesLocalStorageConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "UseLocalStorage": {
+          "type": "boolean"
+        }
+      },
       "type": "object"
     },
     "ManagedInstancesMonitoringOptions": {
