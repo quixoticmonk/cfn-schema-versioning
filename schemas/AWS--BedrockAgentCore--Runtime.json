@@ -10,13 +10,14 @@
         "PYTHON_3_10",
         "PYTHON_3_11",
         "PYTHON_3_12",
-        "PYTHON_3_13"
+        "PYTHON_3_13",
+        "PYTHON_3_14"
       ],
       "type": "string"
     },
     "AgentRuntimeArn": {
       "maxLength": 2048,
-      "pattern": "^arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:runtime/[a-zA-Z][a-zA-Z0-9_]{0,99}-[a-zA-Z0-9]{10}$",
+      "pattern": "^arn:(aws(?:-cn|-us-gov|-iso(?:-[bef])?)?):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:runtime/[a-zA-Z][a-zA-Z0-9_]{0,99}-[a-zA-Z0-9]{10}$",
       "type": "string"
     },
     "AgentRuntimeArtifact": {
@@ -298,6 +299,26 @@
       },
       "type": "object"
     },
+    "FilesystemConfiguration": {
+      "additionalProperties": false,
+      "description": "Filesystem configuration for the runtime",
+      "properties": {
+        "SessionStorage": {
+          "$ref": "#/definitions/SessionStorageConfiguration"
+        }
+      },
+      "type": "object"
+    },
+    "FilesystemConfigurations": {
+      "description": "List of filesystem configurations",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/FilesystemConfiguration"
+      },
+      "maxItems": 1,
+      "minItems": 0,
+      "type": "array"
+    },
     "HeaderName": {
       "description": "HTTP header name",
       "maxLength": 256,
@@ -355,6 +376,13 @@
       "minItems": 1,
       "type": "array"
     },
+    "MountPath": {
+      "description": "Mount path for session storage",
+      "maxLength": 200,
+      "minLength": 6,
+      "pattern": "^/mnt/[a-zA-Z0-9._-]+/?$",
+      "type": "string"
+    },
     "NetworkConfiguration": {
       "additionalProperties": false,
       "properties": {
@@ -382,7 +410,8 @@
       "enum": [
         "MCP",
         "HTTP",
-        "A2A"
+        "A2A",
+        "AGUI"
       ],
       "type": "string"
     },
@@ -460,6 +489,19 @@
       "maxItems": 16,
       "minItems": 1,
       "type": "array"
+    },
+    "SessionStorageConfiguration": {
+      "additionalProperties": false,
+      "description": "Configuration for session storage",
+      "properties": {
+        "MountPath": {
+          "$ref": "#/definitions/MountPath"
+        }
+      },
+      "required": [
+        "MountPath"
+      ],
+      "type": "object"
     },
     "SubnetId": {
       "description": "Subnet id",
@@ -627,6 +669,10 @@
     "FailureReason": {
       "description": "The reason for failure if the agent is in a failed state.",
       "type": "string"
+    },
+    "FilesystemConfigurations": {
+      "$ref": "#/definitions/FilesystemConfigurations",
+      "description": "Filesystem configurations for the agent runtime"
     },
     "LastUpdatedAt": {
       "$ref": "#/definitions/LastUpdatedAt",

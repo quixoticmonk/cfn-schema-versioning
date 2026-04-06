@@ -8,18 +8,17 @@
     "/properties/Configurations",
     "/properties/ReleaseLabel",
     "/properties/BootstrapActions",
-    "/properties/KerberosAttributes",
     "/properties/EbsRootVolumeIops",
-    "/properties/MonitoringConfiguration",
+    "/properties/KerberosAttributes",
     "/properties/ServiceRole",
     "/properties/LogEncryptionKmsKeyId",
     "/properties/Name",
     "/properties/EbsRootVolumeThroughput",
     "/properties/JobFlowRole",
-    "/properties/LogUri",
     "/properties/AdditionalInfo",
-    "/properties/PlacementGroupConfigs",
+    "/properties/LogUri",
     "/properties/CustomAmiId",
+    "/properties/PlacementGroupConfigs",
     "/properties/OSReleaseLabel",
     "/properties/AutoScalingRole",
     "/properties/Applications"
@@ -41,7 +40,7 @@
             "type": "string"
           },
           "type": "array",
-          "uniqueItems": false
+          "uniqueItems": true
         },
         "Name": {
           "type": "string"
@@ -140,30 +139,6 @@
       ],
       "type": "object"
     },
-    "CloudWatchLogConfiguration": {
-      "additionalProperties": false,
-      "properties": {
-        "Enabled": {
-          "type": "boolean"
-        },
-        "EncryptionKeyArn": {
-          "type": "string"
-        },
-        "LogGroupName": {
-          "type": "string"
-        },
-        "LogStreamNamePrefix": {
-          "type": "string"
-        },
-        "LogTypes": {
-          "type": "object"
-        }
-      },
-      "required": [
-        "Enabled"
-      ],
-      "type": "object"
-    },
     "ComputeLimits": {
       "additionalProperties": false,
       "properties": {
@@ -190,7 +165,7 @@
       ],
       "type": "object"
     },
-    "EMRConfiguration": {
+    "Configuration": {
       "additionalProperties": false,
       "properties": {
         "Classification": {
@@ -206,7 +181,7 @@
         },
         "Configurations": {
           "items": {
-            "$ref": "#/definitions/EMRConfiguration"
+            "$ref": "#/definitions/Configuration"
           },
           "type": "array",
           "uniqueItems": true
@@ -253,7 +228,7 @@
             "type": "string"
           },
           "type": "array",
-          "uniqueItems": false
+          "uniqueItems": true
         },
         "Jar": {
           "type": "string"
@@ -337,7 +312,7 @@
         },
         "Configurations": {
           "items": {
-            "$ref": "#/definitions/EMRConfiguration"
+            "$ref": "#/definitions/Configuration"
           },
           "type": "array",
           "uniqueItems": true
@@ -378,7 +353,7 @@
         },
         "Configurations": {
           "items": {
-            "$ref": "#/definitions/EMRConfiguration"
+            "$ref": "#/definitions/Configuration"
           },
           "type": "array",
           "uniqueItems": true
@@ -555,15 +530,6 @@
       ],
       "type": "object"
     },
-    "MonitoringConfiguration": {
-      "additionalProperties": false,
-      "properties": {
-        "CloudWatchLogConfiguration": {
-          "$ref": "#/definitions/CloudWatchLogConfiguration"
-        }
-      },
-      "type": "object"
-    },
     "OnDemandCapacityReservationOptions": {
       "additionalProperties": false,
       "properties": {
@@ -710,7 +676,7 @@
             "type": "string"
           },
           "type": "array",
-          "uniqueItems": false
+          "uniqueItems": true
         },
         "Path": {
           "type": "string"
@@ -857,11 +823,11 @@
         "$ref": "#/definitions/BootstrapActionConfig"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     },
     "Configurations": {
       "items": {
-        "$ref": "#/definitions/EMRConfiguration"
+        "$ref": "#/definitions/Configuration"
       },
       "type": "array",
       "uniqueItems": true
@@ -902,9 +868,6 @@
     "MasterPublicDNS": {
       "type": "string"
     },
-    "MonitoringConfiguration": {
-      "$ref": "#/definitions/MonitoringConfiguration"
-    },
     "Name": {
       "type": "string"
     },
@@ -938,7 +901,7 @@
         "$ref": "#/definitions/StepConfig"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     },
     "Tags": {
       "items": {
@@ -946,6 +909,9 @@
       },
       "type": "array",
       "uniqueItems": false
+    },
+    "VisibleToAllUsers": {
+      "type": "boolean"
     }
   },
   "readOnlyProperties": [

@@ -61,6 +61,15 @@
       ],
       "type": "object"
     },
+    "VolumeConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "VolumeSizeInGb": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "VpcConfig": {
       "additionalProperties": false,
       "properties": {
@@ -92,6 +101,9 @@
     },
     "Description": {
       "type": "string"
+    },
+    "DisableIMDSV1": {
+      "type": "boolean"
     },
     "DisconnectTimeoutInSeconds": {
       "type": "integer"
@@ -140,6 +152,9 @@
     },
     "Platform": {
       "type": "string"
+    },
+    "RootVolumeConfig": {
+      "$ref": "#/definitions/VolumeConfig"
     },
     "SessionScriptS3Location": {
       "$ref": "#/definitions/S3Location"
