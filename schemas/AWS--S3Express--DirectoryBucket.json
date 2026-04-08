@@ -62,6 +62,25 @@
       ],
       "type": "object"
     },
+    "MetricsConfiguration": {
+      "additionalProperties": false,
+      "description": "Specifies a metrics configuration for the CloudWatch request metrics from an Amazon S3 Express bucket.",
+      "properties": {
+        "AccessPointArn": {
+          "description": "The access point ARN used when evaluating a metrics filter.",
+          "type": "string"
+        },
+        "Id": {
+          "description": "The ID used to identify the metrics configuration.",
+          "type": "string"
+        },
+        "Prefix": {
+          "description": "The prefix used when evaluating a metrics filter.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "Rule": {
       "additionalProperties": false,
       "description": "You must specify at least one of the following properties: AbortIncompleteMultipartUpload, or ExpirationInDays.",
@@ -263,6 +282,15 @@
     "LocationName": {
       "description": "Specifies the Zone ID of the Availability Zone or Local Zone where the directory bucket will be created. An example Availability Zone ID value is 'use1-az5'.",
       "type": "string"
+    },
+    "MetricsConfigurations": {
+      "description": "Specifies the metrics configurations for the Amazon S3 Express bucket.",
+      "insertionOrder": true,
+      "items": {
+        "$ref": "#/definitions/MetricsConfiguration"
+      },
+      "type": "array",
+      "uniqueItems": true
     },
     "Tags": {
       "insertionOrder": false,

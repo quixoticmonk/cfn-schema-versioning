@@ -105,12 +105,12 @@
     "list": {
       "handlerSchema": {
         "properties": {
-          "RoutingConfiguration": {
-            "$ref": "resource-schema.json#/properties/RoutingConfiguration"
+          "StateMachineArn": {
+            "$ref": "resource-schema.json#/properties/StateMachineArn"
           }
         },
         "required": [
-          "RoutingConfiguration"
+          "StateMachineArn"
         ]
       },
       "permissions": [
@@ -170,6 +170,11 @@
     },
     "RoutingConfiguration": {
       "$ref": "#/definitions/RoutingConfiguration"
+    },
+    "StateMachineArn": {
+      "maxLength": 2048,
+      "minLength": 1,
+      "type": "string"
     }
   },
   "readOnlyProperties": [

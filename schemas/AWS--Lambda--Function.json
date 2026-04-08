@@ -44,6 +44,14 @@
           "minLength": 1,
           "type": "string"
         },
+        "S3ObjectStorageMode": {
+          "description": "",
+          "enum": [
+            "COPY",
+            "REFERENCE"
+          ],
+          "type": "string"
+        },
         "S3ObjectVersion": {
           "description": "For versioned objects, the version of the deployment package object to use.",
           "maxLength": 1024,
