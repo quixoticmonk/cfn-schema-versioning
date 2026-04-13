@@ -177,6 +177,19 @@
           ],
           "title": "ApiKeyCredentialProvider",
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "IamCredentialProvider": {
+              "$ref": "#/definitions/IamCredentialProvider"
+            }
+          },
+          "required": [
+            "IamCredentialProvider"
+          ],
+          "title": "IamCredentialProvider",
+          "type": "object"
         }
       ]
     },
@@ -202,6 +215,27 @@
         "API_KEY"
       ],
       "type": "string"
+    },
+    "IamCredentialProvider": {
+      "additionalProperties": false,
+      "properties": {
+        "Region": {
+          "maxLength": 32,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-]+$",
+          "type": "string"
+        },
+        "Service": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9._-]+$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Service"
+      ],
+      "type": "object"
     },
     "McpLambdaTargetConfiguration": {
       "additionalProperties": false,

@@ -20,7 +20,8 @@
     },
     "list": {
       "permissions": [
-        "geo:ListTrackerConsumers"
+        "geo:ListTrackerConsumers",
+        "geo:ListTrackers"
       ]
     },
     "read": {

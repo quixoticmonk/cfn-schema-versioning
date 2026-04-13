@@ -148,7 +148,7 @@
       "properties": {
         "Attributes": {
           "items": {
-            "$ref": "#/definitions/PolicyItem"
+            "type": "object"
           },
           "type": "array",
           "uniqueItems": true
@@ -181,30 +181,6 @@
       ],
       "type": "object"
     },
-    "PolicyItem": {
-      "additionalProperties": false,
-      "properties": {
-        "Name": {
-          "type": "string"
-        },
-        "Value": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "SourceSecurityGroup": {
-      "additionalProperties": false,
-      "properties": {
-        "GroupName": {
-          "type": "string"
-        },
-        "OwnerAlias": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "Tag": {
       "additionalProperties": false,
       "properties": {
@@ -235,14 +211,14 @@
         "$ref": "#/definitions/AppCookieStickinessPolicy"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     },
     "AvailabilityZones": {
       "items": {
         "type": "string"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     },
     "CanonicalHostedZoneName": {
       "type": "string"
@@ -273,21 +249,21 @@
         "type": "string"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     },
     "LBCookieStickinessPolicy": {
       "items": {
         "$ref": "#/definitions/LBCookieStickinessPolicy"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     },
     "Listeners": {
       "items": {
         "$ref": "#/definitions/Listeners"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     },
     "LoadBalancerName": {
       "type": "string"
@@ -308,9 +284,6 @@
       },
       "type": "array",
       "uniqueItems": true
-    },
-    "SourceSecurityGroup": {
-      "$ref": "#/definitions/SourceSecurityGroup"
     },
     "SourceSecurityGroupGroupName": {
       "type": "string"
@@ -334,7 +307,6 @@
     }
   },
   "readOnlyProperties": [
-    "/properties/SourceSecurityGroup",
     "/properties/Id",
     "/properties/CanonicalHostedZoneName",
     "/properties/CanonicalHostedZoneNameID",

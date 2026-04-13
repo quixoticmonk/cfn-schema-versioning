@@ -111,7 +111,7 @@
     "ViewName"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "resource-explorer-2:ListTagsForResource",
       "resource-explorer-2:TagResource",

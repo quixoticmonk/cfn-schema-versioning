@@ -168,6 +168,15 @@
       ],
       "type": "object"
     },
+    "ApplicationType": {
+      "description": "The type of application",
+      "enum": [
+        "STANDARD",
+        "SERVICE",
+        "MCP_SERVER"
+      ],
+      "type": "string"
+    },
     "Description": {
       "description": "The application description.",
       "maxLength": 1000,
@@ -235,7 +244,6 @@
   "required": [
     "Name",
     "Namespace",
-    "Description",
     "ApplicationSourceConfig"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",

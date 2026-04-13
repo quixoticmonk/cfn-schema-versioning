@@ -454,7 +454,7 @@
     "UploadAllowed"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "workspaces-web:UntagResource",
       "workspaces-web:ListTagsForResource",
