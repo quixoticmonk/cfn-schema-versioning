@@ -6299,6 +6299,12 @@
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2023-11-11T10:52:25.177000+00:00"
   },
+  "AWS::NeptuneGraph::GraphSnapshot": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-04-15T07:19:40.970730",
+    "last_updated": "2026-04-15T07:19:40.970730",
+    "time_created": "2026-03-27T17:45:50.798000+00:00"
+  },
   "AWS::NeptuneGraph::PrivateGraphEndpoint": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
