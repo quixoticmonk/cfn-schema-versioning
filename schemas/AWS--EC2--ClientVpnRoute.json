@@ -32,7 +32,6 @@
   ],
   "required": [
     "ClientVpnEndpointId",
-    "TargetVpcSubnetId",
     "DestinationCidrBlock"
   ],
   "typeName": "AWS::EC2::ClientVpnRoute"

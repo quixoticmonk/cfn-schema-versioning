@@ -28,7 +28,7 @@
       "type": "object"
     }
   },
-  "description": "Definition of AWS::Deadline::Farm Resource Type",
+  "description": "Resource Type definition for AWS::Deadline::Farm",
   "handlers": {
     "create": {
       "permissions": [

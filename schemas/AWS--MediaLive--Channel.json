@@ -439,6 +439,9 @@
         "Hdr10Settings": {
           "$ref": "#/definitions/Hdr10Settings"
         },
+        "Hlg2020Settings": {
+          "$ref": "#/definitions/Hlg2020Settings"
+        },
         "Rec601Settings": {
           "$ref": "#/definitions/Rec601Settings"
         },

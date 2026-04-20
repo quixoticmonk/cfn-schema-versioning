@@ -687,6 +687,7 @@
           "enum": [
             "on-demand",
             "spot",
+            "capacity-block",
             "reserved-capacity"
           ],
           "type": "string"

@@ -4,7 +4,7 @@
     "/properties/LicenseEndpointId",
     "/properties/ProductId"
   ],
-  "description": "Definition of AWS::Deadline::MeteredProduct Resource Type",
+  "description": "Resource Type definition for AWS::Deadline::MeteredProduct",
   "handlers": {
     "create": {
       "permissions": [

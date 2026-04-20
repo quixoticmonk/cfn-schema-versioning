@@ -168,9 +168,5 @@
     "tagUpdatable": false,
     "taggable": true
   },
-  "typeName": "AWS::NotificationsContacts::EmailContact",
-  "writeOnlyProperties": [
-    "/properties/EmailAddress",
-    "/properties/Name"
-  ]
+  "typeName": "AWS::NotificationsContacts::EmailContact"
 }

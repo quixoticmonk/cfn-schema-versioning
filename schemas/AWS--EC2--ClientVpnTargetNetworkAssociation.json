@@ -23,8 +23,7 @@
     "/properties/Id"
   ],
   "required": [
-    "ClientVpnEndpointId",
-    "SubnetId"
+    "ClientVpnEndpointId"
   ],
   "typeName": "AWS::EC2::ClientVpnTargetNetworkAssociation"
 }

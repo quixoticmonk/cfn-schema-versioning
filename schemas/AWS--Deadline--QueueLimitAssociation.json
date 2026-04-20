@@ -5,7 +5,7 @@
     "/properties/LimitId",
     "/properties/QueueId"
   ],
-  "description": "Definition of AWS::Deadline::QueueLimitAssociation Resource Type",
+  "description": "Resource Type definition for AWS::Deadline::QueueLimitAssociation",
   "handlers": {
     "create": {
       "permissions": [

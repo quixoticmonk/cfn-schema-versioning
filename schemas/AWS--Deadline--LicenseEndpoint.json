@@ -39,7 +39,7 @@
       "type": "object"
     }
   },
-  "description": "Definition of AWS::Deadline::LicenseEndpoint Resource Type",
+  "description": "Resource Type definition for AWS::Deadline::LicenseEndpoint",
   "handlers": {
     "create": {
       "permissions": [

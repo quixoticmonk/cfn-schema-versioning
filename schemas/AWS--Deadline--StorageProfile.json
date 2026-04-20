@@ -45,7 +45,7 @@
       "type": "string"
     }
   },
-  "description": "Definition of AWS::Deadline::StorageProfile Resource Type",
+  "description": "Resource Type definition for AWS::Deadline::StorageProfile",
   "handlers": {
     "create": {
       "permissions": [

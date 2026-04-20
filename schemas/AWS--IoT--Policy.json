@@ -105,7 +105,7 @@
     "PolicyDocument"
   ],
   "tagging": {
-    "cloudFormationSystemTags": true,
+    "cloudFormationSystemTags": false,
     "permissions": [
       "iot:ListTagsForResource",
       "iot:TagResource",

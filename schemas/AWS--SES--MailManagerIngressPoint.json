@@ -36,6 +36,19 @@
           ],
           "title": "SecretArn",
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "TlsAuthConfiguration": {
+              "$ref": "#/definitions/TlsAuthConfiguration"
+            }
+          },
+          "required": [
+            "TlsAuthConfiguration"
+          ],
+          "title": "TlsAuthConfiguration",
+          "type": "object"
         }
       ]
     },
@@ -60,7 +73,8 @@
     "IngressPointType": {
       "enum": [
         "OPEN",
-        "AUTH"
+        "AUTH",
+        "MTLS"
       ],
       "type": "string"
     },
@@ -154,6 +168,51 @@
         "Value"
       ],
       "type": "object"
+    },
+    "TlsAuthConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "TrustStore": {
+          "$ref": "#/definitions/TrustStore"
+        }
+      },
+      "required": [
+        "TrustStore"
+      ],
+      "type": "object"
+    },
+    "TlsPolicy": {
+      "enum": [
+        "REQUIRED",
+        "OPTIONAL",
+        "FIPS"
+      ],
+      "type": "string"
+    },
+    "TrustStore": {
+      "additionalProperties": false,
+      "properties": {
+        "CAContent": {
+          "maxLength": 500000,
+          "minLength": 1,
+          "pattern": "^[\\P{C}\\s]*$",
+          "type": "string"
+        },
+        "CrlContent": {
+          "maxLength": 500000,
+          "minLength": 1,
+          "pattern": "^[\\P{C}\\s]*$",
+          "type": "string"
+        },
+        "KmsKeyArn": {
+          "pattern": "^arn:(aws|aws-cn|aws-us-gov|aws-eusc):kms:[a-z0-9-]+:\\d{12}:(key|alias)/[a-zA-Z0-9/_-]+$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "CAContent"
+      ],
+      "type": "object"
     }
   },
   "description": "Definition of AWS::SES::MailManagerIngressPoint Resource Type",
@@ -240,6 +299,9 @@
       "maxItems": 200,
       "minItems": 0,
       "type": "array"
+    },
+    "TlsPolicy": {
+      "$ref": "#/definitions/TlsPolicy"
     },
     "TrafficPolicyId": {
       "maxLength": 100,

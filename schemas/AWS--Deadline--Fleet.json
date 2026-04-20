@@ -588,7 +588,7 @@
       "type": "object"
     }
   },
-  "description": "Definition of AWS::Deadline::Fleet Resource Type",
+  "description": "Resource Type definition for AWS::Deadline::Fleet",
   "handlers": {
     "create": {
       "permissions": [
