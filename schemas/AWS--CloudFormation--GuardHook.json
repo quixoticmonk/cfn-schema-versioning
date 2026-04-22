@@ -189,7 +189,19 @@
       "additionalProperties": false,
       "properties": {
         "InputParams": {
-          "$ref": "#/definitions/S3Location"
+          "oneOf": [
+            {
+              "$ref": "#/definitions/S3Location"
+            },
+            {
+              "items": {
+                "$ref": "#/definitions/S3Location"
+              },
+              "maxItems": 10,
+              "minItems": 1,
+              "type": "array"
+            }
+          ]
         }
       },
       "required": []

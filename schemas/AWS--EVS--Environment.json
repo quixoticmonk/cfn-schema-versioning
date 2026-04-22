@@ -15,6 +15,7 @@
   ],
   "definitions": {
     "Check": {
+      "additionalProperties": false,
       "properties": {
         "ImpairedSince": {
           "type": "string"
@@ -58,6 +59,7 @@
       "type": "string"
     },
     "HostInfoForCreate": {
+      "additionalProperties": false,
       "dependencies": {
         "PlacementGroupId": {
           "oneOf": [
@@ -111,6 +113,7 @@
       "type": "string"
     },
     "InitialVlanInfo": {
+      "additionalProperties": false,
       "properties": {
         "Cidr": {
           "pattern": "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/(3[0-2]|[1-2][0-9]|[0-9])$",
@@ -132,6 +135,7 @@
       "type": "string"
     },
     "Secret": {
+      "additionalProperties": false,
       "properties": {
         "SecretArn": {
           "type": "string"
@@ -251,14 +255,17 @@
   ],
   "properties": {
     "Checks": {
+      "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/Check"
       },
       "type": "array"
     },
     "ConnectivityInfo": {
+      "additionalProperties": false,
       "properties": {
         "PrivateRouteServerPeerings": {
+          "insertionOrder": false,
           "items": {
             "$ref": "#/definitions/RouteServerPeering"
           },
@@ -276,6 +283,7 @@
       "$ref": "#/definitions/Timestamp"
     },
     "Credentials": {
+      "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/Secret"
       },
@@ -284,7 +292,7 @@
     "EnvironmentArn": {
       "maxLength": 1011,
       "minLength": 1,
-      "pattern": "^arn:aws:evs:[a-z]{2}-[a-z]+-[0-9]:[0-9]{12}:environment/[a-zA-Z0-9_-]+$",
+      "pattern": "^arn:(aws|aws-cn|aws-us-gov):evs:[a-z]{2}-[a-z]+-[0-9]:[0-9]{12}:environment/[a-zA-Z0-9_-]+$",
       "type": "string"
     },
     "EnvironmentId": {
@@ -310,6 +318,7 @@
       "type": "array"
     },
     "InitialVlans": {
+      "additionalProperties": false,
       "description": "The initial Vlan configuration only required upon creation. Modification after creation will have no effect",
       "properties": {
         "EdgeVTep": {
@@ -389,8 +398,10 @@
       "$ref": "#/definitions/Timestamp"
     },
     "ServiceAccessSecurityGroups": {
+      "additionalProperties": false,
       "properties": {
         "SecurityGroups": {
+          "insertionOrder": false,
           "items": {
             "$ref": "#/definitions/SecurityGroupId"
           },
@@ -424,6 +435,7 @@
       "type": "boolean"
     },
     "VcfHostnames": {
+      "additionalProperties": false,
       "properties": {
         "CloudBuilder": {
           "$ref": "#/definitions/HostName"

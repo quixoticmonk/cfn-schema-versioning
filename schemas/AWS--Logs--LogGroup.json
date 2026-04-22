@@ -113,7 +113,7 @@
     },
     "BearerTokenAuthenticationEnabled": {
       "default": false,
-      "description": "",
+      "description": "Indicates whether bearer token authentication is enabled for this log group. When enabled, bearer token authentication is allowed on operations until it is explicitly disabled.",
       "type": "boolean"
     },
     "DataProtectionPolicy": {

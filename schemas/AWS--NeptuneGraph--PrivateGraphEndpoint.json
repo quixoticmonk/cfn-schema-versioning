@@ -127,7 +127,6 @@
   },
   "typeName": "AWS::NeptuneGraph::PrivateGraphEndpoint",
   "writeOnlyProperties": [
-    "/properties/GraphIdentifier",
     "/properties/SecurityGroupIds"
   ]
 }

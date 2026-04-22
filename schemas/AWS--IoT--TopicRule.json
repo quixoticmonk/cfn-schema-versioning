@@ -948,6 +948,10 @@
       "type": "object"
     }
   },
+  "deprecatedProperties": [
+    "/properties/TopicRulePayload/ErrorAction/IotAnalytics",
+    "/properties/TopicRulePayload/Actions/*/IotAnalytics"
+  ],
   "description": "Resource Type definition for AWS::IoT::TopicRule",
   "handlers": {
     "create": {

@@ -43,7 +43,10 @@
       "maxLength": 5120,
       "minLength": 1,
       "pattern": "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+",
-      "type": "string"
+      "type": [
+        "string",
+        "object"
+      ]
     },
     "PolicyName": {
       "description": "A name for resource policy",

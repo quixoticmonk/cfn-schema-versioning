@@ -137,6 +137,9 @@
     "Ec2ConfigurationObject": {
       "additionalProperties": false,
       "properties": {
+        "BatchImageStatus": {
+          "type": "string"
+        },
         "ImageIdOverride": {
           "type": "string"
         },
@@ -340,7 +343,8 @@
     }
   },
   "readOnlyProperties": [
-    "/properties/ComputeEnvironmentArn"
+    "/properties/ComputeEnvironmentArn",
+    "/properties/ComputeResources/Ec2Configuration/*/BatchImageStatus"
   ],
   "required": [
     "Type"

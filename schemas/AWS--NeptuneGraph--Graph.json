@@ -11,7 +11,8 @@
   "createOnlyProperties": [
     "/properties/GraphName",
     "/properties/ReplicaCount",
-    "/properties/VectorSearchConfiguration"
+    "/properties/VectorSearchConfiguration",
+    "/properties/KmsKeyIdentifier"
   ],
   "definitions": {
     "Tag": {
@@ -140,6 +141,13 @@
       "maxLength": 63,
       "minLength": 1,
       "pattern": "^[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$",
+      "type": "string"
+    },
+    "KmsKeyIdentifier": {
+      "description": "The ARN of the KMS key used to encrypt data in the Neptune Analytics graph. If not specified, the graph is encrypted with an AWS managed key.",
+      "maxLength": 1024,
+      "minLength": 1,
+      "pattern": "arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}",
       "type": "string"
     },
     "ProvisionedMemory": {

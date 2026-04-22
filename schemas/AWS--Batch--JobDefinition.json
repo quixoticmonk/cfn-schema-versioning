@@ -1351,7 +1351,7 @@
     "cloudFormationSystemTags": true,
     "permissions": [
       "Batch:TagResource",
-      "Batch:UnTagResource"
+      "Batch:UntagResource"
     ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
