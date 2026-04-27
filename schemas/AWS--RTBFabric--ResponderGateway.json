@@ -13,8 +13,7 @@
     "/properties/Port",
     "/properties/Protocol",
     "/properties/DomainName",
-    "/properties/TrustStoreConfiguration",
-    "/properties/ManagedEndpointConfiguration"
+    "/properties/TrustStoreConfiguration"
   ],
   "definitions": {
     "ActiveLinksCount": {
@@ -39,6 +38,9 @@
       "properties": {
         "AutoScalingGroupNameList": {
           "$ref": "#/definitions/AutoScalingGroupNameList"
+        },
+        "HealthCheckConfig": {
+          "$ref": "#/definitions/HealthCheckConfig"
         },
         "RoleArn": {
           "type": "string"
@@ -119,6 +121,56 @@
     "GatewayId": {
       "pattern": "^(rtbapp-[a-z0-9-]{1,25}|rtb-gw-[a-z0-9-]{1,25})$",
       "type": "string"
+    },
+    "HealthCheckConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "HealthyThresholdCount": {
+          "maximum": 10,
+          "minimum": 2,
+          "type": "integer"
+        },
+        "IntervalSeconds": {
+          "maximum": 60,
+          "minimum": 5,
+          "type": "integer"
+        },
+        "Path": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^/.*$",
+          "type": "string"
+        },
+        "Port": {
+          "maximum": 65535,
+          "minimum": 80,
+          "type": "integer"
+        },
+        "Protocol": {
+          "$ref": "#/definitions/Protocol"
+        },
+        "StatusCodeMatcher": {
+          "maxLength": 2000,
+          "minLength": 3,
+          "pattern": "^[0-9,\\-]+$",
+          "type": "string"
+        },
+        "TimeoutMs": {
+          "maximum": 5000,
+          "minimum": 100,
+          "type": "integer"
+        },
+        "UnhealthyThresholdCount": {
+          "maximum": 10,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Port",
+        "Path"
+      ],
+      "type": "object"
     },
     "InboundLinksCount": {
       "type": "integer"
@@ -222,6 +274,7 @@
           "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
           "maxLength": 128,
           "minLength": 1,
+          "pattern": "^(resourceArn|internalId|[a-zA-Z0-9+\\-=._:/@]+)$",
           "type": "string"
         },
         "Value": {
@@ -306,6 +359,7 @@
     "update": {
       "permissions": [
         "rtbfabric:GetResponderGateway",
+        "rtbfabric:UpdateResponderGateway",
         "rtbfabric:TagResource",
         "rtbfabric:UntagResource",
         "rtbfabric:ListTagsForResource"
@@ -377,7 +431,7 @@
     "Protocol"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "rtbfabric:TagResource",
       "rtbfabric:UntagResource",

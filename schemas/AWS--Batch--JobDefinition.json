@@ -1025,6 +1025,27 @@
       },
       "type": "object"
     },
+    "S3FilesVolumeConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "AccessPointArn": {
+          "type": "string"
+        },
+        "FileSystemArn": {
+          "type": "string"
+        },
+        "RootDirectory": {
+          "type": "string"
+        },
+        "TransitEncryptionPort": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "FileSystemArn"
+      ],
+      "type": "object"
+    },
     "Secret": {
       "additionalProperties": false,
       "properties": {
@@ -1153,6 +1174,12 @@
           "type": "array",
           "uniqueItems": false
         },
+        "StartTimeout": {
+          "type": "integer"
+        },
+        "StopTimeout": {
+          "type": "integer"
+        },
         "Ulimits": {
           "insertionOrder": false,
           "items": {
@@ -1225,6 +1252,9 @@
         },
         "Name": {
           "type": "string"
+        },
+        "S3FilesVolumeConfiguration": {
+          "$ref": "#/definitions/S3FilesVolumeConfiguration"
         }
       },
       "type": "object"

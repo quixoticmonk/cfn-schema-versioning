@@ -187,14 +187,30 @@
           "type": "array",
           "uniqueItems": true
         },
+        "IamInstanceProfile": {
+          "$ref": "#/definitions/IamInstanceProfileSpecification"
+        },
         "InstanceRequirements": {
           "$ref": "#/definitions/InstanceRequirementsRequest"
         },
         "InstanceType": {
           "type": "string"
         },
+        "KeyName": {
+          "type": "string"
+        },
         "MaxPrice": {
           "type": "string"
+        },
+        "MetadataOptions": {
+          "$ref": "#/definitions/InstanceMetadataOptionsRequest"
+        },
+        "NetworkInterfaces": {
+          "items": {
+            "$ref": "#/definitions/NetworkInterfaceSpecificationRequest"
+          },
+          "type": "array",
+          "uniqueItems": false
         },
         "Placement": {
           "$ref": "#/definitions/Placement"
@@ -223,6 +239,10 @@
           "pattern": "[a-zA-Z0-9\\(\\)\\.\\-/_]+",
           "type": "string"
         },
+        "LaunchTemplateSpecificationUserData": {
+          "format": "password",
+          "type": "string"
+        },
         "Version": {
           "type": "string"
         }
@@ -230,6 +250,41 @@
       "required": [
         "Version"
       ],
+      "type": "object"
+    },
+    "IamInstanceProfileSpecification": {
+      "additionalProperties": false,
+      "properties": {
+        "Arn": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "InstanceMetadataOptionsRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "HttpEndpoint": {
+          "enum": [
+            "disabled",
+            "enabled"
+          ],
+          "type": "string"
+        },
+        "HttpPutResponseHopLimit": {
+          "type": "integer"
+        },
+        "HttpTokens": {
+          "enum": [
+            "optional",
+            "required"
+          ],
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "InstanceRequirementsRequest": {
@@ -417,6 +472,15 @@
       },
       "type": "object"
     },
+    "Ipv6AddressRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "Ipv6Address": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "MaintenanceStrategies": {
       "additionalProperties": false,
       "properties": {
@@ -470,6 +534,66 @@
         },
         "Min": {
           "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "NetworkInterfaceSpecificationRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "AssociatePublicIpAddress": {
+          "type": "boolean"
+        },
+        "DeleteOnTermination": {
+          "type": "boolean"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "DeviceIndex": {
+          "type": "integer"
+        },
+        "Groups": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
+        "InterfaceType": {
+          "type": "string"
+        },
+        "Ipv6AddressCount": {
+          "type": "integer"
+        },
+        "Ipv6Addresses": {
+          "items": {
+            "$ref": "#/definitions/Ipv6AddressRequest"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
+        "NetworkCardIndex": {
+          "type": "integer"
+        },
+        "NetworkInterfaceId": {
+          "type": "string"
+        },
+        "PrivateIpAddress": {
+          "type": "string"
+        },
+        "PrivateIpAddresses": {
+          "items": {
+            "$ref": "#/definitions/PrivateIpAddressSpecificationRequest"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
+        "SecondaryPrivateIpAddressCount": {
+          "type": "integer"
+        },
+        "SubnetId": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -532,6 +656,18 @@
           "type": "string"
         },
         "Tenancy": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PrivateIpAddressSpecificationRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "Primary": {
+          "type": "boolean"
+        },
+        "PrivateIpAddress": {
           "type": "string"
         }
       },

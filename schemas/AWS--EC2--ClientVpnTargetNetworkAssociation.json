@@ -2,6 +2,8 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/ClientVpnEndpointId",
+    "/properties/AvailabilityZoneId",
+    "/properties/AvailabilityZone",
     "/properties/SubnetId"
   ],
   "description": "Resource Type definition for AWS::EC2::ClientVpnTargetNetworkAssociation",
@@ -9,6 +11,12 @@
     "/properties/Id"
   ],
   "properties": {
+    "AvailabilityZone": {
+      "type": "string"
+    },
+    "AvailabilityZoneId": {
+      "type": "string"
+    },
     "ClientVpnEndpointId": {
       "type": "string"
     },

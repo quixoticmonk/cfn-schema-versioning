@@ -135,6 +135,19 @@
       ],
       "type": "object"
     },
+    "CacheTagConfig": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "HeaderName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "HeaderName"
+      ],
+      "type": "object"
+    },
     "ConnectionFunctionAssociation": {
       "additionalProperties": false,
       "description": "A connection function association.",
@@ -428,6 +441,10 @@
           },
           "type": "array",
           "uniqueItems": false
+        },
+        "CacheTagConfig": {
+          "$ref": "#/definitions/CacheTagConfig",
+          "description": ""
         },
         "Comment": {
           "default": "",
@@ -1209,7 +1226,8 @@
     "read": {
       "permissions": [
         "cloudfront:GetDistribution",
-        "cloudfront:GetDistributionConfig"
+        "cloudfront:GetDistributionConfig",
+        "cloudfront:ListTagsForResource"
       ]
     },
     "update": {
@@ -1252,6 +1270,9 @@
       "type": "array",
       "uniqueItems": false
     }
+  },
+  "propertyTransform": {
+    "/properties/DistributionConfig/CacheTagConfig/HeaderName": "$lowercase(HeaderName)"
   },
   "readOnlyProperties": [
     "/properties/Id",

@@ -5,6 +5,7 @@
     "/properties/ClientCidrBlock",
     "/properties/TagSpecifications",
     "/properties/AuthenticationOptions",
+    "/properties/TransitGatewayConfiguration",
     "/properties/EndpointIpAddressType",
     "/properties/TrafficIpAddressType"
   ],
@@ -161,6 +162,32 @@
         "Tags"
       ],
       "type": "object"
+    },
+    "TransitGatewayConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "AvailabilityZoneIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
+        "AvailabilityZones": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
+        "TransitGatewayId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "TransitGatewayId"
+      ],
+      "type": "object"
     }
   },
   "description": "Resource Type definition for AWS::EC2::ClientVpnEndpoint",
@@ -237,6 +264,9 @@
     },
     "TrafficIpAddressType": {
       "type": "string"
+    },
+    "TransitGatewayConfiguration": {
+      "$ref": "#/definitions/TransitGatewayConfiguration"
     },
     "TransportProtocol": {
       "type": "string"

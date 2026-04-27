@@ -97,18 +97,6 @@
       ]
     }
   },
-  "oneOf": [
-    {
-      "required": [
-        "FairsharePolicy"
-      ]
-    },
-    {
-      "required": [
-        "QuotaSharePolicy"
-      ]
-    }
-  ],
   "primaryIdentifier": [
     "/properties/Arn"
   ],

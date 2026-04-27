@@ -92,6 +92,20 @@
       "minLength": 1,
       "type": "string"
     },
+    "AzureConfiguration": {
+      "additionalProperties": false,
+      "description": "Azure subscription integration configuration",
+      "properties": {
+        "SubscriptionId": {
+          "description": "Azure subscription ID corresponding to provided resources",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SubscriptionId"
+      ],
+      "type": "object"
+    },
     "DynatraceConfiguration": {
       "additionalProperties": false,
       "description": "Dynatrace monitoring configuration",
@@ -300,6 +314,24 @@
       ],
       "type": "object"
     },
+    "MCPServerSigV4Configuration": {
+      "additionalProperties": false,
+      "description": "SigV4-authenticated MCP server configuration",
+      "properties": {
+        "Tools": {
+          "description": "List of MCP tools available for the association",
+          "items": {
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "Tools"
+      ],
+      "type": "object"
+    },
     "MCPServerSplunkConfiguration": {
       "additionalProperties": false,
       "description": "Splunk MCP server configuration",
@@ -326,6 +358,32 @@
       "required": [
         "Name",
         "Endpoint"
+      ],
+      "type": "object"
+    },
+    "PagerDutyConfiguration": {
+      "additionalProperties": false,
+      "description": "PagerDuty integration configuration",
+      "properties": {
+        "CustomerEmail": {
+          "description": "Email to be used in PagerDuty API header",
+          "type": "string"
+        },
+        "EnableWebhookUpdates": {
+          "description": "When set to true, enables the Agent Space to create and update webhooks for receiving notifications and events from the service",
+          "type": "boolean"
+        },
+        "Services": {
+          "description": "List of PagerDuty service IDs available for the association",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "Services",
+        "CustomerEmail"
       ],
       "type": "object"
     },
@@ -456,12 +514,45 @@
         {
           "additionalProperties": false,
           "properties": {
+            "PagerDuty": {
+              "$ref": "#/definitions/PagerDutyConfiguration"
+            }
+          },
+          "required": [
+            "PagerDuty"
+          ]
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
             "EventChannel": {
               "$ref": "#/definitions/EventChannelConfiguration"
             }
           },
           "required": [
             "EventChannel"
+          ]
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Azure": {
+              "$ref": "#/definitions/AzureConfiguration"
+            }
+          },
+          "required": [
+            "Azure"
+          ]
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "MCPServerSigV4": {
+              "$ref": "#/definitions/MCPServerSigV4Configuration"
+            }
+          },
+          "required": [
+            "MCPServerSigV4"
           ]
         }
       ],
@@ -694,6 +785,7 @@
     "/properties/Configuration/MCPServerDatadog/EnableWebhookUpdates",
     "/properties/Configuration/MCPServerSplunk/EnableWebhookUpdates",
     "/properties/Configuration/GitLab/EnableWebhookUpdates",
+    "/properties/Configuration/PagerDuty/EnableWebhookUpdates",
     "/properties/Configuration/EventChannel/EnableWebhookUpdates",
     "/properties/LinkedAssociationIds"
   ]

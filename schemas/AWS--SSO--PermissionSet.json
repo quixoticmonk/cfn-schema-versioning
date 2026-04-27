@@ -96,18 +96,14 @@
         "properties": {
           "InstanceArn": {
             "$ref": "resource-schema.json#/properties/InstanceArn"
-          },
-          "PermissionSetArn": {
-            "$ref": "resource-schema.json#/properties/PermissionSetArn"
           }
         },
         "required": [
-          "InstanceArn",
-          "PermissionSetArn"
+          "InstanceArn"
         ]
       },
       "permissions": [
-        "sso:DescribePermissionSet"
+        "sso:ListPermissionSets"
       ]
     },
     "read": {
@@ -240,7 +236,8 @@
     "cloudFormationSystemTags": true,
     "permissions": [
       "sso:TagResource",
-      "sso:UntagResource"
+      "sso:UntagResource",
+      "sso:ListTagsForResource"
     ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",

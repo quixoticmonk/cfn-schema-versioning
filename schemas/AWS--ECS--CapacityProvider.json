@@ -34,6 +34,19 @@
       },
       "type": "object"
     },
+    "AutoRepairConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "ActionsStatus": {
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "AutoScalingGroupProvider": {
       "additionalProperties": false,
       "properties": {
@@ -353,6 +366,9 @@
     "ManagedInstancesProvider": {
       "additionalProperties": false,
       "properties": {
+        "AutoRepairConfiguration": {
+          "$ref": "#/definitions/AutoRepairConfiguration"
+        },
         "InfrastructureOptimization": {
           "additionalProperties": false,
           "description": "Defines how Amazon ECS Managed Instances optimizes the infrastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle EC2 instances optimization delay.",
