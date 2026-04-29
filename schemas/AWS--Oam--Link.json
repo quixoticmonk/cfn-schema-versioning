@@ -152,7 +152,7 @@
     "SinkIdentifier"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "oam:ListTagsForResource",
       "oam:UntagResource",

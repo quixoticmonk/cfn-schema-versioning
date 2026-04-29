@@ -557,6 +557,13 @@
     "VerificationMessageTemplate": {
       "$ref": "#/definitions/VerificationMessageTemplate"
     },
+    "WebAuthnFactorConfiguration": {
+      "enum": [
+        "SINGLE_FACTOR",
+        "MULTI_FACTOR_WITH_USER_VERIFICATION"
+      ],
+      "type": "string"
+    },
     "WebAuthnRelyingPartyID": {
       "maxLength": 63,
       "minLength": 1,
