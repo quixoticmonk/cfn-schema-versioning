@@ -77,8 +77,5 @@
   "tagging": {
     "taggable": false
   },
-  "typeName": "AWS::StepFunctions::StateMachineVersion",
-  "writeOnlyProperties": [
-    "/properties/StateMachineArn"
-  ]
+  "typeName": "AWS::StepFunctions::StateMachineVersion"
 }

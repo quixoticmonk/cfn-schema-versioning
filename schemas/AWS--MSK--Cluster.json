@@ -463,6 +463,15 @@
         "Enabled"
       ],
       "type": "object"
+    },
+    "ZookeeperAccess": {
+      "additionalProperties": false,
+      "properties": {
+        "Enabled": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
     }
   },
   "description": "Resource Type definition for AWS::MSK::Cluster",
@@ -627,6 +636,9 @@
         }
       },
       "type": "object"
+    },
+    "ZookeeperAccess": {
+      "$ref": "#/definitions/ZookeeperAccess"
     }
   },
   "readOnlyProperties": [
@@ -651,5 +663,8 @@
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::MSK::Cluster"
+  "typeName": "AWS::MSK::Cluster",
+  "writeOnlyProperties": [
+    "/properties/ZookeeperAccess"
+  ]
 }

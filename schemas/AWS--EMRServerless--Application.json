@@ -244,6 +244,11 @@
           "description": "Enables an Apache Livy endpoint that you can connect to and run interactive jobs",
           "type": "boolean"
         },
+        "SessionEnabled": {
+          "default": false,
+          "description": "Enables interactive sessions on the application",
+          "type": "boolean"
+        },
         "StudioEnabled": {
           "default": false,
           "description": "Enabled you to connect an Application to Amazon EMR Studio to run interactive workloads in a notebook",

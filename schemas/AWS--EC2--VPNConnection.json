@@ -13,8 +13,7 @@
     "/properties/StaticRoutesOnly",
     "/properties/TransportTransitGatewayAttachmentId",
     "/properties/TunnelInsideIpVersion",
-    "/properties/PreSharedKeyStorage",
-    "/properties/TunnelBandwidth"
+    "/properties/PreSharedKeyStorage"
   ],
   "definitions": {
     "CloudwatchLogOptionsSpecification": {
