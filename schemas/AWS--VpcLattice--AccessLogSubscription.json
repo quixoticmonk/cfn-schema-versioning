@@ -197,7 +197,7 @@
     "DestinationArn"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "vpc-lattice:UntagResource",
       "vpc-lattice:TagResource",

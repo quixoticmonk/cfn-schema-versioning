@@ -245,11 +245,10 @@
     "/properties/Status"
   ],
   "required": [
-    "DomainExecutionRole",
     "Name"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "datazone:TagResource",
       "datazone:UntagResource"

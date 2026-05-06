@@ -150,7 +150,7 @@
     "RunConfigurations"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "omics:TagResource",
       "omics:ListTagsForResource"

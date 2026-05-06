@@ -44,8 +44,8 @@
     },
     "State": {
       "enum": [
-        "ACTIVE",
-        "INACTIVE"
+        "Active",
+        "Inactive"
       ],
       "type": "string"
     }

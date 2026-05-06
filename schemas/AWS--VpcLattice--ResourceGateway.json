@@ -9,7 +9,8 @@
     "/properties/VpcIdentifier",
     "/properties/SubnetIds",
     "/properties/IpAddressType",
-    "/properties/Name"
+    "/properties/Name",
+    "/properties/ResourceConfigDnsResolution"
   ],
   "definitions": {
     "Tag": {
@@ -108,6 +109,13 @@
       "maxLength": 40,
       "minLength": 3,
       "pattern": "^(?!rgw-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$",
+      "type": "string"
+    },
+    "ResourceConfigDnsResolution": {
+      "enum": [
+        "IN_VPC",
+        "PUBLIC"
+      ],
       "type": "string"
     },
     "SecurityGroupIds": {
