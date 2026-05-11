@@ -284,7 +284,7 @@
       "internetmonitor:UntagResource",
       "internetmonitor:ListTagsForResource"
     ],
-    "tagOnCreate": false,
+    "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true

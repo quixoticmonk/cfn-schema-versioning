@@ -73,9 +73,6 @@
       "type": "string"
     }
   },
-  "propertyTransform": {
-    "/properties/AutodefinedReverseFlag": "$join([AutodefinedReverseFlag, \"D\"])"
-  },
   "readOnlyProperties": [
     "/properties/OwnerId",
     "/properties/Id",

@@ -118,6 +118,10 @@
       "description": "Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:\n- INBOUND: allows DNS queries to your VPC from your network \n- OUTBOUND: allows DNS queries from your VPC to your network \n- INBOUND_DELEGATION: allows DNS queries to your VPC from your network with authoritative answers from private hosted zones",
       "type": "string"
     },
+    "Dns64Enabled": {
+      "description": "Specifies whether DNS64 is enabled for the Inbound Resolver Endpoint. When set to true, if a DNS AAAA query is made for a domain that has only an A (IPv4) record, the resolver automatically synthesizes an AAAA (IPv6) response by embedding the IPv4 address into the well-known prefix 64:ff9b::/96. Default is false.",
+      "type": "boolean"
+    },
     "HostVPCId": {
       "description": "The ID of the VPC that you want to create the resolver endpoint in.",
       "type": "string"
@@ -134,6 +138,10 @@
       },
       "type": "array",
       "uniqueItems": false
+    },
+    "Ipv6InternetAccessEnabled": {
+      "description": "Specifies whether IPv6 Internet Gateway access is enabled through the Outbound Resolver Endpoint. When set to true, this property allows your Endpoint ENIs to reach public IPv6 target nameservers through an internet gateway. Default is false.",
+      "type": "boolean"
     },
     "Name": {
       "description": "A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.",

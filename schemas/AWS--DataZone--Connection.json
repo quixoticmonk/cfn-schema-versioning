@@ -145,6 +145,22 @@
       "description": "Compute Environments",
       "type": "string"
     },
+    "ConnectionConfiguration": {
+      "additionalProperties": false,
+      "description": "A configuration of the connection.",
+      "properties": {
+        "Classification": {
+          "description": "The classification of the connection configuration.",
+          "maxLength": 64,
+          "pattern": "^[\\w][\\w\\.\\-\\_]*$",
+          "type": "string"
+        },
+        "Properties": {
+          "$ref": "#/definitions/PropertyMap"
+        }
+      },
+      "type": "object"
+    },
     "ConnectionProperties": {
       "additionalProperties": false,
       "description": "Connection Properties",
@@ -314,6 +330,19 @@
           ],
           "title": "WorkflowsServerlessProperties",
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "LakehouseProperties": {
+              "$ref": "#/definitions/LakehousePropertiesInput"
+            }
+          },
+          "required": [
+            "LakehouseProperties"
+          ],
+          "title": "LakehouseProperties",
+          "type": "object"
         }
       ]
     },
@@ -465,6 +494,17 @@
       "description": "IAM Properties Input",
       "properties": {
         "GlueLineageSyncEnabled": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "LakehousePropertiesInput": {
+      "additionalProperties": false,
+      "description": "Lakehouse Properties Input",
+      "properties": {
+        "GlueLineageSyncEnabled": {
+          "description": "Specifies whether Glue lineage sync is enabled for the lakehouse connection.",
           "type": "boolean"
         }
       },
@@ -714,6 +754,10 @@
       "additionalProperties": false,
       "description": "S3 Properties Input",
       "properties": {
+        "RegisterS3AccessGrantLocation": {
+          "description": "Specifies whether to register the S3 Access Grant location.",
+          "type": "boolean"
+        },
         "S3AccessGrantLocationId": {
           "description": "The Amazon S3 Access Grant location ID that's part of the Amazon S3 properties of a connection.",
           "maxLength": 64,
@@ -944,6 +988,14 @@
     "AwsLocation": {
       "$ref": "#/definitions/AwsLocation"
     },
+    "Configurations": {
+      "description": "The configurations of the connection.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/ConnectionConfiguration"
+      },
+      "type": "array"
+    },
     "ConnectionId": {
       "description": "The ID of the connection.",
       "maxLength": 128,
@@ -1043,6 +1095,7 @@
   "typeName": "AWS::DataZone::Connection",
   "writeOnlyProperties": [
     "/properties/AwsLocation",
+    "/properties/Configurations",
     "/properties/DomainIdentifier",
     "/properties/EnableTrustedIdentityPropagation",
     "/properties/EnvironmentIdentifier",

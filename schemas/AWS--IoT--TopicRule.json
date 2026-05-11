@@ -131,6 +131,9 @@
     "BatchConfig": {
       "additionalProperties": false,
       "properties": {
+        "BatchAcrossTopics": {
+          "type": "boolean"
+        },
         "MaxBatchOpenMs": {
           "type": "integer"
         },

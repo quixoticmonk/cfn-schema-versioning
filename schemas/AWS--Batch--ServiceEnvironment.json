@@ -105,7 +105,7 @@
     "CapacityLimits"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "Batch:TagResource",
       "Batch:UntagResource"

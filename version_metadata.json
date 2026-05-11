@@ -908,7 +908,7 @@
   "AWS::Batch::ServiceEnvironment": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2025-06-24T16:23:30.427000+00:00"
   },
   "AWS::BcmPricingCalculator::BillScenario": {
@@ -1088,7 +1088,7 @@
   "AWS::BedrockAgentCore::OAuth2CredentialProvider": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-04-06T07:18:50.950246",
-    "last_updated": "2026-04-06T07:18:50.950246",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2026-04-03T19:15:38.109000+00:00"
   },
   "AWS::BedrockAgentCore::OnlineEvaluationConfig": {
@@ -1514,7 +1514,7 @@
   "AWS::CloudFront::Distribution": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-06T08:09:18.874155",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2021-01-06T00:39:59.935000+00:00"
   },
   "AWS::CloudFront::DistributionTenant": {
@@ -1526,7 +1526,7 @@
   "AWS::CloudFront::Function": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-27T08:07:06.713236",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2021-04-23T01:07:31.854000+00:00"
   },
   "AWS::CloudFront::KeyGroup": {
@@ -2480,7 +2480,7 @@
   "AWS::DataZone::Connection": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-01T07:09:41.416031",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2025-03-20T13:20:30.930000+00:00"
   },
   "AWS::DataZone::DataSource": {
@@ -2666,7 +2666,7 @@
   "AWS::DevOpsAgent::AgentSpace": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-30T07:16:32.251528",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2025-11-20T15:42:12.397000+00:00"
   },
   "AWS::DevOpsAgent::Association": {
@@ -4022,7 +4022,7 @@
   "AWS::FIS::ExperimentTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-13T07:49:39.895731",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2021-01-29T19:40:00.711000+00:00"
   },
   "AWS::FIS::TargetAccountConfiguration": {
@@ -4880,7 +4880,7 @@
   "AWS::InternetMonitor::Monitor": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2023-01-31T20:38:17.401000+00:00"
   },
   "AWS::Invoicing::InvoiceUnit": {
@@ -5060,7 +5060,7 @@
   "AWS::IoT::TopicRule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-22T07:21:18.109462",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2020-10-28T02:52:21.611000+00:00"
   },
   "AWS::IoT::TopicRuleDestination": {
@@ -5558,7 +5558,7 @@
   "AWS::Lambda::Version": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2020-04-22T17:45:17.534000+00:00"
   },
   "AWS::LaunchWizard::Deployment": {
@@ -6542,7 +6542,7 @@
   "AWS::ODB::OdbNetwork": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-16T07:06:18.393291",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2025-06-30T02:30:38.920000+00:00"
   },
   "AWS::ODB::OdbPeeringConnection": {
@@ -7496,7 +7496,7 @@
   "AWS::ResourceGroups::Group": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2020-02-28T15:56:20.245000+00:00"
   },
   "AWS::ResourceGroups::TagSyncTask": {
@@ -7736,7 +7736,7 @@
   "AWS::Route53Resolver::ResolverConfig": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2021-09-23T21:22:56.342000+00:00"
   },
   "AWS::Route53Resolver::ResolverDNSSECConfig": {
@@ -7748,7 +7748,7 @@
   "AWS::Route53Resolver::ResolverEndpoint": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2025-03-13T18:26:25.036000+00:00"
   },
   "AWS::Route53Resolver::ResolverQueryLoggingConfig": {
@@ -8366,7 +8366,7 @@
   "AWS::SageMaker::Domain": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-27T08:07:06.713236",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2021-02-01T02:24:13.085000+00:00"
   },
   "AWS::SageMaker::Endpoint": {
@@ -8492,7 +8492,7 @@
   "AWS::SageMaker::ProcessingJob": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2025-07-30T20:15:38.907000+00:00"
   },
   "AWS::SageMaker::Project": {
@@ -8684,7 +8684,7 @@
   "AWS::SecurityLake::DataLake": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2024-03-28T09:43:32.594000+00:00"
   },
   "AWS::SecurityLake::Subscriber": {
@@ -8900,7 +8900,7 @@
   "AWS::StepFunctions::StateMachine": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-11T08:59:32.588954",
     "time_created": "2021-07-19T15:50:50.941000+00:00"
   },
   "AWS::StepFunctions::StateMachineAlias": {
