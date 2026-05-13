@@ -181,7 +181,7 @@
     "Priority"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "route53resolver:TagResource",
       "route53resolver:UntagResource"

@@ -4,9 +4,41 @@
     "/properties/Name"
   ],
   "definitions": {
+    "FirewallAdvancedContentCategoryConfig": {
+      "additionalProperties": false,
+      "description": "Configuration for an advanced content category rule type.",
+      "properties": {
+        "Category": {
+          "description": "The content category value.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Category"
+      ],
+      "type": "object"
+    },
+    "FirewallAdvancedThreatCategoryConfig": {
+      "additionalProperties": false,
+      "description": "Configuration for an advanced threat category rule type.",
+      "properties": {
+        "Category": {
+          "description": "The threat category value.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Category"
+      ],
+      "type": "object"
+    },
     "FirewallRule": {
       "additionalProperties": false,
-      "description": "Firewall Rule associating the Rule Group to a Domain List",
+      "description": "Firewall Rule associating the Rule Group to a Domain List or advanced rule type",
       "properties": {
         "Action": {
           "description": "Rule Action",
@@ -46,7 +78,7 @@
           "type": "string"
         },
         "ConfidenceThreshold": {
-          "description": "FirewallDomainRedirectionAction",
+          "description": "ConfidenceThreshold",
           "enum": [
             "LOW",
             "MEDIUM",
@@ -55,7 +87,7 @@
           "type": "string"
         },
         "DnsThreatProtection": {
-          "description": "FirewallDomainRedirectionAction",
+          "description": "DnsThreatProtection",
           "enum": [
             "DGA",
             "DNS_TUNNELING",
@@ -76,6 +108,10 @@
             "TRUST_REDIRECTION_DOMAIN"
           ],
           "type": "string"
+        },
+        "FirewallRuleType": {
+          "$ref": "#/definitions/FirewallRuleType",
+          "description": "Advanced firewall rule type. Mutually exclusive with FirewallDomainListId and DnsThreatProtection/ConfidenceThreshold."
         },
         "FirewallThreatProtectionId": {
           "description": "ResourceId",
@@ -98,6 +134,31 @@
         "Priority",
         "Action"
       ],
+      "type": "object"
+    },
+    "FirewallRuleType": {
+      "additionalProperties": false,
+      "description": "Firewall rule type union. Exactly one member must be set. Mutually exclusive with FirewallDomainListId and DnsThreatProtection/ConfidenceThreshold.",
+      "oneOf": [
+        {
+          "required": [
+            "FirewallAdvancedContentCategory"
+          ]
+        },
+        {
+          "required": [
+            "FirewallAdvancedThreatCategory"
+          ]
+        }
+      ],
+      "properties": {
+        "FirewallAdvancedContentCategory": {
+          "$ref": "#/definitions/FirewallAdvancedContentCategoryConfig"
+        },
+        "FirewallAdvancedThreatCategory": {
+          "$ref": "#/definitions/FirewallAdvancedThreatCategoryConfig"
+        }
+      },
       "type": "object"
     },
     "Tag": {
@@ -280,7 +341,7 @@
     "/properties/FirewallRules/*/FirewallThreatProtectionId"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "route53resolver:TagResource",
       "route53resolver:UntagResource"

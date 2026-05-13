@@ -241,9 +241,6 @@
           "type": "array"
         }
       },
-      "required": [
-        "Options"
-      ],
       "type": "object"
     },
     "EvaluationFormMultiSelectQuestionAutomationOption": {
@@ -550,9 +547,6 @@
           "type": "array"
         }
       },
-      "required": [
-        "Options"
-      ],
       "type": "object"
     },
     "EvaluationFormSingleSelectQuestionAutomationOption": {

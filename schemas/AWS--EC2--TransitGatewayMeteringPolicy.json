@@ -103,7 +103,7 @@
     "TransitGatewayId"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "ec2:CreateTags",
       "ec2:DeleteTags"

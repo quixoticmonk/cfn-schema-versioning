@@ -195,7 +195,9 @@
         "states:ListTagsForResource",
         "iam:PassRole",
         "kms:DescribeKey",
-        "kms:GenerateDataKey"
+        "kms:GenerateDataKey",
+        "s3:GetObject",
+        "s3:GetObjectVersion"
       ]
     }
   },

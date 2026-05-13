@@ -250,6 +250,8 @@
   },
   "typeName": "AWS::AutoScaling::LaunchConfiguration",
   "writeOnlyProperties": [
-    "/properties/InstanceId"
+    "/properties/InstanceId",
+    "/properties/ClassicLinkVPCId",
+    "/properties/ClassicLinkVPCSecurityGroups"
   ]
 }
