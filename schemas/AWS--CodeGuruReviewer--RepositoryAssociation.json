@@ -156,5 +156,9 @@
     "tagUpdatable": false,
     "taggable": true
   },
-  "typeName": "AWS::CodeGuruReviewer::RepositoryAssociation"
+  "typeName": "AWS::CodeGuruReviewer::RepositoryAssociation",
+  "writeOnlyProperties": [
+    "/properties/Owner",
+    "/properties/ConnectionArn"
+  ]
 }

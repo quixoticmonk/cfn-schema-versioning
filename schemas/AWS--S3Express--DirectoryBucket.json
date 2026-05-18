@@ -176,6 +176,9 @@
           "type": "string"
         }
       },
+      "required": [
+        "Id"
+      ],
       "type": "object"
     },
     "Rule": {

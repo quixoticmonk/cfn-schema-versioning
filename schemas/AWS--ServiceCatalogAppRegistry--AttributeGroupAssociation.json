@@ -9,7 +9,8 @@
   "handlers": {
     "create": {
       "permissions": [
-        "servicecatalog:AssociateAttributeGroup"
+        "servicecatalog:AssociateAttributeGroup",
+        "servicecatalog:ListAssociatedAttributeGroups"
       ]
     },
     "delete": {
@@ -29,12 +30,12 @@
         ]
       },
       "permissions": [
-        "servicecatalog:ListAttributeGroupsForApplication"
+        "servicecatalog:ListAssociatedAttributeGroups"
       ]
     },
     "read": {
       "permissions": [
-        "servicecatalog:ListAttributeGroupsForApplication"
+        "servicecatalog:ListAssociatedAttributeGroups"
       ]
     }
   },

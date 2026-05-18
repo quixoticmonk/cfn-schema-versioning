@@ -20,6 +20,9 @@
     "Id": {
       "type": "string"
     },
+    "MaximumConcurrentFeeds": {
+      "type": "integer"
+    },
     "Name": {
       "type": "string"
     },

@@ -246,6 +246,7 @@
               "POST_SCALE_UP",
               "TEST_TRAFFIC_SHIFT",
               "POST_TEST_TRAFFIC_SHIFT",
+              "PRE_PRODUCTION_TRAFFIC_SHIFT",
               "PRODUCTION_TRAFFIC_SHIFT",
               "POST_PRODUCTION_TRAFFIC_SHIFT"
             ],
@@ -257,11 +258,12 @@
         "RoleArn": {
           "description": "The Amazon Resource Name (ARN) of the IAM role that grants Amazon ECS permission to call Lambda functions on your behalf.\n For more information, see [Permissions required for Lambda functions in Amazon ECS blue/green deployments](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-permissions.html) in the *Amazon Elastic Container Service Developer Guide*.",
           "type": "string"
+        },
+        "TimeoutConfiguration": {
+          "description": ""
         }
       },
       "required": [
-        "HookTargetArn",
-        "RoleArn",
         "LifecycleStages"
       ],
       "type": "object"

@@ -2187,7 +2187,8 @@
       "enum": [
         "Standard",
         "Neural",
-        "Deepgram"
+        "Deepgram",
+        "Enhanced"
       ],
       "type": "string"
     },
