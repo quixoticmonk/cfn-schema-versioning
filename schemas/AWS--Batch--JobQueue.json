@@ -1,7 +1,6 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
-    "/properties/Tags",
     "/properties/JobQueueName",
     "/properties/JobQueueType"
   ],
@@ -107,7 +106,7 @@
         "Batch:DescribeJobQueues",
         "Batch:UpdateJobQueue",
         "Batch:TagResource",
-        "Batch:UnTagResource"
+        "Batch:UntagResource"
       ]
     }
   },
@@ -195,14 +194,14 @@
     "Priority"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "Batch:TagResource",
       "Batch:UntagResource"
     ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
-    "tagUpdatable": false,
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::Batch::JobQueue"

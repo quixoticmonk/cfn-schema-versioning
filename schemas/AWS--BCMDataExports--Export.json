@@ -2,7 +2,6 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/Export/Name",
-    "/properties/Export/DataQuery/TableConfigurations",
     "/properties/Export/RefreshCadence"
   ],
   "definitions": {
@@ -199,7 +198,9 @@
     },
     "S3OutputType": {
       "enum": [
-        "CUSTOM"
+        "CUSTOM",
+        "ATHENA",
+        "REDSHIFT"
       ],
       "type": "string"
     },
@@ -293,7 +294,7 @@
     "Export"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "bcm-data-exports:ListTagsForResource",
       "bcm-data-exports:TagResource",
