@@ -1067,6 +1067,12 @@
     "last_updated": "2026-05-04T08:18:53.048922",
     "time_created": "2025-09-20T20:06:01.834000+00:00"
   },
+  "AWS::BedrockAgentCore::Dataset": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-05-25T09:50:44.052285",
+    "last_updated": "2026-05-25T09:50:44.052285",
+    "time_created": "2026-05-21T16:45:07.915000+00:00"
+  },
   "AWS::BedrockAgentCore::Evaluator": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-03-02T06:45:49.915953",
@@ -1084,6 +1090,12 @@
     "first_seen": "2026-01-19T02:02:20.407855",
     "last_updated": "2026-05-04T08:18:53.048922",
     "time_created": "2025-10-01T20:45:08.131000+00:00"
+  },
+  "AWS::BedrockAgentCore::Harness": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-05-25T09:50:44.052285",
+    "last_updated": "2026-05-25T09:50:44.052285",
+    "time_created": "2026-05-21T02:21:29.416000+00:00"
   },
   "AWS::BedrockAgentCore::Memory": {
     "deprecation_status": "LIVE",
@@ -2696,7 +2708,7 @@
   "AWS::DevOpsAgent::Service": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-02-18T06:52:25.449227",
-    "last_updated": "2026-05-18T09:41:31.047163",
+    "last_updated": "2026-05-25T09:50:44.052285",
     "time_created": "2025-12-10T20:10:37.270000+00:00"
   },
   "AWS::DevOpsGuru::LogAnomalyDetectionIntegration": {
@@ -3020,7 +3032,7 @@
   "AWS::EC2::LaunchTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-20T08:54:25.472975",
+    "last_updated": "2026-05-25T09:50:44.052285",
     "time_created": "2023-04-04T23:35:46.908000+00:00"
   },
   "AWS::EC2::LocalGatewayRoute": {
@@ -3602,7 +3614,7 @@
   "AWS::ECS::Service": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-20T08:54:25.472975",
+    "last_updated": "2026-05-25T09:50:44.052285",
     "time_created": "2020-06-11T17:49:33.933000+00:00"
   },
   "AWS::ECS::TaskDefinition": {
@@ -6590,7 +6602,7 @@
   "AWS::ObservabilityAdmin::OrganizationTelemetryRule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-13T08:34:52.000173",
+    "last_updated": "2026-05-25T09:50:44.052285",
     "time_created": "2025-08-11T16:25:15.634000+00:00"
   },
   "AWS::ObservabilityAdmin::S3TableIntegration": {
@@ -6614,7 +6626,7 @@
   "AWS::ObservabilityAdmin::TelemetryRule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-13T08:34:52.000173",
+    "last_updated": "2026-05-25T09:50:44.052285",
     "time_created": "2025-08-11T16:25:15.481000+00:00"
   },
   "AWS::Omics::AnnotationStore": {
@@ -6674,7 +6686,7 @@
   "AWS::OpenSearchServerless::Collection": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-20T07:52:21.370885",
+    "last_updated": "2026-05-25T09:50:44.052285",
     "time_created": "2022-11-26T01:01:57.125000+00:00"
   },
   "AWS::OpenSearchServerless::CollectionGroup": {
@@ -8312,7 +8324,7 @@
   "AWS::SSO::Assignment": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-08T07:07:58.990485",
+    "last_updated": "2026-05-25T09:50:44.052285",
     "time_created": "2020-07-19T02:17:49.959000+00:00"
   },
   "AWS::SSO::Instance": {
@@ -8702,7 +8714,7 @@
   "AWS::SecurityLake::Subscriber": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-25T09:50:44.052285",
     "time_created": "2024-03-31T20:53:49.968000+00:00"
   },
   "AWS::SecurityLake::SubscriberNotification": {
@@ -9032,7 +9044,7 @@
   "AWS::Transfer::WebApp": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-09T06:55:57.770231",
+    "last_updated": "2026-05-25T09:50:44.052285",
     "time_created": "2025-02-06T16:30:47.026000+00:00"
   },
   "AWS::Transfer::Workflow": {

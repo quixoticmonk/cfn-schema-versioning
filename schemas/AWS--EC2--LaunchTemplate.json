@@ -160,7 +160,7 @@
           "type": "integer"
         },
         "NestedVirtualization": {
-          "description": "",
+          "description": "Indicates whether the instance is enabled for nested virtualization.",
           "enum": [
             "enabled",
             "disabled"
@@ -1175,15 +1175,10 @@
     "LaunchTemplateData"
   ],
   "tagging": {
-    "cloudFormationSystemTags": true,
-    "permissions": [
-      "ec2:CreateTags",
-      "ec2:DeleteTags"
-    ],
-    "tagOnCreate": true,
-    "tagProperty": "/properties/TagSpecifications/*/Tags",
-    "tagUpdatable": true,
-    "taggable": true
+    "cloudFormationSystemTags": false,
+    "tagOnCreate": false,
+    "tagUpdatable": false,
+    "taggable": false
   },
   "typeName": "AWS::EC2::LaunchTemplate",
   "writeOnlyProperties": [
