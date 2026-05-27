@@ -20,6 +20,16 @@
       ]
     },
     "list": {
+      "handlerSchema": {
+        "properties": {
+          "LayerVersionArn": {
+            "$ref": "resource-schema.json#/properties/LayerVersionArn"
+          }
+        },
+        "required": [
+          "LayerVersionArn"
+        ]
+      },
       "permissions": [
         "lambda:GetLayerVersionPolicy"
       ]

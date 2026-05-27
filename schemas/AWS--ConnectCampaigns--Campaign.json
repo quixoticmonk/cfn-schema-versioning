@@ -257,7 +257,7 @@
     "OutboundCallConfig"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "connect-campaigns:UntagResource",
       "connect-campaigns:TagResource"

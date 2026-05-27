@@ -48,6 +48,16 @@
       ]
     },
     "list": {
+      "handlerSchema": {
+        "properties": {
+          "LayerName": {
+            "$ref": "resource-schema.json#/properties/LayerName"
+          }
+        },
+        "required": [
+          "LayerName"
+        ]
+      },
       "permissions": [
         "lambda:ListLayerVersions"
       ]

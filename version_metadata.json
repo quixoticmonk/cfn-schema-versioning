@@ -2210,13 +2210,13 @@
   "AWS::ConnectCampaigns::Campaign": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-27T09:30:13.186850",
     "time_created": "2022-02-11T23:00:56.483000+00:00"
   },
   "AWS::ConnectCampaignsV2::Campaign": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-13T07:49:39.895731",
+    "last_updated": "2026-05-27T09:30:13.186850",
     "time_created": "2024-09-23T21:21:31.967000+00:00"
   },
   "AWS::ControlTower::EnabledBaseline": {
@@ -5558,13 +5558,13 @@
   "AWS::Lambda::LayerVersion": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-27T09:30:13.186850",
     "time_created": "2020-12-10T19:09:24.027000+00:00"
   },
   "AWS::Lambda::LayerVersionPermission": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-27T09:30:13.186850",
     "time_created": "2023-04-15T00:42:20.704000+00:00"
   },
   "AWS::Lambda::Permission": {
@@ -5720,7 +5720,7 @@
   "AWS::Location::APIKey": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-27T09:30:13.186850",
     "time_created": "2023-12-29T00:17:01.744000+00:00"
   },
   "AWS::Location::GeofenceCollection": {
@@ -6824,7 +6824,7 @@
   "AWS::PCAConnectorAD::ServicePrincipalName": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-27T09:30:13.186850",
     "time_created": "2023-07-19T14:45:54.829000+00:00"
   },
   "AWS::PCAConnectorAD::Template": {
@@ -6836,7 +6836,7 @@
   "AWS::PCAConnectorAD::TemplateGroupAccessControlEntry": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-05-27T09:30:13.186850",
     "time_created": "2023-07-19T14:45:55.270000+00:00"
   },
   "AWS::PCAConnectorSCEP::Challenge": {
@@ -8990,7 +8990,7 @@
   "AWS::Timestream::InfluxDBInstance": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-16T06:54:09.694919",
+    "last_updated": "2026-05-27T09:30:13.186850",
     "time_created": "2024-03-30T01:51:20.345000+00:00"
   },
   "AWS::Timestream::ScheduledQuery": {

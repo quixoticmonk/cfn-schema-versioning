@@ -93,7 +93,9 @@
   },
   "required": [
     "AccessRights",
-    "GroupDisplayName"
+    "GroupDisplayName",
+    "GroupSecurityIdentifier",
+    "TemplateArn"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-pcaconnectorad",
   "tagging": {
