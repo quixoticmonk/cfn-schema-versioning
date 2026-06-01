@@ -8,6 +8,9 @@
     "Capabilities": {
       "additionalProperties": false,
       "properties": {
+        "AccessAppsNativeDataStore": {
+          "$ref": "#/definitions/CapabilityState"
+        },
         "Action": {
           "$ref": "#/definitions/CapabilityState"
         },
@@ -30,6 +33,9 @@
           "$ref": "#/definitions/CapabilityState"
         },
         "ApproveFlowShareRequests": {
+          "$ref": "#/definitions/CapabilityState"
+        },
+        "Apps": {
           "$ref": "#/definitions/CapabilityState"
         },
         "AsanaAction": {
@@ -72,6 +78,9 @@
           "$ref": "#/definitions/CapabilityState"
         },
         "CreateAndUpdateAmazonSThreeAction": {
+          "$ref": "#/definitions/CapabilityState"
+        },
+        "CreateAndUpdateApps": {
           "$ref": "#/definitions/CapabilityState"
         },
         "CreateAndUpdateAsanaAction": {
@@ -221,6 +230,9 @@
         "CreateSharedFolders": {
           "$ref": "#/definitions/CapabilityState"
         },
+        "CreateSpaces": {
+          "$ref": "#/definitions/CapabilityState"
+        },
         "Dashboard": {
           "$ref": "#/definitions/CapabilityState"
         },
@@ -273,6 +285,9 @@
           "$ref": "#/definitions/CapabilityState"
         },
         "IntercomAction": {
+          "$ref": "#/definitions/CapabilityState"
+        },
+        "InvokeAppsAIInference": {
           "$ref": "#/definitions/CapabilityState"
         },
         "JiraAction": {
@@ -371,6 +386,9 @@
         "ShareAnalyses": {
           "$ref": "#/definitions/CapabilityState"
         },
+        "ShareApps": {
+          "$ref": "#/definitions/CapabilityState"
+        },
         "ShareAsanaAction": {
           "$ref": "#/definitions/CapabilityState"
         },
@@ -381,6 +399,9 @@
           "$ref": "#/definitions/CapabilityState"
         },
         "ShareCanvaAgentAction": {
+          "$ref": "#/definitions/CapabilityState"
+        },
+        "ShareChatAgents": {
           "$ref": "#/definitions/CapabilityState"
         },
         "ShareComprehendAction": {
@@ -495,6 +516,9 @@
           "$ref": "#/definitions/CapabilityState"
         },
         "ShareSmartsheetAction": {
+          "$ref": "#/definitions/CapabilityState"
+        },
+        "ShareSpaces": {
           "$ref": "#/definitions/CapabilityState"
         },
         "ShareTextractAction": {

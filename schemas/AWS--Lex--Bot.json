@@ -55,6 +55,45 @@
       ],
       "type": "object"
     },
+    "AudioFillerSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "AudioType": {
+          "enum": [
+            "MELODY_CHIPPER_CHIME",
+            "MELODY_CURIOUS_CRAWL",
+            "MELODY_RISING_RIPPLE",
+            "MELODY_PATIENT_PING",
+            "MELODY_PONDERING_PONG",
+            "TYPING_KINETIC_KEYS",
+            "TYPING_QUIET_QWERTY"
+          ],
+          "type": "string"
+        },
+        "Enabled": {
+          "type": "boolean"
+        },
+        "MinimumPlayDurationInMilliseconds": {
+          "maximum": 5000,
+          "minimum": 1000,
+          "type": "integer"
+        },
+        "ResponseDeliveryDelayInMilliseconds": {
+          "maximum": 1000,
+          "minimum": 200,
+          "type": "integer"
+        },
+        "StartDelayInMilliseconds": {
+          "maximum": 5000,
+          "minimum": 500,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Enabled"
+      ],
+      "type": "object"
+    },
     "AudioLogDestination": {
       "additionalProperties": false,
       "properties": {
@@ -249,6 +288,9 @@
     "BotLocale": {
       "additionalProperties": false,
       "properties": {
+        "AudioFillerSettings": {
+          "$ref": "#/definitions/AudioFillerSettings"
+        },
         "CustomVocabulary": {
           "$ref": "#/definitions/CustomVocabulary"
         },
@@ -2188,7 +2230,7 @@
         "Standard",
         "Neural",
         "Deepgram",
-        "Enhanced"
+        "Advanced"
       ],
       "type": "string"
     },

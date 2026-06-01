@@ -248,6 +248,12 @@
       "additionalProperties": false,
       "description": "Additional options related to the Slurm scheduler.",
       "properties": {
+        "ScaleDownIdleTimeInSeconds": {
+          "description": "The time before an idle node is scaled down.",
+          "maximum": 10000000,
+          "minimum": 1,
+          "type": "integer"
+        },
         "SlurmCustomSettings": {
           "description": "Additional Slurm-specific configuration that directly maps to Slurm settings.",
           "insertionOrder": false,

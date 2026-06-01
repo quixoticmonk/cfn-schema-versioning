@@ -48,6 +48,16 @@
       ]
     },
     "list": {
+      "handlerSchema": {
+        "properties": {
+          "ResourceArn": {
+            "$ref": "resource-schema.json#/properties/ResourceArn"
+          }
+        },
+        "required": [
+          "ResourceArn"
+        ]
+      },
       "permissions": [
         "lex:DescribeResourcePolicy"
       ]
@@ -93,7 +103,7 @@
     "Policy",
     "ResourceArn"
   ],
-  "sourceUrl": "https://docs.aws.amazon.com/lexv2/latest/dg/security_iam_service-with-iam.html#security_iam_service-with-iam-resource-based-policies",
+  "sourceUrl": "https://docs.aws.amazon.com/lexv2/latest/dg/security_iam_service-with-iam.html",
   "tagging": {
     "taggable": false
   },

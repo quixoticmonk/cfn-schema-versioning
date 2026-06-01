@@ -820,6 +820,13 @@
           "maxLength": 256,
           "pattern": "^arn:aws(-[\\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+$",
           "type": "string"
+        },
+        "TrainingPlanArn": {
+          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
+          "maxLength": 2048,
+          "minLength": 0,
+          "pattern": "^(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:training-plan/.*|None)$",
+          "type": "string"
         }
       },
       "type": "object"
@@ -1215,6 +1222,14 @@
     },
     "DomainSettings": {
       "$ref": "#/definitions/DomainSettings"
+    },
+    "HomeEfsFileSystemCreation": {
+      "description": "Indicates whether a home EFS file system is created for the domain. Set to Disabled to skip EFS creation and reduce domain creation time.",
+      "enum": [
+        "Enabled",
+        "Disabled"
+      ],
+      "type": "string"
     },
     "HomeEfsFileSystemId": {
       "description": "The ID of the Amazon Elastic File System (EFS) managed by this Domain.",

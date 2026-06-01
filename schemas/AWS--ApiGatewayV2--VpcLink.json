@@ -44,7 +44,9 @@
     "update": {
       "permissions": [
         "apigateway:PATCH",
+        "apigateway:POST",
         "apigateway:GET",
+        "apigateway:DELETE",
         "apigateway:TagResource",
         "apigateway:unTagResource",
         "iam:CreateServiceLinkedRole",
@@ -63,6 +65,7 @@
     },
     "SecurityGroupIds": {
       "description": "A list of security group IDs for the VPC link.",
+      "insertionOrder": false,
       "items": {
         "type": "string"
       },
@@ -71,6 +74,7 @@
     },
     "SubnetIds": {
       "description": "A list of subnet IDs to include in the VPC link.",
+      "insertionOrder": false,
       "items": {
         "type": "string"
       },
@@ -101,6 +105,12 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "apigateway:GET",
+      "apigateway:PUT",
+      "apigateway:PATCH",
+      "apigateway:DELETE"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

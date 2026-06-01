@@ -145,6 +145,13 @@
       "minLength": 1,
       "type": "string"
     },
+    "IdentityStoreArn": {
+      "description": "The ARN of the identity store associated with the Identity Center instance",
+      "maxLength": 1224,
+      "minLength": 10,
+      "pattern": "^arn:aws(-[a-z]{1,5}){0,3}:identitystore::\\d{12}:identitystore/d-[0-9a-f]{10}$",
+      "type": "string"
+    },
     "InstanceArn": {
       "description": "The ARN of the instance of IAM Identity Center under which the operation will run",
       "maxLength": 1224,
@@ -183,7 +190,8 @@
     }
   },
   "readOnlyProperties": [
-    "/properties/ApplicationArn"
+    "/properties/ApplicationArn",
+    "/properties/IdentityStoreArn"
   ],
   "required": [
     "Name",

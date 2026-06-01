@@ -109,6 +109,7 @@
         "apigateway:GET",
         "apigateway:PUT",
         "apigateway:POST",
+        "apigateway:DELETE",
         "s3:getObject"
       ]
     }
@@ -210,6 +211,12 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "apigateway:GET",
+      "apigateway:PUT",
+      "apigateway:PATCH",
+      "apigateway:DELETE"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

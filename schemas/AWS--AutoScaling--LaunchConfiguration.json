@@ -252,6 +252,8 @@
   "writeOnlyProperties": [
     "/properties/InstanceId",
     "/properties/ClassicLinkVPCId",
-    "/properties/ClassicLinkVPCSecurityGroups"
+    "/properties/ClassicLinkVPCSecurityGroups",
+    "/properties/KernelId",
+    "/properties/RamDiskId"
   ]
 }
