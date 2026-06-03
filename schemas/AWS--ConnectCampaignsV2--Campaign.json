@@ -371,6 +371,9 @@
         },
         "LocalTimeZoneDetection": {
           "$ref": "#/definitions/LocalTimeZoneDetection"
+        },
+        "LocalTimeZoneDetectionScope": {
+          "$ref": "#/definitions/LocalTimeZoneDetectionScope"
         }
       },
       "type": "object"
@@ -382,6 +385,14 @@
         "$ref": "#/definitions/LocalTimeZoneDetectionType"
       },
       "type": "array"
+    },
+    "LocalTimeZoneDetectionScope": {
+      "description": "Local TimeZone Detection scope",
+      "enum": [
+        "PRIMARY_ONLY",
+        "ALL_AVAILABLE"
+      ],
+      "type": "string"
     },
     "LocalTimeZoneDetectionType": {
       "description": "Local TimeZone Detection method",

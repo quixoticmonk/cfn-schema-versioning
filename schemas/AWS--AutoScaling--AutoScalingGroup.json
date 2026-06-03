@@ -797,7 +797,6 @@
         "autoscaling:DeleteLifecycleHook",
         "autoscaling:PutLifecycleHook",
         "autoscaling:StartInstanceRefresh",
-        "autoscaling:DescribeInstanceRefreshes",
         "autoscaling:CancelInstanceRefresh",
         "cloudwatch:PutMetricAlarm",
         "ec2:Describe*",
@@ -816,7 +815,7 @@
         "vpc-lattice:ListTargets",
         "vpc-lattice:RegisterTargets"
       ],
-      "timeoutInMinutes": 660
+      "timeoutInMinutes": 2160
     }
   },
   "primaryIdentifier": [

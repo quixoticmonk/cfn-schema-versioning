@@ -27,7 +27,8 @@
       "enum": [
         "CUSTOM_JWT",
         "AWS_IAM",
-        "NONE"
+        "NONE",
+        "AUTHENTICATE_ONLY"
       ],
       "type": "string"
     },
@@ -483,7 +484,14 @@
       "$ref": "#/definitions/GatewayProtocolConfiguration"
     },
     "ProtocolType": {
-      "$ref": "#/definitions/GatewayProtocolType"
+      "allOf": [
+        {
+          "$ref": "#/definitions/GatewayProtocolType"
+        },
+        {
+          "default": "MCP"
+        }
+      ]
     },
     "RoleArn": {
       "maxLength": 2048,
@@ -526,11 +534,10 @@
   "required": [
     "AuthorizerType",
     "Name",
-    "ProtocolType",
     "RoleArn"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "bedrock-agentcore:ListTagsForResource",
       "bedrock-agentcore:TagResource",
