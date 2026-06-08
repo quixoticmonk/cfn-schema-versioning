@@ -116,6 +116,7 @@
   "handlers": {
     "create": {
       "permissions": [
+        "cloudwatch:PutPipelineRule",
         "iam:PassRole",
         "logs:PutPipelineRule",
         "observabilityadmin:CreateTelemetryPipeline",
@@ -126,6 +127,7 @@
     },
     "delete": {
       "permissions": [
+        "cloudwatch:DeletePipelineRule",
         "logs:DeletePipelineRule",
         "observabilityadmin:DeleteTelemetryPipeline",
         "observabilityadmin:GetTelemetryPipeline"
@@ -145,6 +147,7 @@
     },
     "update": {
       "permissions": [
+        "cloudwatch:PutPipelineRule",
         "iam:PassRole",
         "logs:DeletePipelineRule",
         "logs:PutPipelineRule",

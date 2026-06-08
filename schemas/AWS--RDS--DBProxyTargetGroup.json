@@ -1,4 +1,10 @@
 {
+  "additionalIdentifiers": [
+    [
+      "/properties/DBProxyName",
+      "/properties/TargetGroupName"
+    ]
+  ],
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/DBProxyName",
@@ -46,6 +52,7 @@
       "permissions": [
         "rds:DescribeDBProxies",
         "rds:DescribeDBProxyTargetGroups",
+        "rds:DescribeDBProxyTargets",
         "rds:ModifyDBProxyTargetGroup",
         "rds:RegisterDBProxyTargets"
       ]
@@ -69,6 +76,7 @@
     "update": {
       "permissions": [
         "rds:DescribeDBProxyTargetGroups",
+        "rds:DescribeDBProxyTargets",
         "rds:ModifyDBProxyTargetGroup",
         "rds:RegisterDBProxyTargets",
         "rds:DeregisterDBProxyTargets"

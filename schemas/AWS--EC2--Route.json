@@ -102,6 +102,10 @@
       "description": "The ID of a network interface.",
       "type": "string"
     },
+    "OdbNetworkArn": {
+      "description": "",
+      "type": "string"
+    },
     "RouteTableId": {
       "description": "The ID of the route table for the route.",
       "type": "string"

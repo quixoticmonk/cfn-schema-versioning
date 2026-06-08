@@ -151,7 +151,7 @@
       "items": {
         "$ref": "#/definitions/CustomerManagedPolicyReference"
       },
-      "maxItems": 20,
+      "maxItems": 25,
       "type": "array"
     },
     "Description": {
@@ -181,7 +181,7 @@
       "items": {
         "$ref": "#/definitions/ManagedPolicyArn"
       },
-      "maxItems": 20,
+      "maxItems": 25,
       "type": "array"
     },
     "Name": {

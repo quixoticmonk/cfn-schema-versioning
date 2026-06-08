@@ -7,7 +7,9 @@
     "/properties/Memory",
     "/properties/ExecutionRoleArn",
     "/properties/TaskRoleArn",
-    "/properties/Volumes"
+    "/properties/Volumes",
+    "/properties/PidMode",
+    "/properties/IpcMode"
   ],
   "definitions": {
     "ContainerDependency": {
@@ -626,8 +628,16 @@
       "description": "The name of a family that this daemon task definition is registered to.",
       "type": "string"
     },
+    "IpcMode": {
+      "description": "",
+      "type": "string"
+    },
     "Memory": {
       "description": "The amount of memory (in MiB) used by the daemon task.",
+      "type": "string"
+    },
+    "PidMode": {
+      "description": "",
       "type": "string"
     },
     "Tags": {

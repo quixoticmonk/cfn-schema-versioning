@@ -26,6 +26,14 @@
       ],
       "type": "string"
     },
+    "DeletionProtection": {
+      "description": "The deletion protection state of the collection",
+      "enum": [
+        "ENABLED",
+        "DISABLED"
+      ],
+      "type": "string"
+    },
     "EncryptionConfig": {
       "additionalProperties": false,
       "description": "Encryption settings for the collection",
@@ -158,6 +166,9 @@
     "DashboardEndpoint": {
       "description": "The OpenSearch Dashboards endpoint for the collection.",
       "type": "string"
+    },
+    "DeletionProtection": {
+      "$ref": "#/definitions/DeletionProtection"
     },
     "Description": {
       "description": "The description of the collection",

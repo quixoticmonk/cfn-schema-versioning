@@ -1174,6 +1174,11 @@
     "AccessibleResources": {
       "description": "List of accessible resources for this service",
       "items": {
+        "patternProperties": {
+          ".*": {
+            "type": "string"
+          }
+        },
         "type": "object"
       },
       "type": "array"

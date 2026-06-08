@@ -72,6 +72,7 @@
       "permissions": [
         "rds:CreateDBProxy",
         "rds:DescribeDBProxies",
+        "rds:AddTagsToResource",
         "iam:PassRole"
       ]
     },
@@ -88,12 +89,14 @@
     },
     "read": {
       "permissions": [
-        "rds:DescribeDBProxies"
+        "rds:DescribeDBProxies",
+        "rds:ListTagsForResource"
       ]
     },
     "update": {
       "permissions": [
         "rds:ModifyDBProxy",
+        "rds:DescribeDBProxies",
         "rds:AddTagsToResource",
         "rds:RemoveTagsFromResource",
         "iam:PassRole"

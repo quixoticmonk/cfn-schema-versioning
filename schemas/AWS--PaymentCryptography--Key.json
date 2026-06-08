@@ -237,7 +237,8 @@
       "permissions": [
         "payment-cryptography:GetKey",
         "payment-cryptography:CreateKey",
-        "payment-cryptography:TagResource"
+        "payment-cryptography:TagResource",
+        "payment-cryptography:PutResourcePolicy"
       ]
     },
     "delete": {
@@ -254,7 +255,8 @@
     "read": {
       "permissions": [
         "payment-cryptography:GetKey",
-        "payment-cryptography:ListTagsForResource"
+        "payment-cryptography:ListTagsForResource",
+        "payment-cryptography:GetResourcePolicy"
       ]
     },
     "update": {
@@ -266,7 +268,9 @@
         "payment-cryptography:StartKeyUsage",
         "payment-cryptography:StopKeyUsage",
         "payment-cryptography:AddKeyReplicationRegions",
-        "payment-cryptography:RemoveKeyReplicationRegions"
+        "payment-cryptography:RemoveKeyReplicationRegions",
+        "payment-cryptography:PutResourcePolicy",
+        "payment-cryptography:DeleteResourcePolicy"
       ]
     }
   },
@@ -300,6 +304,13 @@
     },
     "KeyState": {
       "$ref": "#/definitions/KeyState"
+    },
+    "Policy": {
+      "description": "The resource-based policy attached to the key, in JSON format.",
+      "maxLength": 20480,
+      "minLength": 1,
+      "pattern": "^[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+$",
+      "type": "string"
     },
     "ReplicationRegions": {
       "items": {
