@@ -313,6 +313,12 @@
         "SearchType": {
           "$ref": "#/definitions/SearchType"
         },
+        "SessionConfiguration": {
+          "$ref": "#/definitions/SessionConfiguration"
+        },
+        "StreamingConfiguration": {
+          "$ref": "#/definitions/StreamingConfiguration"
+        },
         "SupportedVersions": {
           "items": {
             "default": "2025-03-26",
@@ -343,6 +349,26 @@
         "SEMANTIC"
       ],
       "type": "string"
+    },
+    "SessionConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "SessionTimeoutInSeconds": {
+          "maximum": 28800,
+          "minimum": 900,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "StreamingConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "EnableResponseStreaming": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
     },
     "TagsMap": {
       "additionalProperties": false,

@@ -39,7 +39,7 @@
   ],
   "properties": {
     "ApiId": {
-      "description": "The identifier of the API.",
+      "description": "The API identifier.",
       "type": "string"
     },
     "ApiMappingId": {

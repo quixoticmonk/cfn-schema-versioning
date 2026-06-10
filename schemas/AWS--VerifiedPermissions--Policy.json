@@ -154,6 +154,12 @@
     "Definition": {
       "$ref": "#/definitions/PolicyDefinition"
     },
+    "Name": {
+      "maxLength": 150,
+      "minLength": 0,
+      "pattern": "^[a-zA-Z0-9-/_]*$",
+      "type": "string"
+    },
     "PolicyId": {
       "maxLength": 200,
       "minLength": 1,

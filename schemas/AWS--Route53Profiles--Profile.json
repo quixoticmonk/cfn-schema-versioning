@@ -119,7 +119,7 @@
     "Name"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "route53profiles:TagResource",
       "route53profiles:UntagResource"

@@ -103,9 +103,6 @@
           "$ref": "#/definitions/Enabled"
         }
       },
-      "required": [
-        "Enabled"
-      ],
       "type": "object"
     },
     "InstanceArn": {

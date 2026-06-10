@@ -272,7 +272,7 @@
   "AWS::ApiGatewayV2::Api": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-01T11:11:35.708792",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2022-06-18T02:11:24.278000+00:00"
   },
   "AWS::ApiGatewayV2::ApiGatewayManagedOverrides": {
@@ -284,7 +284,7 @@
   "AWS::ApiGatewayV2::ApiMapping": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2022-08-17T21:23:08.578000+00:00"
   },
   "AWS::ApiGatewayV2::Authorizer": {
@@ -302,7 +302,7 @@
   "AWS::ApiGatewayV2::DomainName": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-01T11:11:35.708792",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2022-06-18T02:08:57.195000+00:00"
   },
   "AWS::ApiGatewayV2::Integration": {
@@ -314,7 +314,7 @@
   "AWS::ApiGatewayV2::IntegrationResponse": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2023-03-07T16:11:46.220000+00:00"
   },
   "AWS::ApiGatewayV2::Model": {
@@ -338,7 +338,7 @@
   "AWS::ApiGatewayV2::RoutingRule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2025-04-24T19:14:18.341000+00:00"
   },
   "AWS::ApiGatewayV2::Stage": {
@@ -350,7 +350,7 @@
   "AWS::ApiGatewayV2::VpcLink": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-01T11:11:35.708792",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2022-06-06T22:54:43.962000+00:00"
   },
   "AWS::AppConfig::Application": {
@@ -1082,13 +1082,13 @@
   "AWS::BedrockAgentCore::Gateway": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-03T10:44:06.512154",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2025-10-01T20:23:50.918000+00:00"
   },
   "AWS::BedrockAgentCore::GatewayTarget": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-08T10:19:00.229033",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2025-10-01T20:45:08.131000+00:00"
   },
   "AWS::BedrockAgentCore::Harness": {
@@ -1244,7 +1244,7 @@
   "AWS::CUR::ReportDefinition": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2021-04-29T15:43:32.090000+00:00"
   },
   "AWS::Cases::CaseRule": {
@@ -1640,7 +1640,7 @@
   "AWS::CloudTrail::Channel": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2022-11-08T02:40:58.865000+00:00"
   },
   "AWS::CloudTrail::Dashboard": {
@@ -1664,7 +1664,7 @@
   "AWS::CloudTrail::Trail": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2020-02-06T20:05:28.195000+00:00"
   },
   "AWS::CloudWatch::Alarm": {
@@ -2042,7 +2042,7 @@
   "AWS::Connect::ContactFlowModule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2021-11-07T07:17:04.972000+00:00"
   },
   "AWS::Connect::ContactFlowModuleAlias": {
@@ -2630,7 +2630,7 @@
   "AWS::Deadline::Fleet": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-06T08:09:18.874155",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2024-03-29T22:33:09.586000+00:00"
   },
   "AWS::Deadline::LicenseEndpoint": {
@@ -3686,7 +3686,7 @@
   "AWS::EKS::Cluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-11T06:40:39.514781",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2021-08-24T22:07:26.705000+00:00"
   },
   "AWS::EKS::FargateProfile": {
@@ -4796,13 +4796,13 @@
   "AWS::IVSChat::LoggingConfiguration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2023-01-23T20:52:29.892000+00:00"
   },
   "AWS::IVSChat::Room": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2023-01-23T20:34:11.249000+00:00"
   },
   "AWS::IdentityStore::Group": {
@@ -6044,7 +6044,7 @@
   "AWS::MediaConnect::FlowOutput": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-16T07:06:18.393291",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2020-11-19T21:30:48.916000+00:00"
   },
   "AWS::MediaConnect::FlowSource": {
@@ -7730,19 +7730,19 @@
   "AWS::Route53Profiles::Profile": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2024-03-20T18:04:48.797000+00:00"
   },
   "AWS::Route53Profiles::ProfileAssociation": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2024-03-24T19:14:33.293000+00:00"
   },
   "AWS::Route53Profiles::ProfileResourceAssociation": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2024-03-24T18:09:11.636000+00:00"
   },
   "AWS::Route53RecoveryControl::Cluster": {
@@ -9128,7 +9128,7 @@
   "AWS::VerifiedPermissions::Policy": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2023-06-11T21:13:41.603000+00:00"
   },
   "AWS::VerifiedPermissions::PolicyStore": {
@@ -9146,7 +9146,7 @@
   "AWS::VerifiedPermissions::PolicyTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-10T09:40:58.413240",
     "time_created": "2023-06-11T21:13:41.371000+00:00"
   },
   "AWS::VoiceID::Domain": {

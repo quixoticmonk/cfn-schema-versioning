@@ -375,6 +375,11 @@
         },
         "McpToolSchema": {
           "$ref": "#/definitions/McpToolSchemaConfiguration"
+        },
+        "ResourcePriority": {
+          "maximum": 1000,
+          "minimum": 0,
+          "type": "integer"
         }
       },
       "required": [

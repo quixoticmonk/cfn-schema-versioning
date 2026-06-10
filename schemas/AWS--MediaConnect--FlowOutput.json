@@ -347,6 +347,14 @@
       "description": "The name of the output. This value must be unique within the current flow.",
       "type": "string"
     },
+    "NdiOutputTimecodeSource": {
+      "description": "The timecode source for the NDI output.",
+      "enum": [
+        "EMBEDDED_TIMECODE",
+        "UTC_SYSTEM_TIME"
+      ],
+      "type": "string"
+    },
     "NdiProgramName": {
       "description": "A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.",
       "type": "string"
