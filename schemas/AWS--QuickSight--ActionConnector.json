@@ -383,7 +383,7 @@
           "items": {
             "type": "string"
           },
-          "maxItems": 20,
+          "maxItems": 30,
           "minItems": 1,
           "type": "array"
         },
@@ -566,6 +566,7 @@
   ],
   "required": [
     "ActionConnectorId",
+    "AuthenticationConfig",
     "AwsAccountId",
     "Name",
     "Type"

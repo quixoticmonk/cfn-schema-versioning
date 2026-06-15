@@ -179,9 +179,19 @@
           "type": "array",
           "uniqueItems": true
         },
+        "OutOfOrderTimeWindowInSeconds": {
+          "description": "The time window in seconds for accepting out-of-order samples",
+          "minimum": 0,
+          "type": "integer"
+        },
         "RetentionPeriodInDays": {
           "description": "How many days that metrics are retained in the workspace",
           "minimum": 1,
+          "type": "integer"
+        },
+        "RuleQueryOffsetInSeconds": {
+          "description": "Duration in seconds to offset rule evaluation queries into the past",
+          "minimum": 0,
           "type": "integer"
         }
       },

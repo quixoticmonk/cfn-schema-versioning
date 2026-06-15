@@ -10,7 +10,8 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/Name",
-    "/properties/StandbyReplicas"
+    "/properties/StandbyReplicas",
+    "/properties/Generation"
   ],
   "definitions": {
     "CapacityLimits": {
@@ -112,6 +113,14 @@
     "Description": {
       "description": "The description of the collection group.",
       "maxLength": 1000,
+      "type": "string"
+    },
+    "Generation": {
+      "description": "The generation of Amazon OpenSearch Serverless for the collection group. Valid values are CLASSIC and NEXTGEN.",
+      "enum": [
+        "CLASSIC",
+        "NEXTGEN"
+      ],
       "type": "string"
     },
     "Id": {

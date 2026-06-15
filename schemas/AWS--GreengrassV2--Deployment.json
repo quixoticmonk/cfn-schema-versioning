@@ -383,7 +383,7 @@
     "TargetArn"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "greengrass:TagResource",
       "greengrass:UntagResource",

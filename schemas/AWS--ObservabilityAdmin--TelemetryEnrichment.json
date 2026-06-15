@@ -80,7 +80,9 @@
   "readOnlyProperties": [
     "/properties/Status"
   ],
-  "required": [],
+  "required": [
+    "Scope"
+  ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "taggable": false
