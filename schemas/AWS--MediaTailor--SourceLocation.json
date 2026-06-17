@@ -187,7 +187,7 @@
     "SourceLocationName"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "mediatailor:TagResource",
       "mediatailor:UntagResource"

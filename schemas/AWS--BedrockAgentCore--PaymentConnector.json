@@ -169,6 +169,13 @@
     "ConnectorType",
     "CredentialProviderConfigurations"
   ],
+  "resourceLink": {
+    "mappings": {
+      "PaymentConnectorId": "/PaymentConnectorId",
+      "PaymentManagerId": "/PaymentManagerId"
+    },
+    "templateUri": "/bedrock-agentcore/payments/managers/${PaymentManagerId}/connectors/${PaymentConnectorId}?region=${awsRegion}"
+  },
   "tagging": {
     "taggable": false
   },

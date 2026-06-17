@@ -52,6 +52,13 @@
       ],
       "type": "string"
     },
+    "DashAudioTimelinePattern": {
+      "enum": [
+        "NONE",
+        "PATTERNED"
+      ],
+      "type": "string"
+    },
     "DashAvailabilityStartTimeConfiguration": {
       "oneOf": [
         {
@@ -189,6 +196,9 @@
       "additionalProperties": false,
       "description": "<p>Retrieve the DASH manifest configuration.</p>",
       "properties": {
+        "AudioTimelinePattern": {
+          "$ref": "#/definitions/DashAudioTimelinePattern"
+        },
         "AvailabilityStartTimeConfiguration": {
           "$ref": "#/definitions/DashAvailabilityStartTimeConfiguration"
         },
@@ -761,7 +771,9 @@
         "PROVIDER_PROMO",
         "DISTRIBUTOR_PROMO",
         "PROVIDER_AD_BLOCK",
-        "DISTRIBUTOR_AD_BLOCK"
+        "DISTRIBUTOR_AD_BLOCK",
+        "CONTENT_IDENTIFICATION",
+        "CALL_AD_SERVER"
       ],
       "type": "string"
     },

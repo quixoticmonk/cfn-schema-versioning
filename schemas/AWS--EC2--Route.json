@@ -103,7 +103,7 @@
       "type": "string"
     },
     "OdbNetworkArn": {
-      "description": "",
+      "description": "The Amazon Resource Name (ARN) of the ODB network.",
       "type": "string"
     },
     "RouteTableId": {

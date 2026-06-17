@@ -170,7 +170,7 @@
       "description": "",
       "properties": {
         "ExplicitTags": {
-          "description": "A list of tags to explicitly propagate to managed resources.",
+          "description": "",
           "insertionOrder": false,
           "items": {
             "$ref": "#/definitions/Tag"
@@ -181,7 +181,8 @@
           "uniqueItems": true
         },
         "Mode": {
-          "$ref": "#/definitions/PropagateTagsMode"
+          "$ref": "#/definitions/PropagateTagsMode",
+          "description": ""
         }
       },
       "type": "object"
