@@ -86,6 +86,40 @@
       ],
       "type": "object"
     },
+    "AnnotationTableConfiguration": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "ConfigurationState": {
+          "description": "Specifies whether annotation table configuration is enabled or disabled.",
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "type": "string"
+        },
+        "EncryptionConfiguration": {
+          "$ref": "#/definitions/MetadataTableEncryptionConfiguration",
+          "description": "The encryption configuration for the annotation table."
+        },
+        "Role": {
+          "description": "The ARN of the IAM role that grants Amazon S3 Metadata permission to read annotations from your bucket.",
+          "type": "string"
+        },
+        "TableArn": {
+          "description": "The ARN of the annotation table.",
+          "type": "string"
+        },
+        "TableName": {
+          "description": "The name of the annotation table.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ConfigurationState"
+      ],
+      "type": "object"
+    },
     "Arn": {
       "description": "the Amazon Resource Name (ARN) of the specified bucket.",
       "type": "string"
@@ -604,6 +638,10 @@
       "additionalProperties": false,
       "description": "Creates a V2 S3 Metadata configuration of a general purpose bucket. For more information, see [Accelerating data discovery with S3 Metadata](https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html) in the *Amazon S3 User Guide*.",
       "properties": {
+        "AnnotationTableConfiguration": {
+          "$ref": "#/definitions/AnnotationTableConfiguration",
+          "description": ""
+        },
         "Destination": {
           "$ref": "#/definitions/MetadataDestination",
           "description": "The destination information for the S3 Metadata configuration."
@@ -1820,6 +1858,7 @@
         "s3:CreateBucketMetadataTableConfiguration",
         "s3:UpdateBucketMetadataJournalTableConfiguration",
         "s3:UpdateBucketMetadataInventoryTableConfiguration",
+        "s3:UpdateBucketMetadataAnnotationTableConfiguration",
         "s3tables:CreateNamespace",
         "s3tables:CreateTable",
         "s3tables:CreateTableBucket",
@@ -2050,6 +2089,8 @@
     "/properties/MetadataConfiguration/JournalTableConfiguration/TableArn",
     "/properties/MetadataConfiguration/InventoryTableConfiguration/TableName",
     "/properties/MetadataConfiguration/InventoryTableConfiguration/TableArn",
+    "/properties/MetadataConfiguration/AnnotationTableConfiguration/TableName",
+    "/properties/MetadataConfiguration/AnnotationTableConfiguration/TableArn",
     "/properties/WebsiteURL"
   ],
   "tagging": {
@@ -2074,6 +2115,7 @@
     "/properties/BucketNamespace",
     "/properties/MetadataConfiguration/JournalTableConfiguration/EncryptionConfiguration",
     "/properties/MetadataConfiguration/InventoryTableConfiguration/EncryptionConfiguration",
+    "/properties/MetadataConfiguration/AnnotationTableConfiguration/EncryptionConfiguration",
     "/properties/LifecycleConfiguration/Rules/*/NoncurrentVersionExpirationInDays",
     "/properties/LifecycleConfiguration/Rules/*/NoncurrentVersionTransition",
     "/properties/LifecycleConfiguration/Rules/*/Transition",

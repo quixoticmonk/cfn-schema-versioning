@@ -1,6 +1,24 @@
 {
   "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/ResourceShareConfiguration/RetainSharingOnAccountLeaveOrganization"
+  ],
   "definitions": {
+    "ResourceShareConfiguration": {
+      "additionalProperties": false,
+      "description": "The configuration for a resource share.",
+      "properties": {
+        "ExclusiveAccountAccess": {
+          "description": "The resource share restricts access to an account",
+          "type": "boolean"
+        },
+        "RetainSharingOnAccountLeaveOrganization": {
+          "description": "Specifies whether the consumer account retains access to the resource share after leaving the organization.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "Tag": {
       "additionalProperties": false,
       "description": "A key-value pair to associate with a resource.",
@@ -121,6 +139,10 @@
         "type": "string"
       },
       "type": "array"
+    },
+    "ResourceShareConfiguration": {
+      "$ref": "#/definitions/ResourceShareConfiguration",
+      "description": "Specifies the configuration for the resource share"
     },
     "Sources": {
       "description": "Specifies from which source accounts the service principal has access to the resources in this resource share.",

@@ -92,13 +92,13 @@
   "AWS::AmazonMQ::Broker": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2025-03-04T06:27:48.668000+00:00"
   },
   "AWS::AmazonMQ::Configuration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2023-10-03T22:20:11.667000+00:00"
   },
   "AWS::AmazonMQ::ConfigurationAssociation": {
@@ -1082,7 +1082,7 @@
   "AWS::BedrockAgentCore::ConfigurationBundle": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-06-15T11:47:19.958503",
-    "last_updated": "2026-06-15T11:47:19.958503",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2026-06-12T04:29:14.925000+00:00"
   },
   "AWS::BedrockAgentCore::Dataset": {
@@ -1106,7 +1106,7 @@
   "AWS::BedrockAgentCore::GatewayTarget": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-10T09:40:58.413240",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2025-10-01T20:45:08.131000+00:00"
   },
   "AWS::BedrockAgentCore::Harness": {
@@ -1154,7 +1154,7 @@
   "AWS::BedrockAgentCore::Policy": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-03-04T06:36:37.856012",
-    "last_updated": "2026-03-30T07:16:32.251528",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2026-03-03T19:39:29.382000+00:00"
   },
   "AWS::BedrockAgentCore::PolicyEngine": {
@@ -1838,7 +1838,7 @@
   "AWS::CodePipeline::Webhook": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2025-02-14T01:20:18.494000+00:00"
   },
   "AWS::CodeStar::GitHubRepository": {
@@ -1922,7 +1922,7 @@
   "AWS::Cognito::UserPoolDomain": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2024-04-01T04:30:59.044000+00:00"
   },
   "AWS::Cognito::UserPoolGroup": {
@@ -2204,13 +2204,13 @@
   "AWS::Connect::TaskTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2022-05-24T20:26:59.530000+00:00"
   },
   "AWS::Connect::TrafficDistributionGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2023-05-23T21:13:29.598000+00:00"
   },
   "AWS::Connect::User": {
@@ -3656,7 +3656,7 @@
   "AWS::ECS::Service": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-25T09:50:44.052285",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2020-06-11T17:49:33.933000+00:00"
   },
   "AWS::ECS::TaskDefinition": {
@@ -3680,7 +3680,7 @@
   "AWS::EFS::FileSystem": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2020-05-04T22:02:02.854000+00:00"
   },
   "AWS::EFS::MountTarget": {
@@ -3710,7 +3710,7 @@
   "AWS::EKS::Cluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-10T09:40:58.413240",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2021-08-24T22:07:26.705000+00:00"
   },
   "AWS::EKS::FargateProfile": {
@@ -4238,7 +4238,7 @@
   "AWS::GameLift::ContainerGroupDefinition": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-13T08:34:52.000173",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2024-04-20T02:21:28.399000+00:00"
   },
   "AWS::GameLift::Fleet": {
@@ -5576,7 +5576,7 @@
   "AWS::Lambda::CapacityProvider": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-17T10:26:53.712479",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2025-11-22T12:09:43.081000+00:00"
   },
   "AWS::Lambda::CodeSigningConfig": {
@@ -5606,7 +5606,7 @@
   "AWS::Lambda::LayerVersion": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-27T09:30:13.186850",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2020-12-10T19:09:24.027000+00:00"
   },
   "AWS::Lambda::LayerVersionPermission": {
@@ -6134,7 +6134,7 @@
   "AWS::MediaLive::Channel": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-01T11:11:35.708792",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2019-11-15T17:23:54.429000+00:00"
   },
   "AWS::MediaLive::ChannelPlacementGroup": {
@@ -6914,7 +6914,7 @@
   "AWS::PCS::Cluster": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-30T07:16:32.251528",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2024-12-11T07:53:26.327000+00:00"
   },
   "AWS::PCS::ComputeNodeGroup": {
@@ -7268,7 +7268,7 @@
   "AWS::QuickSight::Topic": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-08T10:19:00.229033",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2023-03-28T19:20:04.641000+00:00"
   },
   "AWS::QuickSight::VPCConnection": {
@@ -7280,13 +7280,13 @@
   "AWS::RAM::Permission": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2023-03-27T15:42:08.705000+00:00"
   },
   "AWS::RAM::ResourceShare": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2024-12-11T14:21:15.096000+00:00"
   },
   "AWS::RDS::CustomDBEngineVersion": {
@@ -7922,7 +7922,7 @@
   "AWS::S3::Bucket": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-18T06:52:50.727011",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2021-09-08T21:54:30.601000+00:00"
   },
   "AWS::S3::BucketPolicy": {
@@ -9398,7 +9398,7 @@
   "AWS::WAFv2::LoggingConfiguration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2021-08-02T19:34:48.344000+00:00"
   },
   "AWS::WAFv2::RegexPatternSet": {
@@ -9410,19 +9410,19 @@
   "AWS::WAFv2::RuleGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-02T06:53:56.338912",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2021-06-02T23:02:23.329000+00:00"
   },
   "AWS::WAFv2::WebACL": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-02T06:53:56.338912",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2021-06-02T23:01:56.066000+00:00"
   },
   "AWS::WAFv2::WebACLAssociation": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-25T06:53:23.840116",
+    "last_updated": "2026-06-22T11:36:20.621855",
     "time_created": "2021-06-02T23:01:48.937000+00:00"
   },
   "AWS::Wisdom::AIAgent": {

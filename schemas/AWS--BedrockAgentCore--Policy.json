@@ -17,7 +17,7 @@
       "properties": {
         "Statement": {
           "description": "The Cedar policy statement that defines the authorization logic.",
-          "maxLength": 153600,
+          "maxLength": 10000,
           "minLength": 35,
           "type": "string"
         }
@@ -27,16 +27,53 @@
       ],
       "type": "object"
     },
+    "EnforcementMode": {
+      "default": "ACTIVE",
+      "description": "Whether the policy contributes to the enforce decision returned to Gateway. LOG_ONLY policies are still evaluated but their decisions are observed only, allowing customers to validate a policy against real traffic before promoting it.",
+      "enum": [
+        "ACTIVE",
+        "LOG_ONLY"
+      ],
+      "type": "string"
+    },
     "PolicyDefinition": {
       "additionalProperties": false,
       "description": "The definition structure for policies. Encapsulates different policy formats.",
+      "oneOf": [
+        {
+          "required": [
+            "Cedar"
+          ]
+        },
+        {
+          "required": [
+            "Policy"
+          ]
+        }
+      ],
       "properties": {
         "Cedar": {
           "$ref": "#/definitions/CedarPolicy"
+        },
+        "Policy": {
+          "$ref": "#/definitions/PolicyStatement"
+        }
+      },
+      "type": "object"
+    },
+    "PolicyStatement": {
+      "additionalProperties": false,
+      "description": "A policy statement within the AgentCore Policy system.",
+      "properties": {
+        "Statement": {
+          "description": "The policy statement.",
+          "maxLength": 10000,
+          "minLength": 35,
+          "type": "string"
         }
       },
       "required": [
-        "Cedar"
+        "Statement"
       ],
       "type": "object"
     },
@@ -128,6 +165,9 @@
       "maxLength": 4096,
       "minLength": 1,
       "type": "string"
+    },
+    "EnforcementMode": {
+      "$ref": "#/definitions/EnforcementMode"
     },
     "Name": {
       "description": "The customer-assigned immutable name for the policy. Must be unique within the policy engine.",

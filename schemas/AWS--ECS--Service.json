@@ -424,6 +424,55 @@
       },
       "type": "object"
     },
+    "MetricConfiguration": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "MetricNames": {
+          "items": {
+            "enum": [
+              "CPUUtilization",
+              "MemoryUtilization"
+            ],
+            "type": "string"
+          },
+          "maxItems": 2,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "ResolutionSeconds": {
+          "enum": [
+            20,
+            60
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "MetricNames",
+        "ResolutionSeconds"
+      ],
+      "type": "object"
+    },
+    "MonitoringConfiguration": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "MetricConfigurations": {
+          "items": {
+            "$ref": "#/definitions/MetricConfiguration"
+          },
+          "maxItems": 2,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "MetricConfigurations"
+      ],
+      "type": "object"
+    },
     "NetworkConfiguration": {
       "additionalProperties": false,
       "description": "The network configuration for a task or service.",
@@ -964,6 +1013,10 @@
       },
       "type": "array"
     },
+    "Monitoring": {
+      "$ref": "#/definitions/MonitoringConfiguration",
+      "description": ""
+    },
     "Name": {
       "description": "",
       "type": "string"
@@ -1080,6 +1133,7 @@
   "writeOnlyProperties": [
     "/properties/ServiceConnectConfiguration",
     "/properties/VolumeConfigurations",
-    "/properties/ForceNewDeployment"
+    "/properties/ForceNewDeployment",
+    "/properties/Monitoring"
   ]
 }
