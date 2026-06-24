@@ -176,14 +176,15 @@
       "additionalProperties": false,
       "description": "Details of the client authentication used by the Apache Kafka cluster.",
       "properties": {
+        "MTLS": {
+          "$ref": "#/definitions/KafkaClusterMtlsAuthentication",
+          "description": "Details for mTLS client authentication."
+        },
         "SaslScram": {
           "$ref": "#/definitions/KafkaClusterSaslScramAuthentication",
           "description": "Details for SASL/SCRAM client authentication."
         }
       },
-      "required": [
-        "SaslScram"
-      ],
       "type": "object"
     },
     "KafkaClusterClientVpcConfig": {
@@ -242,6 +243,20 @@
         "TLS"
       ],
       "type": "string"
+    },
+    "KafkaClusterMtlsAuthentication": {
+      "additionalProperties": false,
+      "description": "Details for mTLS client authentication.",
+      "properties": {
+        "SecretArn": {
+          "description": "The Amazon Resource Name (ARN) of the Secrets Manager secret.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SecretArn"
+      ],
+      "type": "object"
     },
     "KafkaClusterSaslScramAuthentication": {
       "additionalProperties": false,

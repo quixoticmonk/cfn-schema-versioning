@@ -1112,7 +1112,7 @@
   "AWS::BedrockAgentCore::Harness": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-05-25T09:50:44.052285",
-    "last_updated": "2026-06-17T10:26:53.712479",
+    "last_updated": "2026-06-24T08:53:47.173971",
     "time_created": "2026-05-21T02:21:29.416000+00:00"
   },
   "AWS::BedrockAgentCore::Memory": {
@@ -5615,6 +5615,18 @@
     "last_updated": "2026-05-27T09:30:13.186850",
     "time_created": "2023-04-15T00:42:20.704000+00:00"
   },
+  "AWS::Lambda::MicrovmImage": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-06-24T08:53:47.173971",
+    "last_updated": "2026-06-24T08:53:47.173971",
+    "time_created": "2026-06-18T21:03:54.585000+00:00"
+  },
+  "AWS::Lambda::NetworkConnector": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-06-24T08:53:47.173971",
+    "last_updated": "2026-06-24T08:53:47.173971",
+    "time_created": "2026-06-15T12:18:46.321000+00:00"
+  },
   "AWS::Lambda::Permission": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
@@ -5966,7 +5978,7 @@
   "AWS::MSK::Replicator": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-15T11:47:19.958503",
+    "last_updated": "2026-06-24T08:53:47.173971",
     "time_created": "2023-10-05T03:22:29.027000+00:00"
   },
   "AWS::MSK::ServerlessCluster": {
