@@ -224,6 +224,7 @@
   },
   "typeName": "AWS::CodePipeline::CustomActionType",
   "writeOnlyProperties": [
-    "/properties/ConfigurationProperties/*/Type"
+    "/properties/ConfigurationProperties/*/Type",
+    "/properties/Settings/ThirdPartyConfigurationUrl"
   ]
 }

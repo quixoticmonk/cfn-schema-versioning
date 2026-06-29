@@ -5,6 +5,7 @@
     "/properties/KnowledgeBaseConfiguration/Type",
     "/properties/KnowledgeBaseConfiguration/VectorKnowledgeBaseConfiguration",
     "/properties/KnowledgeBaseConfiguration/KendraKnowledgeBaseConfiguration",
+    "/properties/KnowledgeBaseConfiguration/ManagedKnowledgeBaseConfiguration",
     "/properties/KnowledgeBaseConfiguration/SqlKnowledgeBaseConfiguration/Type",
     "/properties/KnowledgeBaseConfiguration/SqlKnowledgeBaseConfiguration/RedshiftConfiguration/StorageConfigurations",
     "/properties/KnowledgeBaseConfiguration/SqlKnowledgeBaseConfiguration/RedshiftConfiguration/QueryEngineConfiguration"
@@ -132,6 +133,14 @@
       },
       "type": "object"
     },
+    "EmbeddingModelType": {
+      "description": "The type of embedding model to use for the managed knowledge base.",
+      "enum": [
+        "CUSTOM",
+        "MANAGED"
+      ],
+      "type": "string"
+    },
     "FixedLengthDuration": {
       "description": "Duration in seconds to segment the multi modal media",
       "maximum": 30,
@@ -171,6 +180,9 @@
         "KendraKnowledgeBaseConfiguration": {
           "$ref": "#/definitions/KendraKnowledgeBaseConfiguration"
         },
+        "ManagedKnowledgeBaseConfiguration": {
+          "$ref": "#/definitions/ManagedKnowledgeBaseConfiguration"
+        },
         "SqlKnowledgeBaseConfiguration": {
           "$ref": "#/definitions/SqlKnowledgeBaseConfiguration"
         },
@@ -194,7 +206,8 @@
         "DELETING",
         "UPDATING",
         "FAILED",
-        "DELETE_UNSUCCESSFUL"
+        "DELETE_UNSUCCESSFUL",
+        "UPDATE_UNSUCCESSFUL"
       ],
       "type": "string"
     },
@@ -216,9 +229,50 @@
       "enum": [
         "VECTOR",
         "KENDRA",
-        "SQL"
+        "SQL",
+        "MANAGED"
       ],
       "type": "string"
+    },
+    "ManagedKnowledgeBaseConfiguration": {
+      "additionalProperties": false,
+      "description": "Contains details about the model used to create vector embeddings for a managed knowledge base.",
+      "properties": {
+        "EmbeddingModelArn": {
+          "description": "The ARN of the model used to create vector embeddings for the knowledge base.",
+          "maxLength": 2048,
+          "minLength": 20,
+          "pattern": "^(arn:aws(-[^:]+)?:[a-z0-9-]+:[a-z0-9-]{1,20}:[0-9]{0,12}:[a-zA-Z0-9-:/._+]+)$",
+          "type": "string"
+        },
+        "EmbeddingModelConfiguration": {
+          "$ref": "#/definitions/EmbeddingModelConfiguration"
+        },
+        "EmbeddingModelType": {
+          "$ref": "#/definitions/EmbeddingModelType"
+        },
+        "ServerSideEncryptionConfiguration": {
+          "$ref": "#/definitions/ManagedKnowledgeBaseServerSideEncryptionConfiguration"
+        }
+      },
+      "required": [
+        "EmbeddingModelArn"
+      ],
+      "type": "object"
+    },
+    "ManagedKnowledgeBaseServerSideEncryptionConfiguration": {
+      "additionalProperties": false,
+      "description": "Contains details about the server-side encryption for the managed knowledge base.",
+      "properties": {
+        "KmsKeyArn": {
+          "description": "The ARN of the AWS KMS key used to encrypt the managed knowledge base.",
+          "maxLength": 2048,
+          "minLength": 1,
+          "pattern": "^arn:aws(-cn|-us-gov|-eusc|-iso(-[b-f])?)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$",
+          "type": "string"
+        }
+      },
+      "type": "object"
     },
     "MongoDbAtlasConfiguration": {
       "additionalProperties": false,
@@ -1278,7 +1332,13 @@
         "bedrock:TagResource",
         "bedrock:ListTagsForResource",
         "bedrock:AssociateThirdPartyKnowledgeBase",
-        "iam:PassRole"
+        "iam:PassRole",
+        "kms:CreateGrant",
+        "kms:RetireGrant",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:Encrypt",
+        "kms:Decrypt"
       ]
     },
     "delete": {
@@ -1307,7 +1367,13 @@
         "bedrock:UntagResource",
         "bedrock:ListTagsForResource",
         "bedrock:AssociateThirdPartyKnowledgeBase",
-        "iam:PassRole"
+        "iam:PassRole",
+        "kms:CreateGrant",
+        "kms:RetireGrant",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:Encrypt",
+        "kms:Decrypt"
       ]
     }
   },
