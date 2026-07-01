@@ -116,6 +116,11 @@
       "pattern": "^[A-Za-z0-9][A-Za-z0-9_\\-]{1,59}$",
       "type": "string"
     },
+    "SharingEnabled": {
+      "default": false,
+      "description": "Whether the system is enabled to be shared with other members of the Organization. Only applicable if the system owner is a management account or delegated admin.",
+      "type": "boolean"
+    },
     "SystemArn": {
       "description": "The ARN of the system.",
       "pattern": "^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$",

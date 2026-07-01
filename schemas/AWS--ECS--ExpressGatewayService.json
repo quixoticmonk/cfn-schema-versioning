@@ -186,6 +186,9 @@
         "ServiceRevisionArn": {
           "type": "string"
         },
+        "TaskDefinitionArn": {
+          "type": "string"
+        },
         "TaskRoleArn": {
           "type": "string"
         }
@@ -361,6 +364,8 @@
         "ecs:UpdateExpressGatewayService",
         "ecs:DescribeExpressGatewayService",
         "ecs:DescribeServiceDeployments",
+        "ecs:DescribeServiceRevisions",
+        "ecs:DescribeServices",
         "ecs:ListServiceDeployments",
         "ecs:RegisterTaskDefinition",
         "iam:PassRole"
@@ -434,6 +439,9 @@
       },
       "type": "array"
     },
+    "TaskDefinitionArn": {
+      "type": "string"
+    },
     "TaskRoleArn": {
       "type": "string"
     },
@@ -443,7 +451,7 @@
     }
   },
   "propertyTransform": {
-    "/properties/Cluster": "Cluster $OR $join([\"arn:(aws)[-]{0,1}[a-z]{0,3}[-]{0,1}[a-z]{0,3}:ecs:[a-z0-9-]+:[0-9]{12}:cluster/{1}\", Cluster])"
+    "/properties/Cluster": "Cluster $OR $join([\"arn:(aws)[-]{0,1}[a-z]{0,3}[-]{0,1}[a-z]{0,3}:ecs:[a-z0-9-]+:[0-9]{12}:cluster/\", Cluster])"
   },
   "readOnlyProperties": [
     "/properties/ServiceArn",
@@ -468,9 +476,7 @@
     "/properties/ECSManagedResourceArns/IngressPath/TargetGroupArns"
   ],
   "required": [
-    "ExecutionRoleArn",
-    "InfrastructureRoleArn",
-    "PrimaryContainer"
+    "InfrastructureRoleArn"
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
@@ -488,6 +494,7 @@
   "writeOnlyProperties": [
     "/properties/ExecutionRoleArn",
     "/properties/TaskRoleArn",
+    "/properties/TaskDefinitionArn",
     "/properties/HealthCheckPath",
     "/properties/PrimaryContainer",
     "/properties/NetworkConfiguration",

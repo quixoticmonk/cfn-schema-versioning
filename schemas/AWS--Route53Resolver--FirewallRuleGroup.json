@@ -128,6 +128,15 @@
           "maxLength": 16,
           "minLength": 1,
           "type": "string"
+        },
+        "Status": {
+          "description": "The status of the firewall rule.",
+          "enum": [
+            "COMPLETE",
+            "CREATING",
+            "CREATION_FAILED"
+          ],
+          "type": "string"
         }
       },
       "required": [
@@ -140,6 +149,11 @@
       "additionalProperties": false,
       "description": "Firewall rule type union. Exactly one member must be set. Mutually exclusive with FirewallDomainListId and DnsThreatProtection/ConfidenceThreshold.",
       "oneOf": [
+        {
+          "required": [
+            "PartnerThreatProtection"
+          ]
+        },
         {
           "required": [
             "FirewallAdvancedContentCategory"
@@ -157,8 +171,27 @@
         },
         "FirewallAdvancedThreatCategory": {
           "$ref": "#/definitions/FirewallAdvancedThreatCategoryConfig"
+        },
+        "PartnerThreatProtection": {
+          "$ref": "#/definitions/PartnerThreatProtectionConfig"
         }
       },
+      "type": "object"
+    },
+    "PartnerThreatProtectionConfig": {
+      "additionalProperties": false,
+      "description": "Configuration for a partner threat protection rule type.",
+      "properties": {
+        "Partner": {
+          "description": "The partner identifier value.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Partner"
+      ],
       "type": "object"
     },
     "Tag": {
@@ -338,7 +371,8 @@
     "/properties/CreatorRequestId",
     "/properties/CreationTime",
     "/properties/ModificationTime",
-    "/properties/FirewallRules/*/FirewallThreatProtectionId"
+    "/properties/FirewallRules/*/FirewallThreatProtectionId",
+    "/properties/FirewallRules/*/Status"
   ],
   "tagging": {
     "cloudFormationSystemTags": true,

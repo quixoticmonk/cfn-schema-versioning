@@ -261,9 +261,25 @@
       "additionalProperties": false,
       "description": "An option for a multi-select question in an evaluation form.",
       "properties": {
+        "AutomaticFail": {
+          "description": "",
+          "type": "boolean"
+        },
+        "AutomaticFailConfiguration": {
+          "$ref": "#/definitions/AutomaticFailConfiguration",
+          "description": ""
+        },
+        "PointsConfiguration": {
+          "$ref": "#/definitions/QuestionOptionPointsConfiguration",
+          "description": ""
+        },
         "RefId": {
           "$ref": "#/definitions/RefId",
           "description": "Reference identifier for this option."
+        },
+        "Score": {
+          "$ref": "#/definitions/Score",
+          "description": ""
         },
         "Text": {
           "description": "Display text for this option.",
@@ -345,6 +361,10 @@
           "description": "The minimum answer value of the range option.",
           "type": "integer"
         },
+        "PointsConfiguration": {
+          "$ref": "#/definitions/QuestionOptionPointsConfiguration",
+          "description": ""
+        },
         "Score": {
           "$ref": "#/definitions/Score",
           "description": "The score assigned to answer values within the range option.\n *Minimum*: 0\n *Maximum*: 10"
@@ -425,6 +445,10 @@
           "$ref": "#/definitions/RefId",
           "description": "The identifier of the question. An identifier must be unique within the evaluation form.\n *Length Constraints*: Minimum length of 1. Maximum length of 40."
         },
+        "ScoringConfiguration": {
+          "$ref": "#/definitions/EvaluationFormQuestionScoringConfiguration",
+          "description": ""
+        },
         "Title": {
           "description": "The title of the question.\n *Length Constraints*: Minimum length of 1. Maximum length of 350.",
           "maxLength": 350,
@@ -461,6 +485,28 @@
       ],
       "type": "object"
     },
+    "EvaluationFormQuestionScoringConfiguration": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "IsExcludedFromScoring": {
+          "description": "Whether the question is excluded from scoring.",
+          "type": "boolean"
+        },
+        "PointsConfiguration": {
+          "$ref": "#/definitions/QuestionPointsConfiguration",
+          "description": "The points configuration for the question."
+        },
+        "ScoreThresholds": {
+          "description": "The score thresholds for the question.",
+          "items": {
+            "$ref": "#/definitions/EvaluationFormScoreThreshold"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "EvaluationFormQuestionTypeProperties": {
       "additionalProperties": false,
       "description": "Information about properties for a question in an evaluation form. The question type properties must be either for a numeric question or a single select question.",
@@ -484,6 +530,36 @@
       },
       "type": "object"
     },
+    "EvaluationFormScoreThreshold": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "MaxScorePercentage": {
+          "description": "The maximum score percentage for this threshold.",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "MinScorePercentage": {
+          "description": "The minimum score percentage for this threshold.",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "PerformanceCategory": {
+          "description": "The performance category name.",
+          "enum": [
+            "NEEDS_IMPROVEMENT",
+            "EXCEEDS_EXPECTATIONS"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "PerformanceCategory"
+      ],
+      "type": "object"
+    },
     "EvaluationFormSection": {
       "additionalProperties": false,
       "description": "Information about a section from an evaluation form. A section can contain sections and/or questions. Evaluation forms can only contain sections and subsections (two level nesting).",
@@ -492,6 +568,10 @@
           "description": "The instructions of the section.",
           "maxLength": 1024,
           "type": "string"
+        },
+        "IsExcludedFromScoring": {
+          "description": "",
+          "type": "boolean"
         },
         "Items": {
           "description": "The items of the section.\n *Minimum*: 1",
@@ -506,6 +586,13 @@
         "RefId": {
           "$ref": "#/definitions/RefId",
           "description": "The identifier of the section. An identifier must be unique within the evaluation form.\n *Length Constraints*: Minimum length of 1. Maximum length of 40."
+        },
+        "ScoreThresholds": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/EvaluationFormScoreThreshold"
+          },
+          "type": "array"
         },
         "Title": {
           "description": "The title of the section.\n *Length Constraints*: Minimum length of 1. Maximum length of 128.",
@@ -574,6 +661,10 @@
         "AutomaticFailConfiguration": {
           "$ref": "#/definitions/AutomaticFailConfiguration",
           "description": "Whether automatic fail is configured on a single select question."
+        },
+        "PointsConfiguration": {
+          "$ref": "#/definitions/QuestionOptionPointsConfiguration",
+          "description": ""
         },
         "RefId": {
           "$ref": "#/definitions/RefId",
@@ -784,6 +875,49 @@
       ],
       "type": "object"
     },
+    "PointValue": {
+      "description": "The point value for scoring.",
+      "maximum": 100,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "QuestionOptionPointsConfiguration": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "IsBonus": {
+          "description": "Whether this option is a bonus. Note: Bonus options are not supported for multi-select questions. This property should only be set to true for single-select and numeric question options.",
+          "type": "boolean"
+        },
+        "PointValue": {
+          "$ref": "#/definitions/PointValue",
+          "description": "The point value assigned to this option."
+        }
+      },
+      "required": [
+        "PointValue"
+      ],
+      "type": "object"
+    },
+    "QuestionPointsConfiguration": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "IsBonus": {
+          "description": "Whether the question is a bonus question.",
+          "type": "boolean"
+        },
+        "MaxPointValue": {
+          "$ref": "#/definitions/PointValue",
+          "description": "The maximum point value for the question."
+        },
+        "MinPointValue": {
+          "$ref": "#/definitions/PointValue",
+          "description": "The minimum point value for the question."
+        }
+      },
+      "type": "object"
+    },
     "RefId": {
       "description": "The identifier to reference the item.",
       "pattern": "^[a-zA-Z0-9._-]{1,40}$",
@@ -810,9 +944,17 @@
           "description": "The scoring mode of the evaluation form.\n *Allowed values*: ``QUESTION_ONLY`` | ``SECTION_ONLY``",
           "enum": [
             "QUESTION_ONLY",
-            "SECTION_ONLY"
+            "SECTION_ONLY",
+            "POINTS_BASED"
           ],
           "type": "string"
+        },
+        "ScoreThresholds": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/EvaluationFormScoreThreshold"
+          },
+          "type": "array"
         },
         "Status": {
           "description": "The scoring status of the evaluation form.\n *Allowed values*: ``ENABLED`` | ``DISABLED``",

@@ -426,9 +426,10 @@
     },
     "MetricConfiguration": {
       "additionalProperties": false,
-      "description": "",
+      "description": "The configuration for a specific set of metrics to collect for a service.",
       "properties": {
         "MetricNames": {
+          "description": "The list of metric names to configure. The supported metric names are ``CPUUtilization`` and ``MemoryUtilization``.",
           "items": {
             "enum": [
               "CPUUtilization",
@@ -442,6 +443,7 @@
           "uniqueItems": true
         },
         "ResolutionSeconds": {
+          "description": "The resolution, in seconds, at which to collect the metrics. The valid values are ``20`` and ``60``.",
           "enum": [
             20,
             60
@@ -457,9 +459,10 @@
     },
     "MonitoringConfiguration": {
       "additionalProperties": false,
-      "description": "",
+      "description": "The optional monitoring configuration for a service, which defines the resolution for the service-level ``CPUUtilization`` and ``MemoryUtilization`` Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of ``60`` seconds.",
       "properties": {
         "MetricConfigurations": {
+          "description": "The list of metric configurations for the service monitoring.",
           "items": {
             "$ref": "#/definitions/MetricConfiguration"
           },
@@ -1015,7 +1018,7 @@
     },
     "Monitoring": {
       "$ref": "#/definitions/MonitoringConfiguration",
-      "description": ""
+      "description": "The optional monitoring configuration for the service, which defines the resolution for the service-level ``CPUUtilization`` and ``MemoryUtilization`` Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of ``60`` seconds."
     },
     "Name": {
       "description": "",

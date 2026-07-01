@@ -21,14 +21,14 @@
       "description": "",
       "properties": {
         "LogGroup": {
-          "description": "The log group name.",
+          "description": "",
           "maxLength": 512,
           "minLength": 1,
           "pattern": "[\\.\\-_/#A-Za-z0-9]+",
           "type": "string"
         },
         "SystemLogLevel": {
-          "description": "System log granularity level",
+          "description": "",
           "enum": [
             "DEBUG",
             "INFO",
@@ -114,7 +114,7 @@
       "properties": {
         "LoggingConfig": {
           "$ref": "#/definitions/CapacityProviderLoggingConfig",
-          "description": "The logging configuration for the capacity provider."
+          "description": ""
         }
       },
       "type": "object"
@@ -201,10 +201,10 @@
     },
     "PropagateTagsConfig": {
       "additionalProperties": false,
-      "description": "",
+      "description": "Configuration that defines how tags are propagated to managed resources.",
       "properties": {
         "ExplicitTags": {
-          "description": "",
+          "description": "A list of tags to explicitly propagate to managed resources. Maximum of 40 tags.",
           "insertionOrder": false,
           "items": {
             "$ref": "#/definitions/Tag"
@@ -216,7 +216,7 @@
         },
         "Mode": {
           "$ref": "#/definitions/PropagateTagsMode",
-          "description": ""
+          "description": "The mode for tag propagation. Use ``Explicit`` to propagate specific tags, or ``None`` to disable propagation."
         }
       },
       "type": "object"
@@ -362,7 +362,7 @@
     },
     "PropagateTags": {
       "$ref": "#/definitions/PropagateTagsConfig",
-      "description": ""
+      "description": "Configuration for tag propagation to managed resources launched by the capacity provider."
     },
     "State": {
       "$ref": "#/definitions/CapacityProviderState",

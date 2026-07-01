@@ -27,8 +27,42 @@
     }
   },
   "description": "Resource Type definition for AWS::Config::RemediationConfiguration",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "config:DescribeRemediationConfigurations",
+        "config:PutRemediationConfigurations",
+        "iam:PassRole",
+        "iam:CreateServiceLinkedRole"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "config:DeleteRemediationConfiguration"
+      ]
+    },
+    "list": {
+      "permissions": [
+        "config:DescribeRemediationConfigurations",
+        "config:DescribeConfigRules"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "config:DescribeRemediationConfigurations"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "config:PutRemediationConfigurations",
+        "config:DescribeRemediationConfigurations",
+        "iam:PassRole",
+        "iam:CreateServiceLinkedRole"
+      ]
+    }
+  },
   "primaryIdentifier": [
-    "/properties/Id"
+    "/properties/ConfigRuleName"
   ],
   "properties": {
     "Automatic": {
@@ -39,9 +73,6 @@
     },
     "ExecutionControls": {
       "$ref": "#/definitions/ExecutionControls"
-    },
-    "Id": {
-      "type": "string"
     },
     "MaximumAutomaticAttempts": {
       "type": "integer"
@@ -65,13 +96,13 @@
       "type": "string"
     }
   },
-  "readOnlyProperties": [
-    "/properties/Id"
-  ],
   "required": [
     "TargetType",
     "ConfigRuleName",
     "TargetId"
   ],
+  "tagging": {
+    "taggable": false
+  },
   "typeName": "AWS::Config::RemediationConfiguration"
 }

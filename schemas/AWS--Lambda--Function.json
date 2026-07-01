@@ -44,6 +44,14 @@
           "minLength": 1,
           "type": "string"
         },
+        "S3ObjectStorageMode": {
+          "description": "",
+          "enum": [
+            "COPY",
+            "REFERENCE"
+          ],
+          "type": "string"
+        },
         "S3ObjectVersion": {
           "description": "For versioned objects, the version of the deployment package object to use.",
           "maxLength": 1024,
@@ -446,10 +454,8 @@
         "s3files:ListMountTargets",
         "kms:CreateGrant",
         "kms:Decrypt",
-        "kms:DescribeKey",
         "kms:Encrypt",
         "kms:GenerateDataKey",
-        "kms:GenerateDataKeyWithoutPlaintext",
         "lambda:GetCodeSigningConfig",
         "lambda:GetFunctionCodeSigningConfig",
         "lambda:GetLayerVersion",
@@ -503,9 +509,7 @@
         "s3files:ListMountTargets",
         "kms:CreateGrant",
         "kms:Decrypt",
-        "kms:DescribeKey",
         "kms:GenerateDataKey",
-        "kms:GenerateDataKeyWithoutPlaintext",
         "lambda:GetRuntimeManagementConfig",
         "lambda:PutRuntimeManagementConfig",
         "lambda:PutFunctionCodeSigningConfig",
@@ -725,6 +729,7 @@
     "/properties/Code/S3ObjectVersion",
     "/properties/Code/ZipFile",
     "/properties/Code/SourceKMSKeyArn",
+    "/properties/Code/S3ObjectStorageMode",
     "/properties/PublishToLatestPublished"
   ]
 }

@@ -382,6 +382,19 @@
       ],
       "type": "object"
     },
+    "RollbackConfig": {
+      "additionalProperties": false,
+      "description": "The rollback configuration to use for the cluster version rollback.",
+      "properties": {
+        "TimeoutMinutes": {
+          "description": "The timeout in minutes for the version rollback operation. If not specified, defaults to 720 minutes (12 hours).",
+          "maximum": 10080,
+          "minimum": 120,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "StorageConfig": {
       "additionalProperties": false,
       "description": "Todo: add description",
@@ -584,6 +597,9 @@
       "description": "The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.",
       "type": "string"
     },
+    "RollbackConfig": {
+      "$ref": "#/definitions/RollbackConfig"
+    },
     "StorageConfig": {
       "$ref": "#/definitions/StorageConfig"
     },
@@ -638,6 +654,7 @@
   "writeOnlyProperties": [
     "/properties/AccessConfig/BootstrapClusterCreatorAdminPermissions",
     "/properties/BootstrapSelfManagedAddons",
-    "/properties/Force"
+    "/properties/Force",
+    "/properties/RollbackConfig"
   ]
 }
