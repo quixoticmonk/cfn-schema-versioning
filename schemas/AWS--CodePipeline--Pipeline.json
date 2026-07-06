@@ -731,6 +731,11 @@
     "/properties/Name"
   ],
   "properties": {
+    "Arn": {
+      "description": "The Amazon Resource Name (ARN) of the pipeline.",
+      "pattern": "arn:aws(-[\\w]+)*:codepipeline:[a-z0-9-]+:[0-9]{12}:.+",
+      "type": "string"
+    },
     "ArtifactStore": {
       "$ref": "#/definitions/ArtifactStore",
       "description": "The S3 bucket where artifacts for the pipeline are stored."
@@ -820,7 +825,8 @@
     }
   },
   "readOnlyProperties": [
-    "/properties/Version"
+    "/properties/Version",
+    "/properties/Arn"
   ],
   "required": [
     "Stages",

@@ -268,6 +268,16 @@
       "$ref": "#/definitions/ImageScanningConfiguration",
       "description": "Contains settings for vulnerability scans."
     },
+    "ImageTags": {
+      "additionalProperties": false,
+      "description": "The tags to be applied to images created by this pipeline.",
+      "patternProperties": {
+        ".{1,}": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "ImageTestsConfiguration": {
       "$ref": "#/definitions/ImageTestsConfiguration",
       "description": "The image tests configuration of the image pipeline."

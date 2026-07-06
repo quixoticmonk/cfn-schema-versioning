@@ -405,6 +405,7 @@
     "read": {
       "permissions": [
         "profile:GetDomain",
+        "profile:ListTagsForResource",
         "kms:CreateGrant",
         "kms:DescribeKey",
         "kms:GetKeyPolicy",
@@ -418,6 +419,7 @@
         "profile:UpdateDomain",
         "profile:UntagResource",
         "profile:TagResource",
+        "profile:ListTagsForResource",
         "kms:CreateGrant",
         "kms:DescribeKey",
         "kms:GetKeyPolicy",

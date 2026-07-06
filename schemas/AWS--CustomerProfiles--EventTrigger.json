@@ -189,6 +189,7 @@
         "Unit": {
           "description": "The unit of time.",
           "enum": [
+            "MINUTES",
             "HOURS",
             "DAYS",
             "WEEKS",
@@ -202,7 +203,7 @@
         },
         "Value": {
           "description": "The amount of time of the specified unit.",
-          "maximum": 24,
+          "maximum": 60,
           "minimum": 1,
           "type": "integer"
         }
@@ -295,7 +296,8 @@
     },
     "read": {
       "permissions": [
-        "profile:GetEventTrigger"
+        "profile:GetEventTrigger",
+        "profile:ListTagsForResource"
       ]
     },
     "update": {
@@ -303,7 +305,8 @@
         "profile:GetEventTrigger",
         "profile:UpdateEventTrigger",
         "profile:UntagResource",
-        "profile:TagResource"
+        "profile:TagResource",
+        "profile:ListTagsForResource"
       ]
     }
   },

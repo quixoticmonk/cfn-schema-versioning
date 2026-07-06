@@ -1,4 +1,9 @@
 {
+  "additionalIdentifiers": [
+    [
+      "/properties/RuleName"
+    ]
+  ],
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/RuleName"
@@ -15,24 +20,59 @@
         }
       },
       "required": [
-        "Value",
-        "Key"
+        "Key",
+        "Value"
       ],
       "type": "object"
     }
   },
-  "description": "Resource Type definition for AWS::CloudWatch::InsightRule",
+  "description": "Resource Type definition for AWS::CloudWatch::InsightRule. Creates a Contributor Insights rule that analyzes log data to identify top contributors and usage patterns.",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "cloudwatch:PutInsightRule",
+        "cloudwatch:DescribeInsightRules",
+        "cloudwatch:TagResource"
+      ],
+      "timeoutInMinutes": 20
+    },
+    "delete": {
+      "permissions": [
+        "cloudwatch:DeleteInsightRules",
+        "cloudwatch:DescribeInsightRules"
+      ],
+      "timeoutInMinutes": 20
+    },
+    "list": {
+      "permissions": [
+        "cloudwatch:DescribeInsightRules"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "cloudwatch:DescribeInsightRules",
+        "cloudwatch:ListTagsForResource"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "cloudwatch:PutInsightRule",
+        "cloudwatch:DescribeInsightRules",
+        "cloudwatch:TagResource",
+        "cloudwatch:UntagResource"
+      ],
+      "timeoutInMinutes": 20
+    }
+  },
   "primaryIdentifier": [
-    "/properties/Id"
+    "/properties/Arn"
   ],
   "properties": {
     "ApplyOnTransformedLogs": {
+      "default": false,
       "type": "boolean"
     },
     "Arn": {
-      "type": "string"
-    },
-    "Id": {
       "type": "string"
     },
     "RuleBody": {
@@ -42,24 +82,40 @@
       "type": "string"
     },
     "RuleState": {
+      "enum": [
+        "ENABLED",
+        "DISABLED"
+      ],
       "type": "string"
     },
     "Tags": {
+      "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/Tag"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     }
   },
   "readOnlyProperties": [
-    "/properties/Id",
     "/properties/Arn"
   ],
   "required": [
+    "RuleName",
     "RuleState",
-    "RuleBody",
-    "RuleName"
+    "RuleBody"
   ],
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "cloudwatch:TagResource",
+      "cloudwatch:UntagResource",
+      "cloudwatch:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::CloudWatch::InsightRule"
 }

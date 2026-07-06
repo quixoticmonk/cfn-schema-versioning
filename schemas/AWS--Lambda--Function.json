@@ -92,6 +92,11 @@
           "minimum": 1,
           "type": "integer"
         },
+        "KMSKeyArn": {
+          "description": "",
+          "pattern": "^(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()$",
+          "type": "string"
+        },
         "RetentionPeriodInDays": {
           "default": 14,
           "description": "The number of days to retain execution history after a durable execution completes. After this period, execution history is no longer available through the GetDurableExecutionHistory API.",
@@ -454,6 +459,7 @@
         "s3files:ListMountTargets",
         "kms:CreateGrant",
         "kms:Decrypt",
+        "kms:DescribeKey",
         "kms:Encrypt",
         "kms:GenerateDataKey",
         "lambda:GetCodeSigningConfig",
@@ -509,6 +515,7 @@
         "s3files:ListMountTargets",
         "kms:CreateGrant",
         "kms:Decrypt",
+        "kms:DescribeKey",
         "kms:GenerateDataKey",
         "lambda:GetRuntimeManagementConfig",
         "lambda:PutRuntimeManagementConfig",

@@ -343,6 +343,9 @@
       "type": "string"
     }
   },
+  "propertyTransform": {
+    "/properties/Version": "$join([\"^\", $replace($replace(Version, \".\", \"\\\\.\"), \"x\", \"[0-9]+\"), \"$\"])"
+  },
   "readOnlyProperties": [
     "/properties/Arn",
     "/properties/LatestVersion",

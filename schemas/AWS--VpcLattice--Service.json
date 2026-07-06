@@ -127,6 +127,11 @@
       "pattern": "^svc-[0-9a-z]{17}$",
       "type": "string"
     },
+    "IdleTimeoutSeconds": {
+      "maximum": 600,
+      "minimum": 60,
+      "type": "integer"
+    },
     "LastUpdatedAt": {
       "type": "string"
     },

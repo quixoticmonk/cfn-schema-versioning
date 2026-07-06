@@ -482,7 +482,8 @@
     "VcfVersion": {
       "enum": [
         "VCF-5.2.1",
-        "VCF-5.2.2"
+        "VCF-5.2.2",
+        "SELF_DEPLOYED"
       ],
       "type": "string"
     },
@@ -507,11 +508,7 @@
     "VpcId",
     "ServiceAccessSubnetId",
     "VcfVersion",
-    "TermsAccepted",
-    "LicenseInfo",
-    "ConnectivityInfo",
-    "VcfHostnames",
-    "SiteId"
+    "TermsAccepted"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {

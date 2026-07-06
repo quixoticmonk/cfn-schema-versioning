@@ -7,7 +7,9 @@
     "/properties/ParentImage",
     "/properties/Description",
     "/properties/BlockDeviceMappings",
-    "/properties/WorkingDirectory"
+    "/properties/WorkingDirectory",
+    "/properties/AdditionalInstanceConfiguration",
+    "/properties/AmiTags"
   ],
   "definitions": {
     "AdditionalInstanceConfiguration": {
@@ -283,6 +285,9 @@
       "description": "The working directory to be used during build and test workflows.",
       "type": "string"
     }
+  },
+  "propertyTransform": {
+    "/properties/Version": "$join([\"^\", $replace($replace(Version, \".\", \"\\\\.\"), \"x\", \"[0-9]+\"), \"$\"])"
   },
   "readOnlyProperties": [
     "/properties/Arn",
