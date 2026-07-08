@@ -491,7 +491,7 @@
     "PartitionKeyColumns"
   ],
   "tagging": {
-    "cloudFormationSystemTags": true,
+    "cloudFormationSystemTags": false,
     "permissions": [
       "cassandra:TagResource",
       "cassandra:TagMultiRegionResource",

@@ -47,6 +47,11 @@
       "description": "A regular expression used to validate the parameter value. For example, for ``String`` types with values restricted to numbers, you can specify the following: ``AllowedPattern=^\\d+$``",
       "type": "string"
     },
+    "Arn": {
+      "description": "",
+      "pattern": "arn:aws(-[a-z0-9-]+)*:ssm:[a-z0-9-]+:[0-9]{12}:parameter/.+",
+      "type": "string"
+    },
     "DataType": {
       "description": "The data type of the parameter, such as ``text`` or ``aws:ec2:image``. The default is ``text``.",
       "enum": [
@@ -99,6 +104,9 @@
       "type": "string"
     }
   },
+  "readOnlyProperties": [
+    "/properties/Arn"
+  ],
   "required": [
     "Value",
     "Type"

@@ -212,7 +212,7 @@
     "TreatMissingData"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "medialive:CreateTags",
       "medialive:DeleteTags"

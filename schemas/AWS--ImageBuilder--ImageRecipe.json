@@ -9,7 +9,8 @@
     "/properties/BlockDeviceMappings",
     "/properties/WorkingDirectory",
     "/properties/AdditionalInstanceConfiguration",
-    "/properties/AmiTags"
+    "/properties/AmiTags",
+    "/properties/AmiWatermarks"
   ],
   "definitions": {
     "AdditionalInstanceConfiguration": {
@@ -230,6 +231,19 @@
         }
       },
       "type": "object"
+    },
+    "AmiWatermarks": {
+      "description": "The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers that automatically propagate to derivative AMIs when the source AMI is copied or distributed.",
+      "insertionOrder": false,
+      "items": {
+        "maxLength": 128,
+        "minLength": 3,
+        "pattern": "^[A-Za-z0-9()\\[\\]./'@_\\-][A-Za-z0-9 ()\\[\\]./'@_\\-]{1,126}[A-Za-z0-9()\\[\\]./'@_\\-]$",
+        "type": "string"
+      },
+      "maxItems": 5,
+      "minItems": 1,
+      "type": "array"
     },
     "Arn": {
       "description": "The Amazon Resource Name (ARN) of the image recipe.",

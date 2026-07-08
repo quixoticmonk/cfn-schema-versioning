@@ -670,7 +670,7 @@
     "/properties/DaemonTaskDefinitionArn"
   ],
   "tagging": {
-    "cloudFormationSystemTags": true,
+    "cloudFormationSystemTags": false,
     "permissions": [
       "ecs:TagResource",
       "ecs:UntagResource",
