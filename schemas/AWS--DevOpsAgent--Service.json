@@ -441,13 +441,18 @@
           },
           "type": "object"
         },
+        "McpRoleArn": {
+          "description": "IAM role ARN to assume for SigV4 signing. Optional - when omitted, credentials are resolved at runtime via a monitor account association.",
+          "pattern": "^arn:aws:iam::\\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$",
+          "type": "string"
+        },
         "Region": {
           "description": "AWS region for SigV4 signing. Use '*' for SigV4a multi-region signing.",
           "pattern": "^(\\*|[a-z]{2,4}(-[a-z]+)+-\\d+)$",
           "type": "string"
         },
         "RoleArn": {
-          "description": "IAM role ARN to assume for SigV4 signing",
+          "description": "Deprecated - use McpRoleArn instead. IAM role ARN to assume for SigV4 signing",
           "pattern": "^arn:aws:iam::\\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$",
           "type": "string"
         },
@@ -460,8 +465,7 @@
       },
       "required": [
         "Region",
-        "Service",
-        "RoleArn"
+        "Service"
       ],
       "type": "object"
     },
@@ -845,6 +849,10 @@
           "description": "The MCP server endpoint URL",
           "type": "string"
         },
+        "McpRoleArn": {
+          "description": "IAM role ARN for SigV4 signing. Absent when no dedicated role is configured.",
+          "type": "string"
+        },
         "Name": {
           "description": "The MCP server name",
           "type": "string"
@@ -854,7 +862,7 @@
           "type": "string"
         },
         "RoleArn": {
-          "description": "IAM role ARN for SigV4 signing",
+          "description": "Deprecated - use McpRoleArn instead. IAM role ARN for SigV4 signing",
           "type": "string"
         },
         "Service": {
@@ -1163,7 +1171,8 @@
         "aidevops:GetService",
         "aidevops:TagResource",
         "aidevops:UntagResource",
-        "aidevops:ListTagsForResource"
+        "aidevops:ListTagsForResource",
+        "iam:PassRole"
       ]
     }
   },

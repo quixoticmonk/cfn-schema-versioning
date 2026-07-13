@@ -1,4 +1,10 @@
 {
+  "additionalIdentifiers": [
+    [
+      "/properties/ApplicationId",
+      "/properties/Name"
+    ]
+  ],
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/LocationUri",

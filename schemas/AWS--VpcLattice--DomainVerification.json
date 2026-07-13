@@ -122,6 +122,7 @@
       "uniqueItems": true
     },
     "TxtMethodConfig": {
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"

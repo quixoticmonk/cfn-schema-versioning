@@ -362,13 +362,13 @@
   "AWS::AppConfig::Application": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2024-01-17T15:33:26.357000+00:00"
   },
   "AWS::AppConfig::ConfigurationProfile": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-04T06:36:37.856012",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2024-01-17T15:41:18.113000+00:00"
   },
   "AWS::AppConfig::Deployment": {
@@ -386,13 +386,13 @@
   "AWS::AppConfig::Environment": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2023-11-19T17:26:43.500000+00:00"
   },
   "AWS::AppConfig::Extension": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2023-03-27T03:54:23.314000+00:00"
   },
   "AWS::AppConfig::ExtensionAssociation": {
@@ -2048,7 +2048,7 @@
   "AWS::Config::ConformancePack": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2020-01-29T20:48:32.370000+00:00"
   },
   "AWS::Config::Connector": {
@@ -2156,7 +2156,7 @@
   "AWS::Connect::EvaluationForm": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-07-01T09:30:26.820828",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2023-04-12T22:46:52.756000+00:00"
   },
   "AWS::Connect::HoursOfOperation": {
@@ -2210,7 +2210,7 @@
   "AWS::Connect::Queue": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-09T06:51:44.416053",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2023-06-28T15:53:06.421000+00:00"
   },
   "AWS::Connect::QuickConnect": {
@@ -2264,7 +2264,7 @@
   "AWS::Connect::User": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-02-09T06:55:57.770231",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2021-09-27T21:13:38.265000+00:00"
   },
   "AWS::Connect::UserHierarchyGroup": {
@@ -2804,7 +2804,7 @@
   "AWS::DevOpsAgent::Service": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-02-18T06:52:25.449227",
-    "last_updated": "2026-06-08T10:19:00.229033",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2025-12-10T20:10:37.270000+00:00"
   },
   "AWS::DevOpsGuru::LogAnomalyDetectionIntegration": {
@@ -3443,6 +3443,12 @@
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2021-05-11T16:59:35.560000+00:00"
   },
+  "AWS::EC2::TransitGatewayPolicyTable": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-07-13T08:51:08.731289",
+    "last_updated": "2026-07-13T08:51:08.731289",
+    "time_created": "2026-05-05T22:11:09.491000+00:00"
+  },
   "AWS::EC2::TransitGatewayRoute": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
@@ -3890,7 +3896,7 @@
   "AWS::ElastiCache::ReplicationGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-03T10:44:06.512154",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2025-09-29T21:37:13.624000+00:00"
   },
   "AWS::ElastiCache::SecurityGroup": {
@@ -7142,7 +7148,7 @@
   "AWS::Pinpoint::InAppTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2021-10-21T15:28:59.286000+00:00"
   },
   "AWS::Pinpoint::PushTemplate": {
@@ -8372,7 +8378,7 @@
   "AWS::SQS::Queue": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-11T06:40:39.514781",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2021-06-03T04:50:12.767000+00:00"
   },
   "AWS::SQS::QueueInlinePolicy": {
@@ -8849,10 +8855,16 @@
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2024-05-24T01:52:14.482000+00:00"
   },
+  "AWS::SecurityHub::Connector": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-07-13T08:51:08.731289",
+    "last_updated": "2026-07-13T08:51:08.731289",
+    "time_created": "2026-06-30T04:47:37.523000+00:00"
+  },
   "AWS::SecurityHub::ConnectorV2": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2025-09-09T18:37:10.490000+00:00"
   },
   "AWS::SecurityHub::DelegatedAdmin": {
@@ -9104,13 +9116,13 @@
   "AWS::Shield::Protection": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2023-05-11T11:37:29.346000+00:00"
   },
   "AWS::Shield::ProtectionGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2023-05-11T11:37:34.088000+00:00"
   },
   "AWS::Signer::ProfilePermission": {
@@ -9326,7 +9338,7 @@
   "AWS::VpcLattice::DomainVerification": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-13T08:51:08.731289",
     "time_created": "2025-11-18T18:27:13.421000+00:00"
   },
   "AWS::VpcLattice::Listener": {

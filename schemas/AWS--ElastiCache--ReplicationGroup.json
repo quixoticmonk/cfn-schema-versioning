@@ -491,6 +491,9 @@
       "uniqueItems": true
     }
   },
+  "propertyTransform": {
+    "/properties/ReplicationGroupId": "$lowercase(ReplicationGroupId)"
+  },
   "readOnlyProperties": [
     "/properties/ConfigurationEndPoint",
     "/properties/ConfigurationEndPoint/Address",

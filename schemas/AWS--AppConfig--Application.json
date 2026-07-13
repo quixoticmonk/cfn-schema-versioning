@@ -1,4 +1,9 @@
 {
+  "additionalIdentifiers": [
+    [
+      "/properties/Name"
+    ]
+  ],
   "additionalProperties": false,
   "definitions": {
     "Tags": {
