@@ -4,7 +4,8 @@
     "ConfigOwner": {
       "description": "Configuration owner type",
       "enum": [
-        "ACCOUNT"
+        "ACCOUNT",
+        "ORGANIZATION"
       ],
       "type": "string"
     },

@@ -196,7 +196,7 @@
     "ApplicationName"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "elasticbeanstalk:AddTags",
       "elasticbeanstalk:RemoveTags",

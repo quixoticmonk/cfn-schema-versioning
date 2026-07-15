@@ -746,7 +746,7 @@
   "AWS::AutoScaling::AutoScalingGroup": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-07-01T09:30:26.820828",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2023-03-03T21:43:24.578000+00:00"
   },
   "AWS::AutoScaling::LaunchConfiguration": {
@@ -950,7 +950,7 @@
   "AWS::Bedrock::AutomatedReasoningPolicy": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-06T08:09:18.874155",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2025-08-26T23:11:59.263000+00:00"
   },
   "AWS::Bedrock::AutomatedReasoningPolicyVersion": {
@@ -986,7 +986,7 @@
   "AWS::Bedrock::EnforcedGuardrailConfiguration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-04-08T07:07:58.990485",
-    "last_updated": "2026-04-08T07:07:58.990485",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2026-04-07T17:55:27.432000+00:00"
   },
   "AWS::Bedrock::Flow": {
@@ -1010,7 +1010,7 @@
   "AWS::Bedrock::Guardrail": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2024-03-26T02:21:57.741000+00:00"
   },
   "AWS::Bedrock::GuardrailVersion": {
@@ -1415,6 +1415,12 @@
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2024-07-28T00:16:40.504000+00:00"
   },
+  "AWS::CleanRooms::IntermediateTable": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-07-15T07:51:46.561464",
+    "last_updated": "2026-07-15T07:51:46.561464",
+    "time_created": "2026-07-14T23:37:57.245000+00:00"
+  },
   "AWS::CleanRooms::Membership": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
@@ -1580,7 +1586,7 @@
   "AWS::CloudFront::ConnectionFunction": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-03-25T06:53:10.632848",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2025-11-17T18:58:59.906000+00:00"
   },
   "AWS::CloudFront::ConnectionGroup": {
@@ -1598,7 +1604,7 @@
   "AWS::CloudFront::Distribution": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-18T09:41:31.047163",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2021-01-06T00:39:59.935000+00:00"
   },
   "AWS::CloudFront::DistributionTenant": {
@@ -1610,7 +1616,7 @@
   "AWS::CloudFront::Function": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-05-11T08:59:32.588954",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2021-04-23T01:07:31.854000+00:00"
   },
   "AWS::CloudFront::KeyGroup": {
@@ -1676,7 +1682,7 @@
   "AWS::CloudFront::VpcOrigin": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2025-01-27T19:21:38.754000+00:00"
   },
   "AWS::CloudTrail::Channel": {
@@ -2128,6 +2134,12 @@
     "first_seen": "2026-01-19T02:02:20.407855",
     "last_updated": "2026-01-19T02:16:06.407687",
     "time_created": "2025-01-06T22:47:23.111000+00:00"
+  },
+  "AWS::Connect::DataLakeAssociation": {
+    "deprecation_status": "LIVE",
+    "first_seen": "2026-07-15T07:51:46.561464",
+    "last_updated": "2026-07-15T07:51:46.561464",
+    "time_created": "2026-06-29T21:58:32.680000+00:00"
   },
   "AWS::Connect::DataTable": {
     "deprecation_status": "LIVE",
@@ -2798,7 +2810,7 @@
   "AWS::DevOpsAgent::PrivateConnection": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-04-27T08:07:06.713236",
-    "last_updated": "2026-04-27T08:07:06.713236",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2026-04-24T20:24:09.747000+00:00"
   },
   "AWS::DevOpsAgent::Service": {
@@ -3950,13 +3962,13 @@
   "AWS::ElasticBeanstalk::ConfigurationTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2022-11-15T01:14:32.246000+00:00"
   },
   "AWS::ElasticBeanstalk::Environment": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2022-07-01T10:50:56.906000+00:00"
   },
   "AWS::ElasticLoadBalancing::LoadBalancer": {
@@ -3968,7 +3980,7 @@
   "AWS::ElasticLoadBalancingV2::Listener": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-20T07:52:21.370885",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2020-07-24T17:13:56.229000+00:00"
   },
   "AWS::ElasticLoadBalancingV2::ListenerCertificate": {
@@ -3980,7 +3992,7 @@
   "AWS::ElasticLoadBalancingV2::ListenerRule": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2020-10-02T17:16:15.791000+00:00"
   },
   "AWS::ElasticLoadBalancingV2::LoadBalancer": {
@@ -4910,55 +4922,55 @@
   "AWS::ImageBuilder::Component": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2020-03-16T07:00:43.393000+00:00"
   },
   "AWS::ImageBuilder::ContainerRecipe": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-07-06T09:57:43.221473",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2021-01-05T16:14:24.486000+00:00"
   },
   "AWS::ImageBuilder::DistributionConfiguration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2020-03-16T07:17:14.036000+00:00"
   },
   "AWS::ImageBuilder::Image": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-04-27T08:07:06.713236",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2020-03-18T01:47:44.074000+00:00"
   },
   "AWS::ImageBuilder::ImagePipeline": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-07-06T09:57:43.221473",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2020-03-18T01:43:36.992000+00:00"
   },
   "AWS::ImageBuilder::ImageRecipe": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-07-08T08:09:45.195160",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2020-03-16T10:15:46.585000+00:00"
   },
   "AWS::ImageBuilder::InfrastructureConfiguration": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2020-03-18T01:43:10.573000+00:00"
   },
   "AWS::ImageBuilder::LifecyclePolicy": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2023-10-27T05:07:58.446000+00:00"
   },
   "AWS::ImageBuilder::Workflow": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-01-19T02:16:06.407687",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2023-12-14T23:52:16.428000+00:00"
   },
   "AWS::Inspector::AssessmentTarget": {
@@ -9608,7 +9620,7 @@
   "AWS::Wisdom::MessageTemplate": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-15T11:47:19.958503",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2024-11-13T02:05:48.867000+00:00"
   },
   "AWS::Wisdom::MessageTemplateVersion": {
@@ -9620,7 +9632,7 @@
   "AWS::Wisdom::QuickResponse": {
     "deprecation_status": "LIVE",
     "first_seen": "2026-01-19T02:02:20.407855",
-    "last_updated": "2026-06-15T11:47:19.958503",
+    "last_updated": "2026-07-15T07:51:46.561464",
     "time_created": "2025-06-18T21:47:34.138000+00:00"
   },
   "AWS::WorkSpaces::ConnectionAlias": {

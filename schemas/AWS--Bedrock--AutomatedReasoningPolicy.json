@@ -1,8 +1,7 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
-    "/properties/KmsKeyId",
-    "/properties/ForceDelete"
+    "/properties/KmsKeyId"
   ],
   "definitions": {
     "CreatedAt": {

@@ -56,6 +56,14 @@
       "additionalProperties": false,
       "description": "Configuration for a service-managed Private Connection.",
       "properties": {
+        "DnsResolution": {
+          "description": "DNS resolution mode for the resource gateway. Defaults to PUBLIC when not set.",
+          "enum": [
+            "PUBLIC",
+            "IN_VPC"
+          ],
+          "type": "string"
+        },
         "HostAddress": {
           "description": "IP address or DNS name of the target resource.",
           "maxLength": 255,

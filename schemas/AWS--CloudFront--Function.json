@@ -9,7 +9,7 @@
       "description": "Contains configuration information about a CloudFront function.",
       "properties": {
         "Comment": {
-          "description": "A comment to describe the function.",
+          "description": "A comment to describe the function. The comment cannot be longer than 128 characters.",
           "type": "string"
         },
         "KeyValueStoreAssociations": {
