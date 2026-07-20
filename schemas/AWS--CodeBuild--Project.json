@@ -127,6 +127,9 @@
         "Fleet": {
           "$ref": "#/definitions/ProjectFleet"
         },
+        "HostKernel": {
+          "type": "string"
+        },
         "Image": {
           "type": "string"
         },

@@ -59,7 +59,8 @@
     "CapacityProviderPredefinedMetricType": {
       "description": "The predefined metric for target tracking.",
       "enum": [
-        "LambdaCapacityProviderAverageCPUUtilization"
+        "LambdaCapacityProviderAverageCPUUtilization",
+        "LambdaCapacityProviderAverageGPUUtilization"
       ],
       "type": "string"
     },

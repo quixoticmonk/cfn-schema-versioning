@@ -6,7 +6,8 @@
   "createOnlyProperties": [
     "/properties/CidrBlock",
     "/properties/Ipv4IpamPoolId",
-    "/properties/Ipv4NetmaskLength"
+    "/properties/Ipv4NetmaskLength",
+    "/properties/VpcEncryptionControl"
   ],
   "definitions": {
     "Tag": {
@@ -27,17 +28,162 @@
         "Key"
       ],
       "type": "object"
+    },
+    "VpcEncryptionControl": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "EgressOnlyInternetGatewayExclusion": {
+          "description": "The desired exclusion mode for Egress-Only Internet Gateways.",
+          "enum": [
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        },
+        "ElasticFileSystemExclusion": {
+          "description": "The desired exclusion mode for Elastic File System.",
+          "enum": [
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        },
+        "InternetGatewayExclusion": {
+          "description": "The desired exclusion mode for Internet Gateways.",
+          "enum": [
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        },
+        "LambdaExclusion": {
+          "description": "The desired exclusion mode for Lambda.",
+          "enum": [
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        },
+        "Mode": {
+          "description": "The mode of the VPC encryption control.",
+          "enum": [
+            "monitor",
+            "enforce"
+          ],
+          "type": "string"
+        },
+        "NatGatewayExclusion": {
+          "description": "The desired exclusion mode for NAT Gateways.",
+          "enum": [
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        },
+        "ResourceExclusions": {
+          "$ref": "#/definitions/VpcEncryptionControlExclusions"
+        },
+        "State": {
+          "description": "The state of the VPC encryption control.",
+          "type": "string"
+        },
+        "StateMessage": {
+          "description": "A message describing the state of the VPC encryption control.",
+          "type": "string"
+        },
+        "VirtualPrivateGatewayExclusion": {
+          "description": "The desired exclusion mode for Virtual Private Gateways.",
+          "enum": [
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        },
+        "VpcEncryptionControlId": {
+          "description": "The ID of the VPC encryption control.",
+          "type": "string"
+        },
+        "VpcId": {
+          "description": "The ID of the VPC.",
+          "type": "string"
+        },
+        "VpcLatticeExclusion": {
+          "description": "The desired exclusion mode for VPC Lattice.",
+          "enum": [
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        },
+        "VpcPeeringExclusion": {
+          "description": "The desired exclusion mode for VPC Peering.",
+          "enum": [
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VpcEncryptionControlExclusion": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "State": {
+          "description": "The exclusion state of the resource type.",
+          "type": "string"
+        },
+        "StateMessage": {
+          "description": "A message describing the exclusion state of the resource type.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VpcEncryptionControlExclusions": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "EgressOnlyInternetGateway": {
+          "$ref": "#/definitions/VpcEncryptionControlExclusion"
+        },
+        "ElasticFileSystem": {
+          "$ref": "#/definitions/VpcEncryptionControlExclusion"
+        },
+        "InternetGateway": {
+          "$ref": "#/definitions/VpcEncryptionControlExclusion"
+        },
+        "Lambda": {
+          "$ref": "#/definitions/VpcEncryptionControlExclusion"
+        },
+        "NatGateway": {
+          "$ref": "#/definitions/VpcEncryptionControlExclusion"
+        },
+        "VirtualPrivateGateway": {
+          "$ref": "#/definitions/VpcEncryptionControlExclusion"
+        },
+        "VpcLattice": {
+          "$ref": "#/definitions/VpcEncryptionControlExclusion"
+        },
+        "VpcPeering": {
+          "$ref": "#/definitions/VpcEncryptionControlExclusion"
+        }
+      },
+      "type": "object"
     }
   },
   "description": "Specifies a virtual private cloud (VPC).\n A VPC must have an associated IPv4 CIDR block. You can specify an IPv4 CIDR block or an IPAM-allocated IPv4 CIDR block. To associate an IPv6 CIDR block with the VPC, see [AWS::EC2::VPCCidrBlock](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html).\n For more information, see [Virtual private clouds (VPC)](https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html) in the *Amazon VPC User Guide*.",
   "handlers": {
     "create": {
       "permissions": [
+        "ec2:CreateTags",
         "ec2:CreateVpc",
-        "ec2:DescribeVpcs",
+        "ec2:CreateVpcEncryptionControl",
         "ec2:DescribeVpcAttribute",
-        "ec2:ModifyVpcAttribute",
-        "ec2:CreateTags"
+        "ec2:DescribeVpcs",
+        "ec2:ModifyVpcAttribute"
       ]
     },
     "delete": {
@@ -48,15 +194,17 @@
     },
     "list": {
       "permissions": [
+        "ec2:DescribeVpcEncryptionControls",
         "ec2:DescribeVpcs"
       ]
     },
     "read": {
       "permissions": [
-        "ec2:DescribeVpcs",
-        "ec2:DescribeSecurityGroups",
         "ec2:DescribeNetworkAcls",
-        "ec2:DescribeVpcAttribute"
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcAttribute",
+        "ec2:DescribeVpcEncryptionControls",
+        "ec2:DescribeVpcs"
       ]
     },
     "update": {
@@ -134,6 +282,10 @@
       "type": "array",
       "uniqueItems": false
     },
+    "VpcEncryptionControl": {
+      "$ref": "#/definitions/VpcEncryptionControl",
+      "description": ""
+    },
     "VpcId": {
       "description": "",
       "type": "string"
@@ -144,7 +296,36 @@
     "/properties/DefaultNetworkAcl",
     "/properties/DefaultSecurityGroup",
     "/properties/Ipv6CidrBlocks",
-    "/properties/VpcId"
+    "/properties/VpcId",
+    "/properties/VpcEncryptionControl/VpcId",
+    "/properties/VpcEncryptionControl/VpcEncryptionControlId",
+    "/properties/VpcEncryptionControl/State",
+    "/properties/VpcEncryptionControl/StateMessage",
+    "/properties/VpcEncryptionControl/ResourceExclusions",
+    "/properties/VpcEncryptionControl/ResourceExclusions/InternetGateway",
+    "/properties/VpcEncryptionControl/ResourceExclusions/InternetGateway/State",
+    "/properties/VpcEncryptionControl/ResourceExclusions/InternetGateway/StateMessage",
+    "/properties/VpcEncryptionControl/ResourceExclusions/EgressOnlyInternetGateway",
+    "/properties/VpcEncryptionControl/ResourceExclusions/EgressOnlyInternetGateway/State",
+    "/properties/VpcEncryptionControl/ResourceExclusions/EgressOnlyInternetGateway/StateMessage",
+    "/properties/VpcEncryptionControl/ResourceExclusions/NatGateway",
+    "/properties/VpcEncryptionControl/ResourceExclusions/NatGateway/State",
+    "/properties/VpcEncryptionControl/ResourceExclusions/NatGateway/StateMessage",
+    "/properties/VpcEncryptionControl/ResourceExclusions/VirtualPrivateGateway",
+    "/properties/VpcEncryptionControl/ResourceExclusions/VirtualPrivateGateway/State",
+    "/properties/VpcEncryptionControl/ResourceExclusions/VirtualPrivateGateway/StateMessage",
+    "/properties/VpcEncryptionControl/ResourceExclusions/VpcPeering",
+    "/properties/VpcEncryptionControl/ResourceExclusions/VpcPeering/State",
+    "/properties/VpcEncryptionControl/ResourceExclusions/VpcPeering/StateMessage",
+    "/properties/VpcEncryptionControl/ResourceExclusions/Lambda",
+    "/properties/VpcEncryptionControl/ResourceExclusions/Lambda/State",
+    "/properties/VpcEncryptionControl/ResourceExclusions/Lambda/StateMessage",
+    "/properties/VpcEncryptionControl/ResourceExclusions/VpcLattice",
+    "/properties/VpcEncryptionControl/ResourceExclusions/VpcLattice/State",
+    "/properties/VpcEncryptionControl/ResourceExclusions/VpcLattice/StateMessage",
+    "/properties/VpcEncryptionControl/ResourceExclusions/ElasticFileSystem",
+    "/properties/VpcEncryptionControl/ResourceExclusions/ElasticFileSystem/State",
+    "/properties/VpcEncryptionControl/ResourceExclusions/ElasticFileSystem/StateMessage"
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
@@ -160,6 +341,14 @@
   "typeName": "AWS::EC2::VPC",
   "writeOnlyProperties": [
     "/properties/Ipv4IpamPoolId",
-    "/properties/Ipv4NetmaskLength"
+    "/properties/Ipv4NetmaskLength",
+    "/properties/VpcEncryptionControl/InternetGatewayExclusion",
+    "/properties/VpcEncryptionControl/EgressOnlyInternetGatewayExclusion",
+    "/properties/VpcEncryptionControl/NatGatewayExclusion",
+    "/properties/VpcEncryptionControl/VirtualPrivateGatewayExclusion",
+    "/properties/VpcEncryptionControl/VpcPeeringExclusion",
+    "/properties/VpcEncryptionControl/LambdaExclusion",
+    "/properties/VpcEncryptionControl/VpcLatticeExclusion",
+    "/properties/VpcEncryptionControl/ElasticFileSystemExclusion"
   ]
 }

@@ -175,6 +175,13 @@
     "/properties/LastModifiedRegion",
     "/properties/LastModifiedTime"
   ],
+  "required": [
+    "InstanceArn",
+    "Name",
+    "TimeZone",
+    "ValueLockLevel",
+    "Status"
+  ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-connect",
   "tagging": {
     "cloudFormationSystemTags": true,

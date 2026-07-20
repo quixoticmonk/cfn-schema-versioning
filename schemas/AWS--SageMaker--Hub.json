@@ -74,6 +74,7 @@
   "properties": {
     "CreationTime": {
       "description": "The date and time that the hub was created.",
+      "format": "date-time",
       "type": "string"
     },
     "HubArn": {
@@ -131,6 +132,7 @@
     },
     "LastModifiedTime": {
       "description": "The date and time that the hub was last modified.",
+      "format": "date-time",
       "type": "string"
     },
     "S3StorageConfig": {

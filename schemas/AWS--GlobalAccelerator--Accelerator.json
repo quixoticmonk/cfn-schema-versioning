@@ -36,14 +36,25 @@
       "permissions": [
         "globalaccelerator:CreateAccelerator",
         "globalaccelerator:DescribeAccelerator",
-        "globalaccelerator:TagResource"
+        "globalaccelerator:DescribeAcceleratorAttributes",
+        "globalaccelerator:UpdateAcceleratorAttributes",
+        "globalaccelerator:TagResource",
+        "globalaccelerator:ListTagsForResource",
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy"
       ]
     },
     "delete": {
       "permissions": [
         "globalaccelerator:UpdateAccelerator",
         "globalaccelerator:DeleteAccelerator",
-        "globalaccelerator:DescribeAccelerator"
+        "globalaccelerator:DescribeAccelerator",
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy"
       ]
     },
     "list": {
@@ -53,15 +64,24 @@
     },
     "read": {
       "permissions": [
-        "globalaccelerator:DescribeAccelerator"
+        "globalaccelerator:DescribeAccelerator",
+        "globalaccelerator:DescribeAcceleratorAttributes",
+        "globalaccelerator:ListTagsForResource"
       ]
     },
     "update": {
       "permissions": [
         "globalaccelerator:UpdateAccelerator",
+        "globalaccelerator:UpdateAcceleratorAttributes",
+        "globalaccelerator:DescribeAcceleratorAttributes",
         "globalaccelerator:TagResource",
         "globalaccelerator:UntagResource",
-        "globalaccelerator:DescribeAccelerator"
+        "globalaccelerator:DescribeAccelerator",
+        "globalaccelerator:ListTagsForResource",
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy"
       ]
     }
   },
@@ -85,6 +105,37 @@
       "default": true,
       "description": "Indicates whether an accelerator is enabled. The value is true or false.",
       "type": "boolean"
+    },
+    "FlowLogsEnabled": {
+      "default": false,
+      "dependencies": {
+        "FlowLogsEnabled": [
+          "FlowLogsS3Bucket",
+          "FlowLogsS3Prefix"
+        ]
+      },
+      "description": "Indicates whether flow logs are enabled for the accelerator.",
+      "type": "boolean"
+    },
+    "FlowLogsS3Bucket": {
+      "dependencies": {
+        "FlowLogsS3Bucket": [
+          "FlowLogsEnabled"
+        ]
+      },
+      "description": "The name of the Amazon S3 bucket for the flow logs.",
+      "maxLength": 255,
+      "type": "string"
+    },
+    "FlowLogsS3Prefix": {
+      "dependencies": {
+        "FlowLogsS3Prefix": [
+          "FlowLogsEnabled"
+        ]
+      },
+      "description": "The prefix for the location in the Amazon S3 bucket for the flow logs.",
+      "maxLength": 255,
+      "type": "string"
     },
     "IpAddressType": {
       "default": "IPV4",
@@ -148,7 +199,12 @@
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-globalaccelerator",
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "globalaccelerator:TagResource",
+      "globalaccelerator:UntagResource",
+      "globalaccelerator:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

@@ -228,6 +228,12 @@
     "/properties/LastModifiedRegion",
     "/properties/LastModifiedTime"
   ],
+  "required": [
+    "InstanceArn",
+    "DataTableArn",
+    "Name",
+    "ValueType"
+  ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-connect",
   "tagging": {
     "taggable": false

@@ -1296,7 +1296,7 @@
     "EventExpiryDuration"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "bedrock-agentcore:TagResource",
       "bedrock-agentcore:UntagResource",

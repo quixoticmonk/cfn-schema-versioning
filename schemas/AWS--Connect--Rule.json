@@ -69,7 +69,7 @@
       "properties": {
         "CaseSlaConfiguration": {
           "additionalProperties": false,
-          "description": "The SLA configuration for cases.",
+          "description": "",
           "properties": {
             "FieldId": {
               "description": "The field Id for the SLA.",
@@ -113,7 +113,7 @@
           "type": "object"
         },
         "SlaAssignmentType": {
-          "description": "The type of SLA assignment.",
+          "description": "",
           "enum": [
             "CASES"
           ],
@@ -420,6 +420,7 @@
       "description": "",
       "properties": {
         "StringValue": {
+          "description": "",
           "type": "string"
         }
       },

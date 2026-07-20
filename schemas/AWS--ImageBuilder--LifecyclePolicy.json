@@ -231,7 +231,7 @@
       "type": "string"
     }
   },
-  "description": "Resource schema for AWS::ImageBuilder::LifecyclePolicy",
+  "description": "Resource Type definition for AWS::ImageBuilder::LifecyclePolicy",
   "handlers": {
     "create": {
       "permissions": [
@@ -274,6 +274,7 @@
   "properties": {
     "Arn": {
       "description": "The Amazon Resource Name (ARN) of the lifecycle policy.",
+      "pattern": "^arn:[^:]+:imagebuilder:[^:]+:[^:]+:lifecycle-policy/.+$",
       "type": "string"
     },
     "Description": {

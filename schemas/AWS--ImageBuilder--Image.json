@@ -181,7 +181,7 @@
       "type": "string"
     }
   },
-  "description": "Resource schema for AWS::ImageBuilder::Image",
+  "description": "Resource Type definition for AWS::ImageBuilder::Image",
   "handlers": {
     "create": {
       "permissions": [
@@ -260,6 +260,7 @@
   "properties": {
     "Arn": {
       "description": "The Amazon Resource Name (ARN) of the image.",
+      "pattern": "^arn:[^:]+:imagebuilder:[^:]+:[^:]+:image/.+$",
       "type": "string"
     },
     "ContainerRecipeArn": {

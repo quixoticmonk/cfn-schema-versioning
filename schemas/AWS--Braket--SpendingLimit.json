@@ -33,10 +33,12 @@
       "properties": {
         "EndAt": {
           "description": "The end date and time for the spending limit period, in ISO 8601 format.",
+          "format": "date-time",
           "type": "string"
         },
         "StartAt": {
           "description": "The start date and time for the spending limit period, in ISO 8601 format.",
+          "format": "date-time",
           "type": "string"
         }
       },
@@ -88,6 +90,7 @@
   "properties": {
     "CreatedAt": {
       "description": "The date and time when the spending limit was created, in ISO 8601 format.",
+      "format": "date-time",
       "type": "string"
     },
     "DeviceArn": {
@@ -131,6 +134,7 @@
     },
     "UpdatedAt": {
       "description": "The date and time when the spending limit was last modified, in ISO 8601 format.",
+      "format": "date-time",
       "type": "string"
     }
   },

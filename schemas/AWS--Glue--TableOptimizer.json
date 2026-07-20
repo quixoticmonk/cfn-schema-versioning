@@ -7,6 +7,30 @@
     "/properties/CatalogId"
   ],
   "definitions": {
+    "CompactionConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "IcebergConfiguration": {
+          "$ref": "#/definitions/IcebergCompactionConfiguration"
+        }
+      },
+      "type": "object"
+    },
+    "IcebergCompactionConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "DeleteFileThreshold": {
+          "type": "integer"
+        },
+        "MinInputFiles": {
+          "type": "integer"
+        },
+        "Strategy": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "IcebergConfiguration": {
       "additionalProperties": false,
       "properties": {
@@ -55,6 +79,9 @@
     "TableOptimizerConfiguration": {
       "additionalProperties": false,
       "properties": {
+        "CompactionConfiguration": {
+          "$ref": "#/definitions/CompactionConfiguration"
+        },
         "Enabled": {
           "type": "boolean"
         },

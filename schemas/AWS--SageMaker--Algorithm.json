@@ -468,6 +468,7 @@
     },
     "CreationTime": {
       "description": "A timestamp specifying when the algorithm was created.",
+      "format": "date-time",
       "type": "string"
     },
     "InferenceSpecification": {

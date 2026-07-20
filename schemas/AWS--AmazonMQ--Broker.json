@@ -501,6 +501,10 @@
       "type": "array",
       "uniqueItems": false
     },
+    "StorageSize": {
+      "description": "The broker's storage size in GB.",
+      "type": "integer"
+    },
     "StorageType": {
       "anyOf": [
         {

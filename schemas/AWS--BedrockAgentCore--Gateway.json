@@ -138,12 +138,22 @@
         "DiscoveryUrl": {
           "pattern": "^.+/\\.well-known/openid-configuration$",
           "type": "string"
+        },
+        "PrivateEndpoint": {
+          "$ref": "#/definitions/PrivateEndpoint"
         }
       },
       "required": [
         "DiscoveryUrl"
       ],
       "type": "object"
+    },
+    "EndpointIpAddressType": {
+      "enum": [
+        "IPV4",
+        "IPV6"
+      ],
+      "type": "string"
     },
     "ExceptionLevel": {
       "enum": [
@@ -329,6 +339,46 @@
       },
       "type": "object"
     },
+    "ManagedVpcResource": {
+      "additionalProperties": false,
+      "properties": {
+        "EndpointIpAddressType": {
+          "$ref": "#/definitions/EndpointIpAddressType"
+        },
+        "RoutingDomain": {
+          "maxLength": 255,
+          "minLength": 3,
+          "type": "string"
+        },
+        "SecurityGroupIds": {
+          "items": {
+            "pattern": "^sg-(([0-9a-z]{8})|([0-9a-z]{17}))$",
+            "type": "string"
+          },
+          "maxItems": 5,
+          "minItems": 0,
+          "type": "array"
+        },
+        "SubnetIds": {
+          "items": {
+            "pattern": "^subnet-(([0-9a-z]{8})|([0-9a-z]{17}))$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "VpcIdentifier": {
+          "pattern": "^vpc-(([0-9a-z]{8})|([0-9a-z]{17}))$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "EndpointIpAddressType",
+        "SubnetIds",
+        "VpcIdentifier"
+      ],
+      "type": "object"
+    },
     "MatchValueString": {
       "description": "The string value to match for",
       "pattern": "[A-Za-z0-9_.-]+",
@@ -344,11 +394,61 @@
       "minItems": 1,
       "type": "array"
     },
+    "PrivateEndpoint": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "SelfManagedLatticeResource": {
+              "$ref": "#/definitions/SelfManagedLatticeResource"
+            }
+          },
+          "required": [
+            "SelfManagedLatticeResource"
+          ],
+          "title": "SelfManagedLatticeResource",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "ManagedVpcResource": {
+              "$ref": "#/definitions/ManagedVpcResource"
+            }
+          },
+          "required": [
+            "ManagedVpcResource"
+          ],
+          "title": "ManagedVpcResource",
+          "type": "object"
+        }
+      ]
+    },
     "SearchType": {
       "enum": [
         "SEMANTIC"
       ],
       "type": "string"
+    },
+    "SelfManagedLatticeResource": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "ResourceConfigurationIdentifier": {
+              "maxLength": 2048,
+              "minLength": 20,
+              "pattern": "^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\\-]+:vpc-lattice:[a-zA-Z0-9\\-]+:\\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "ResourceConfigurationIdentifier"
+          ],
+          "title": "ResourceConfigurationIdentifier",
+          "type": "object"
+        }
+      ]
     },
     "SessionConfiguration": {
       "additionalProperties": false,
