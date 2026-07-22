@@ -71,6 +71,10 @@
     "/properties/DBSubnetGroupName"
   ],
   "properties": {
+    "DBSubnetGroupArn": {
+      "description": "",
+      "type": "string"
+    },
     "DBSubnetGroupDescription": {
       "description": "The description for the DB subnet group.",
       "type": "string"
@@ -102,6 +106,9 @@
   "propertyTransform": {
     "/properties/DBSubnetGroupName": "$lowercase(DBSubnetGroupName)"
   },
+  "readOnlyProperties": [
+    "/properties/DBSubnetGroupArn"
+  ],
   "required": [
     "DBSubnetGroupDescription",
     "SubnetIds"

@@ -209,7 +209,8 @@
     "delete": {
       "permissions": [
         "bedrock-agentcore:DeletePaymentManager",
-        "bedrock-agentcore:GetPaymentManager"
+        "bedrock-agentcore:GetPaymentManager",
+        "bedrock-agentcore:DeleteWorkloadIdentity"
       ]
     },
     "list": {
@@ -312,8 +313,14 @@
     "AuthorizerType",
     "RoleArn"
   ],
+  "resourceLink": {
+    "mappings": {
+      "PaymentManagerId": "/PaymentManagerId"
+    },
+    "templateUri": "/bedrock-agentcore/payments/managers/${PaymentManagerId}?region=${awsRegion}"
+  },
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "bedrock-agentcore:TagResource",
       "bedrock-agentcore:UntagResource",

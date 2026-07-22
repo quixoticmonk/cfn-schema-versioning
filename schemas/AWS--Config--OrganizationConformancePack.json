@@ -32,6 +32,29 @@
       "maxLength": 4096,
       "minLength": 0,
       "type": "string"
+    },
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
+        "Value": {
+          "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+          "maxLength": 256,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Value",
+        "Key"
+      ],
+      "type": "object"
     }
   },
   "description": "Resource Type definition for AWS::Config::OrganizationConformancePack.",
@@ -43,6 +66,8 @@
         "config:DescribeOrganizationConformancePackStatuses",
         "config:GetOrganizationConformancePackDetailedStatus",
         "config:DescribeOrganizationConformancePacks",
+        "config:TagResource",
+        "config:ListTagsForResource",
         "s3:GetObject",
         "s3:GetBucketAcl",
         "iam:CreateServiceLinkedRole",
@@ -57,6 +82,7 @@
         "config:DeleteOrganizationConformancePack",
         "config:DescribeOrganizationConformancePackStatuses",
         "config:GetOrganizationConformancePackDetailedStatus",
+        "config:UntagResource",
         "organizations:ListDelegatedAdministrators"
       ],
       "timeoutInMinutes": 706
@@ -68,7 +94,8 @@
     },
     "read": {
       "permissions": [
-        "config:DescribeOrganizationConformancePacks"
+        "config:DescribeOrganizationConformancePacks",
+        "config:ListTagsForResource"
       ]
     },
     "update": {
@@ -76,6 +103,10 @@
         "config:PutOrganizationConformancePack",
         "config:DescribeOrganizationConformancePackStatuses",
         "config:GetOrganizationConformancePackDetailedStatus",
+        "config:DescribeOrganizationConformancePacks",
+        "config:TagResource",
+        "config:UntagResource",
+        "config:ListTagsForResource",
         "s3:GetObject",
         "s3:GetBucketAcl",
         "iam:CreateServiceLinkedRole",
@@ -120,12 +151,25 @@
       "minItems": 0,
       "type": "array"
     },
+    "OrganizationConformancePackArn": {
+      "description": "Amazon Resource Name (ARN) of the organization conformance pack.",
+      "type": "string"
+    },
     "OrganizationConformancePackName": {
       "description": "The name of the organization conformance pack.",
       "maxLength": 128,
       "minLength": 1,
       "pattern": "[a-zA-Z][-a-zA-Z0-9]*",
       "type": "string"
+    },
+    "Tags": {
+      "description": "The tags for the organization conformance pack.",
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "maxItems": 50,
+      "type": "array",
+      "uniqueItems": true
     },
     "TemplateBody": {
       "description": "A string containing full conformance pack template body.",
@@ -141,16 +185,24 @@
       "type": "string"
     }
   },
+  "readOnlyProperties": [
+    "/properties/OrganizationConformancePackArn"
+  ],
   "required": [
     "OrganizationConformancePackName"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-config.git",
   "tagging": {
-    "cloudFormationSystemTags": false,
-    "tagOnCreate": false,
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "config:TagResource",
+      "config:UntagResource",
+      "config:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
-    "tagUpdatable": false,
-    "taggable": false
+    "tagUpdatable": true,
+    "taggable": true
   },
   "typeName": "AWS::Config::OrganizationConformancePack",
   "writeOnlyProperties": [

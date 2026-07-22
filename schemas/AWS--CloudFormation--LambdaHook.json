@@ -1,7 +1,9 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
-    "/properties/Alias"
+    "/properties/Alias",
+    "/properties/AutoUpdate",
+    "/properties/LoggingConfig"
   ],
   "definitions": {
     "Action": {
@@ -40,6 +42,31 @@
         "PRE_PROVISION"
       ],
       "type": "string"
+    },
+    "LoggingConfig": {
+      "additionalProperties": false,
+      "description": "Contains logging configuration information for an extension.",
+      "properties": {
+        "LogGroupName": {
+          "description": "The Amazon CloudWatch Logs group to which CloudFormation sends error logging information when invoking the extension's handlers.",
+          "maxLength": 512,
+          "minLength": 1,
+          "pattern": "^[\\.\\-_/#A-Za-z0-9]+$",
+          "type": "string"
+        },
+        "LogRoleArn": {
+          "description": "The ARN of the role that CloudFormation should assume when sending log entries to CloudWatch Logs.",
+          "maxLength": 256,
+          "minLength": 1,
+          "pattern": "arn:.+:iam::[0-9]{12}:role/.+",
+          "type": "string"
+        }
+      },
+      "required": [
+        "LogGroupName",
+        "LogRoleArn"
+      ],
+      "type": "object"
     },
     "Role": {
       "description": "IAM Role ARN",
@@ -135,6 +162,11 @@
       "pattern": "^(?!(?i)aws)[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$",
       "type": "string"
     },
+    "AutoUpdate": {
+      "default": true,
+      "description": "Whether to automatically update the extension in this account and Region when a new minor version is published by the extension publisher.",
+      "type": "boolean"
+    },
     "ExecutionRole": {
       "$ref": "#/definitions/Role",
       "description": "The execution role ARN assumed by Hooks to invoke Lambda."
@@ -167,6 +199,10 @@
       "minLength": 1,
       "pattern": "(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?(-iso([a-z])?)?-[a-z]+-\\d{1}:)?(\\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
       "type": "string"
+    },
+    "LoggingConfig": {
+      "$ref": "#/definitions/LoggingConfig",
+      "description": "Contains logging configuration information for the hook."
     },
     "StackFilters": {
       "additionalProperties": false,
@@ -339,5 +375,9 @@
     "tagUpdatable": false,
     "taggable": false
   },
-  "typeName": "AWS::CloudFormation::LambdaHook"
+  "typeName": "AWS::CloudFormation::LambdaHook",
+  "writeOnlyProperties": [
+    "/properties/AutoUpdate",
+    "/properties/LoggingConfig"
+  ]
 }

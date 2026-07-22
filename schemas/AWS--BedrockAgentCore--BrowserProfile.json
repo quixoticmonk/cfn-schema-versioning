@@ -221,7 +221,7 @@
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "bedrock-agentcore:TagResource",
       "bedrock-agentcore:UntagResource",

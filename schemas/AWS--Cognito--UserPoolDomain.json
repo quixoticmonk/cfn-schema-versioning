@@ -10,6 +10,9 @@
       "properties": {
         "CertificateArn": {
           "type": "string"
+        },
+        "SecurityPolicy": {
+          "type": "string"
         }
       },
       "type": "object"

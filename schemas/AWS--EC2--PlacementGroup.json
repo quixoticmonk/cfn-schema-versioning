@@ -61,6 +61,10 @@
     "/properties/GroupName"
   ],
   "properties": {
+    "GroupId": {
+      "description": "The ID of the placement group.",
+      "type": "string"
+    },
     "GroupName": {
       "description": "The Group Name of Placement Group.",
       "type": "string"
@@ -88,7 +92,8 @@
     }
   },
   "readOnlyProperties": [
-    "/properties/GroupName"
+    "/properties/GroupName",
+    "/properties/GroupId"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-ec2",
   "tagging": {
